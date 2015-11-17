@@ -55,9 +55,10 @@
             a few seconds....</p></div>
 </div>
 <div id="container">
-    @include('layouts.partials.navigation')
+
+    @include('partials/_navigation')
     @yield('content')
-    @include('layouts.partials.footer')
+    @include('partials/_footer')
 
 </div>
 </body>
