@@ -1,6 +1,6 @@
-<html lang="en" ng-app="FormApp" id="ng-app" class="ng-scope">
+<html lang="en">
 <head>
-    <title>@yield('title') | Teach for Taiwan</title>
+    <title>Teach for Taiwan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
