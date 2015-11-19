@@ -15,3 +15,4 @@
 
 
 Route::get('dashboard','PagesController@dashboard');
+Route::get('basic','PagesController@basic');

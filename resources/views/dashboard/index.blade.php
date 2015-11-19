@@ -34,7 +34,7 @@
                             <div class="panel-body">
                                 <p class="panel-head">
                                     <i class="fa fa-th-list"> </i>
-                                    Basic Information
+                                    基本資訊
                                 </p>
 
                                 <p class="panel-description">
@@ -49,7 +49,112 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  <!--基本訊息-->
+                    <div class="float-shadow col-md-4">
+                        <div class="panel panel-default panel-dashboard">
+                            <div class="panel-body">
+                                <p class="panel-head">
+                                    <i class="fa fa-th-list"> </i>
+                                    專業資訊
+                                </p>
+
+                                <p class="panel-description">
+                                    Start by entering your General Details and
+                                    Contact Details
+                                </p>
+                                <div>
+                                    <p class="panel-status-inprogress">
+                                        In Progress
+                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--專業資訊-->
+                    <div class="float-shadow col-md-4">
+                        <div class="panel panel-default panel-dashboard">
+                            <div class="panel-body">
+                                <p class="panel-head">
+                                    <i class="fa fa-th-list"> </i>
+                                    教育資訊
+                                </p>
+
+                                <p class="panel-description">
+                                    Start by entering your General Details and
+                                    Contact Details
+                                </p>
+                                <div>
+                                    <p class="panel-status-inprogress">
+                                        In Progress
+                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--教育資訊-->
+                    <div class="float-shadow col-md-4">
+                        <div class="panel panel-default panel-dashboard">
+                            <div class="panel-body">
+                                <p class="panel-head">
+                                    <i class="fa fa-th-list"> </i>
+                                    興趣與經歷
+                                </p>
+
+                                <p class="panel-description">
+                                    Start by entering your General Details and
+                                    Contact Details
+                                </p>
+                                <div>
+                                    <p class="panel-status-inprogress">
+                                        In Progress
+                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--興趣與經歷-->
+                    <div class="float-shadow col-md-4">
+                        <div class="panel panel-default panel-dashboard">
+                            <div class="panel-body">
+                                <p class="panel-head">
+                                    <i class="fa fa-th-list"> </i>
+                                    短文
+                                </p>
+
+                                <p class="panel-description">
+                                    Start by entering your General Details and
+                                    Contact Details
+                                </p>
+                                <div>
+                                    <p class="panel-status-inprogress">
+                                        In Progress
+                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--短文-->
+                    <div class="float-shadow col-md-4">
+                        <div class="panel panel-default panel-dashboard">
+                            <div class="panel-body">
+                                <p class="panel-head">
+                                    <i class="fa fa-th-list"> </i>
+                                    送出資料
+                                </p>
+
+                                <p class="panel-description">
+                                    Start by entering your General Details and
+                                    Contact Details
+                                </p>
+                                <div>
+                                    <p class="panel-status-inprogress">
+                                        In Progress
+                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--送出-->
                 </div>
             </div>
         </div>
