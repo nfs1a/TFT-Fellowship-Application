@@ -13,4 +13,9 @@ class PagesController extends Controller
     {
         return view('dashboard.index');
     }
+
+    public function basic()
+    {
+        return view('dashboard.basic');
+    }
 }
