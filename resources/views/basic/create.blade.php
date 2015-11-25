@@ -18,18 +18,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="input" class="col-md-2 control-label">性別</label>
+                                <label for="input" class="col-md-2 control-label">生理性別</label>
                                 <div class="col-md-9">
                                     <div class="radio col-md-4">
                                         <label>
                                             <input type="radio" name="sex" id="boy" value="1">
-                                            生理男
+                                            男
                                         </label>
                                     </div>
                                     <div class="radio col-md-4">
                                         <label>
                                             <input type="radio" name="sex" id="gril" value="2">
-                                            生理女
+                                            女
                                         </label>
                                     </div>
                                     <div class="radio col-md-4">

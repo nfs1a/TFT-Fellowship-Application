@@ -20,6 +20,7 @@ class BasicController extends Controller
         $basic = Basic::all();
 
         $post_type = '基本資料列表';
+        //把性別代號轉換成文字
         foreach($basic as $var){
             if($var->sex == 1 ) $var->sex = '男';
             elseif ($var->sex == 2 ) $var->sex = '女';
