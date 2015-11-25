@@ -19,37 +19,31 @@
                             </div>
                             <div class="form-group" onmouseover ="displayExample('sex')">
                                 <label for="input" class="col-md-2 control-label">生理性別</label>
-                                <div class="col-md-9">
-                                    <div class="radio col-md-4">
-                                        <label>
-                                            <input type="radio" name="sex" id="boy" value="1">
-                                            男
-                                        </label>
+                                <div class="col-md-10">
+                                    <div class="col-md-4">
+                                        <input type="radio" name="sex" id="boy" value="1"> 男
                                     </div>
-                                    <div class="radio col-md-4">
-                                        <label>
-                                            <input type="radio" name="sex" id="gril" value="2">
-                                            女
-                                        </label>
+                                    <div class="col-md-4">
+                                        <input type="radio" name="sex" id="gril" value="2"> 女
                                     </div>
-                                    <div class="radio col-md-4">
-                                        <label>
-                                            <input type="radio" name="sex" id="other" value="3">
-                                            其他
-                                        </label>
+                                    <div class="col-md-4">
+                                        <input type="radio" name="sex" id="other" value="3"> 其他
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group" onmouseover ="displayExample('birthday')">
-                                <div class="col-xs-3">
-                                    <input type="text" name="b_year" class="form-control" placeholder="西元年"/>
-                                </div>
-                                <div class="col-xs-3">
-                                    <input type="text" name="b_month" class="form-control" placeholder="月"/>
-                                </div>
-                                <div class="col-xs-3">
-                                    <input type="text" name="b_day" class="form-control" placeholder="日"/>
+                                <label for="input" class="col-md-2 control-label">生日</label>
+                                <div class="col-md-10">
+                                    <div class="col-md-4">
+                                        <input type="text" name="b_year" class="form-control" placeholder="西元年"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="b_month" class="form-control" placeholder="月"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="b_day" class="form-control" placeholder="日"/>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -129,10 +123,25 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="bottomButtonSet">
+                                <div class="row">
+                                    <div class="col-md-9 col-md-offset-1">
+                                        <button type="submit" class="btn btn-success btn-submit-form form-control">
+                                            Submit Section
+                                        </button>
+                                    </div>
+                                    <div class="col-md-9 col-md-offset-1">
+                                        <button type="button" class="btn btn-info form-control">
+                                            Edit!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div> 
 
                 </div>
-                <input type="submit" value="送出" class="btn btn-primary">
             </form>
         </div>
     </div>
