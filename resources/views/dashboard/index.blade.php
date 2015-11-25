@@ -29,27 +29,29 @@
             </div>
             <div>
                 <div class='col-md-12'>
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    基本資訊
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                    <a href="{{ url('basic/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        基本資訊
                                     </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        <p class="panel-status-inprogress">
+                                            In Progress
+                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>  <!--基本訊息-->
+                        </div>  <!--基本訊息-->
+                    </a>
                     <div class="float-shadow col-md-4">
                         <div class="panel panel-default panel-dashboard">
                             <div class="panel-body">
