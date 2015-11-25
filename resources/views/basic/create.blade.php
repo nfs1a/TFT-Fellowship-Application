@@ -128,12 +128,12 @@
                                 <div class="row">
                                     <div class="col-md-9 col-md-offset-1">
                                         <button type="submit" class="btn btn-success btn-submit-form form-control">
-                                            Submit Section
+                                            儲存/送出
                                         </button>
                                     </div>
                                     <div class="col-md-9 col-md-offset-1">
-                                        <button type="button" class="btn btn-info form-control">
-                                            Edit!
+                                        <button type="button" class="btn btn-info form-control" disabled="disable">
+                                            編輯
                                         </button>
                                     </div>
                                 </div>
