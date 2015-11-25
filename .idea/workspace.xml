@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f53511f-cb32-439c-b410-f828c65ec544" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BasicController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BasicController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/basic/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/basic/create.blade.php" />
     </list>
     <ignored path="laravel.iws" />
@@ -125,8 +124,8 @@
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/basic/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27817404">
-              <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.871612">
+              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -873,8 +872,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/basic/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27817404">
-          <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.871612">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding />
         </state>
       </provider>
