@@ -50,7 +50,7 @@ class BasicController extends Controller
     public function store(Request $request)
     {
         $basic = Basic::create($request->all());
-        return redirect()->route('posts.show', $basic->id)->with('success', '新增基本資訊完成');
+        return redirect('/basic');
     }
 
     /**

@@ -3,6 +3,7 @@
 Route::pattern('id', '[0-9]+'); //規定ID格式
 
 Route::get('dashboard','PagesController@dashboard');
+Route::get('/','PagesController@dashboard');
 
 Route::get      ('basic'            , ['as' => 'basic.index'  , 'uses' => 'BasicController@index']);    //顯示所有列表
 Route::get      ('basic/{id}'       , ['as' => 'basic.show'   , 'uses' => 'BasicController@show']);     //顯示某個人的資料
