@@ -1,9 +1,10 @@
-@extends('layouts/_default')
+@extends('layouts._default')
 
 @section('content')
     <div id="page">
         <div class="container">
-            <form name="dynamicForm" class="form-horizontal">
+            <form action="{{ url('basic') }}" method="post" name="dynamicForm" class="form-horizontal">
+                {{csrf_field()}}
                 <div class="row sectionTitle">
                     <h1>Basic Information</h1>
                 </div>
@@ -11,54 +12,92 @@
                     <div class="sectionPan panel panel-default col-md-7 shadow">
                         <div class="panel-body">
                             <div class="form-group" onmouseover ="displayExample('name')">
-                                <label for="input" class="col-sm-2 control-label">姓名</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="name" placeholder="王大明">
+                                <label for="input" class="col-md-2 control-label">姓名</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="name" placeholder="王大明">
                                 </div>
                             </div>
+                            <div class="form-group" onmouseover ="displayExample('sex')">
+                                <label for="input" class="col-md-2 control-label">生理性別</label>
+                                <div class="col-md-9">
+                                    <div class="radio col-md-4">
+                                        <label>
+                                            <input type="radio" name="sex" id="boy" value="1">
+                                            男
+                                        </label>
+                                    </div>
+                                    <div class="radio col-md-4">
+                                        <label>
+                                            <input type="radio" name="sex" id="gril" value="2">
+                                            女
+                                        </label>
+                                    </div>
+                                    <div class="radio col-md-4">
+                                        <label>
+                                            <input type="radio" name="sex" id="other" value="3">
+                                            其他
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group" onmouseover ="displayExample('birthday')">
-                                <label for="birthday" class="col-xs-3 col-sm-2 control-label">生日</label>
                                 <div class="col-xs-3">
-                                    <input type="text" class="form-control" placeholder="(西元年)1990"/>
+                                    <input type="text" name="b_year" class="form-control" placeholder="西元年"/>
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="text" class="form-control" placeholder="(月)4"/>
+                                    <input type="text" name="b_month" class="form-control" placeholder="月"/>
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="text" class="form-control" placeholder="(日)1"/>
+                                    <input type="text" name="b_day" class="form-control" placeholder="日"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input" class="col-sm-2 control-label">室內電話</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="phone" placeholder="0227386224">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('phone')">
                                 <label for="input" class="col-sm-2 control-label">手機號碼</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="phone" placeholder="0912345678">
+                                    <input type="text" class="form-control" name="cell_phone" placeholder="0912345678">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('skype')">
                                 <label for="input" class="col-sm-2 control-label">Skype帳號</label>
+
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="skype" placeholder="Skype">
+                                    <input type="text" class="form-control" name="skype" placeholder="Skype">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('email')">
                                 <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
+
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="email" placeholder="tft@teach4taiwan.org">
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="tft@teach4taiwan.org">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('email')">
                                 <label for="input" class="col-sm-2 control-label">備用電子郵件</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="sec_email" placeholder="tft@teach4taiwan.org">
+                                    <input type="email" class="form-control" name="sec_email"
+                                           placeholder="tft@teach4taiwan.org">
                                 </div>
                             </div>
+
                             <div class="form-group" onmouseover ="displayExample('address')">
-                                <label for="input" class="col-sm-2 control-label">地址</label>
+                                <label for="input" class="col-sm-2 control-label">通訊地址</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="address" placeholder="106台北市大安區復興南路二段318號三樓">
+                                    <input type="address" class="form-control" name="address"
+                                           placeholder="106台北市大安區復興南路二段318號三樓">
                                 </div>
                             </div>
+                            <!--
                             <div class="form-group" onmouseover ="displayExample('job')">
+
                                 <label for="input" class="col-sm-2 control-label">工作</label>
                                 <div class="col-sm-3">
                                     <select class="form-control">
@@ -69,6 +108,7 @@
                                     </select>
                                 </div>
                             </div>
+                            -->
                         </div>
                     </div>
 
@@ -92,6 +132,7 @@
                     </div> 
 
                 </div>
+                <input type="submit" value="送出" class="btn btn-primary">
             </form>
         </div>
     </div>
@@ -106,6 +147,10 @@ function displayExample(dom)
     if(dom == 'name'){
         exampleHelpText = '請輸入你的姓名';
         exampleText = '王大明';
+    }
+    if(dom == 'sex'){
+        exampleHelpText = '請輸入你的生理性別';
+        exampleText = '男，女，或其他';
     }
     if(dom == 'birthday'){
         exampleHelpText = '請輸入你的生日';
@@ -127,13 +172,7 @@ function displayExample(dom)
         exampleHelpText = '請輸入你的地址';
         exampleText = '地址';
     }
-    if(dom == 'job'){
-        exampleHelpText = '請輸入你的工作';
-        exampleText = '工作';
-    }
     document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
     document.getElementById("exampleText").innerHTML= exampleText;
 }
 </script>
-
-
