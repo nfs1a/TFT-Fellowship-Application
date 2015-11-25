@@ -3,7 +3,7 @@
         <div class="container-fluid"><!--Brand and toggle get grouped for better mobile display-->
             <ul id="navmain" class="nav navbar-nav navbar-left">
                 <li><a href="/" class="navbar-brand">
-                        <img src="http://www.teach4taiwan.org/templates/eason-one/images/tittle-24.png" alt="">
+                        <img src="/tittle-24.png" alt="">
                     </a>
                 </li>
                 <li><a href="/dashboard"
