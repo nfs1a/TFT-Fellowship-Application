@@ -2,15 +2,13 @@
     <nav role="navigation" class="navbar navbar-fixed-top navbar-default background_white">
         <div class="container-fluid"><!--Brand and toggle get grouped for better mobile display-->
             <ul id="navmain" class="nav navbar-nav navbar-left">
-                <li><a href="http://apply.teachforindia.org/user/register" class="navbar-brand">
-                        <span>TEACH</span>
-                        <span class="tfiBlue">FOR</span>
-                        <span>TAIWAN</span>
+                <li><a href="/" class="navbar-brand">
+                        <img src="/tittle-24.png" alt="">
                     </a>
                 </li>
-                <li><a href="http://apply.teachforindia.org/dashboard"
+                <li><a href="/dashboard"
                        class="btn btn-success btn-lg btn-home">DASHBOARD</a></li>
-                <li><a href="http://teachforindia.org/fellow-ship/fellowship-faqs" target="_blank"
+                <li><a href="http://www.teach4taiwan.org/faqs.html" target="_blank"
                        class="btn btn-success btn-lg btn-home">FAQ</a></li>
             </ul>
             <ul id="navmainright" class="nav navbar-nav navbar-right">
