@@ -6,6 +6,7 @@
  * Time: 3:21 PM
  */
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Basic;
@@ -15,7 +16,7 @@ class BasicTableSeeder extends Seeder{
     {
         DB::table('basics')->truncate();
 
-        for($i=0;$i<10; $i++)
+        for($i=0;$i<20; $i++)
         {
             Basic::create([
                 'name'      =>  str_random(5),
@@ -25,7 +26,7 @@ class BasicTableSeeder extends Seeder{
                 'skype'     =>  str_random(rand(5,20)),
                 'email'     =>  str_random(rand(2,10)).'@'.str_random(rand(3,6)).'.'.str_random(rand(3,6)),
                 'sec_email' =>  str_random(rand(2,10)).'@'.str_random(rand(3,6)).'.'.str_random(rand(3,6)),
-                //'birthday'  =>  random_bytes(4).'/'.rand(1,12).'/'.rand(1,31),
+                'birthday'  =>  Carbon::now(),
                 'address'   =>  str_random(50)
             ]);
         }
