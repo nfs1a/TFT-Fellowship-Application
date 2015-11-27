@@ -3,11 +3,6 @@
 @section('content')
     <div id="page">
         <div class="container">
-            @if($errors->has())
-               @foreach ($errors->all() as $error)
-                  <div>{{ $error }}</div>
-              @endforeach
-            @endif
             <form action="{{ url('basic') }}" method="post" name="dynamicForm" class="form-horizontal">
                 {{csrf_field()}}
                 <div class="row sectionTitle">
@@ -20,6 +15,7 @@
                                 <label for="input" class="col-md-2 control-label">姓名</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" name="name" placeholder="王大明" value={{ Input::old('name') }}>
+                                    {{ $errors->first('name') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('sex')">
