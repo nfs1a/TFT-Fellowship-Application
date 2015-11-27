@@ -31,7 +31,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group" onmouseover ="displayExample('birthday')">
                                 <label for="input" class="col-md-2 control-label">生日</label>
                                 <div class="col-md-10">
@@ -61,14 +60,12 @@
                             </div>
                             <div class="form-group" onmouseover ="displayExample('skype')">
                                 <label for="input" class="col-sm-2 control-label">Skype帳號</label>
-
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="skype" placeholder="Skype">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('email')">
                                 <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
-
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" name="email"
                                            placeholder="tft@teach4taiwan.org">
@@ -81,7 +78,6 @@
                                            placeholder="tft@teach4taiwan.org">
                                 </div>
                             </div>
-
                             <div class="form-group" onmouseover ="displayExample('address')">
                                 <label for="input" class="col-sm-2 control-label">通訊地址</label>
                                 <div class="col-sm-10">
@@ -89,23 +85,8 @@
                                            placeholder="106台北市大安區復興南路二段318號三樓">
                                 </div>
                             </div>
-                            <!--
-                            <div class="form-group" onmouseover ="displayExample('job')">
-
-                                <label for="input" class="col-sm-2 control-label">工作</label>
-                                <div class="col-sm-3">
-                                    <select class="form-control">
-                                        <option>讀書中</option>
-                                        <option>就業中</option>
-                                        <option>實習中</option>
-                                        <option>其他</option>
-                                    </select>
-                                </div>
-                            </div>
-                            -->
                         </div>
                     </div>
-
                     <div class="col-md-5 pull-right hidden-xs hidden-sm">
                         <div class="row">
                             <div class="col-md-9 col-md-offset-1 well help-box">
@@ -131,6 +112,7 @@
                                             儲存/送出
                                         </button>
                                     </div>
+                                    <div class="col-md-9 col-md-offset-1"> &nbsp;</div>
                                     <div class="col-md-9 col-md-offset-1">
                                         <button type="button" class="btn btn-info form-control" disabled="disable">
                                             編輯
@@ -139,12 +121,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
-
+                    </div>
                 </div>
             </form>
         </div>
     </div>
+
 @endsection
 
 
@@ -154,11 +136,11 @@ function displayExample(dom)
     var exampleHelpText = '...';
     var exampleText = '...';
     if(dom == 'name'){
-        exampleHelpText = '請輸入你的姓名';
+        exampleHelpText = '請輸入你的姓名(2~20個字)';
         exampleText = '王大明';
     }
     if(dom == 'sex'){
-        exampleHelpText = '請輸入你的生理性別';
+        exampleHelpText = '請輸入你的生理性別(必填)';
         exampleText = '男，女，或其他';
     }
     if(dom == 'birthday'){
@@ -167,7 +149,7 @@ function displayExample(dom)
     }
     if(dom == 'phone'){
         exampleHelpText = '請輸入你的手機';
-        exampleText = '09XX-XXX-XXX';
+        exampleText = '09XXXXXXXX';
     }
     if(dom == 'skype'){
         exampleHelpText = '請輸入你的 skype 帳號';

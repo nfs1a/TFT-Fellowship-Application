@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Basic;
-
+use App\Http\Requests\BasicRequest;
 class BasicController extends Controller
 {
     /**
@@ -47,7 +47,7 @@ class BasicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
         $basic = Basic::create($request->all());
         return redirect('/basic');
@@ -61,7 +61,8 @@ class BasicController extends Controller
      */
     public function show($id)
     {
-        //
+        $query = Basic::find($id);
+        return view('basic.show',compact('query'));
     }
 
     /**

@@ -27,7 +27,7 @@
                                     <td>{{ $var->sex    }}</td>
                                     <td>{{ $var->phone  }}</td>
                                     <td>{{ $var->email  }}</td>
-                                    <td><a href="{{ url('basic/'.$var->id.'/edit') }}" role="btn" class="btn btn-primary" disabled="disable">編輯</a></td>
+                                    <td><a href="{{ url('basic/'.$var->id) }}" role="btn" class="btn btn-primary">檢視(部分功能尚未完成)</a></td>
                                     <td><a href="{{ url('basic/'.$var->id.'/delete') }}" role="btn" class="btn btn-danger" disabled="disable">刪除</a></td>
                                 </tr>
                             @endforeach
