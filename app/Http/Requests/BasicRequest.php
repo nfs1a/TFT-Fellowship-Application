@@ -13,7 +13,7 @@ class BasicRequest extends Request
      */
     public function authorize()
     {
-        return false;    //打開驗證
+        return true;    //打開驗證
     }
 
     /**
