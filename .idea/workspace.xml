@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f53511f-cb32-439c-b410-f828c65ec544" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_11_27_091415_del_finish_to_basics_table.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/database.sqlite" afterPath="$PROJECT_DIR$/storage/database.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_11_24_105224_Basic.php" afterPath="$PROJECT_DIR$/database/migrations/2015_11_24_105224_Basic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/BasicTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/BasicTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/basic/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/basic/index.blade.php" />
-    </list>
+    <list default="true" id="7f53511f-cb32-439c-b410-f828c65ec544" name="Default" comment="" />
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
