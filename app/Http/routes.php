@@ -13,6 +13,9 @@ Route::get      ('basic/{id}/edit'  , ['as' => 'basic.edit'   , 'uses' => 'Basic
 Route::patch    ('basic/{id}'       , ['as' => 'basic.update' , 'uses' => 'BasicController@update']);   //更新某一個使用者的資料
 Route::delete   ('basic/{id}'       , ['as' => 'basic.destroy', 'uses' => 'BasicController@destroy']);  //刪除某一個使用者的資料
 
+Route::get      ('essay/create'     , ['as' => 'essay.create' , 'uses' => 'EssayController@create']);   //新增基本資料表單);
+Route::post     ('essay'            , ['as' => 'essay.store'  , 'uses' => 'EssayController@store']);    //新增使用者資料到資料庫
+
 Route::get('mail_test', function()
 {
     // 傳送給郵件view的變數資料
@@ -30,5 +33,6 @@ Route::get('mail_test', function()
         $message->to('yianccc@gmail.com')->subject('歡迎使用 Laravel Mail!');
     });
     echo '完成寄送!!';
-});
+})
+;
 
