@@ -90,30 +90,12 @@ body {
     background-color: #d3d7d7;
     border-color: #d3d7d7;
 }
-#lbl_citizen_yes {
+.question {
     color: white;
 }
-#lbl_citizen_no {
+/*#q1_yes {
     color: white;
-}
-#lbl_bachelor_yes {
-    color: white;
-}
-#lbl_bachelor_no {
-    color: white;
-}
-#lbl_apply_first_yes {
-    color: white;
-}
-#lbl_apply_first_no {
-    color: white;
-}
-#lbl_pio_yes {
-    color: white;
-}
-#lbl_pio_no {
-    color: white
-}
+}*/
 .bottomButtonSet {
     position: absolute;
     width: 100%;
