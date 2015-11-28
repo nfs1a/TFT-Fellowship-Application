@@ -14,7 +14,7 @@
                             <div class="form-group" onmouseover ="displayExample('name')">
                                 <label for="input" class="col-md-2 control-label">姓名</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="name" placeholder="王大明" value={{ Input::old('name') }}>
+                                    <input type="text" class="form-control" name="name" placeholder="王大明" value="{{ Input::old('name') }}" required="required" maxlength="20">
                                     {{ $errors->first('name') }}
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                                 <label for="input" class="col-md-2 control-label">生理性別</label>
                                 <div class="col-md-10">
                                     <div class="col-md-4">
-                                        <input type="radio" name="sex" id="boy" value="1"> 男
+                                        <input type="radio" name="sex" id="boy" value="1" required="required"> 男
                                     </div>
                                     <div class="col-md-4">
                                         <input type="radio" name="sex" id="gril" value="2"> 女
@@ -36,13 +36,13 @@
                                 <label for="input" class="col-md-2 control-label">生日</label>
                                 <div class="col-md-10">
                                     <div class="col-md-4">
-                                        <input type="text" name="b_year" class="form-control" placeholder="西元年"/>
+                                        <input type="text" name="b_year" class="form-control" placeholder="西元年" required="required"/>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="b_month" class="form-control" placeholder="月"/>
+                                        <input type="text" name="b_month" class="form-control" placeholder="月" required="required" />
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="b_day" class="form-control" placeholder="日"/>
+                                        <input type="text" name="b_day" class="form-control" placeholder="日" required="required"/>
                                     </div>
                                 </div>
                             </div>
@@ -50,26 +50,26 @@
                                 <label for="input" class="col-sm-2 control-label">室內電話</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="phone" placeholder="0227386224">
+                                    <input type="text" class="form-control" name="phone" placeholder="0227386224"  required="required">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('phone')">
                                 <label for="input" class="col-sm-2 control-label">手機號碼</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="cell_phone" placeholder="0912345678">
+                                    <input type="text" class="form-control" name="cell_phone" placeholder="0912345678" required="required">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('skype')">
                                 <label for="input" class="col-sm-2 control-label">Skype帳號</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="skype" placeholder="Skype">
+                                    <input type="text" class="form-control" name="skype" placeholder="Skype" required="required">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('email')">
                                 <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" name="email"
-                                           placeholder="tft@teach4taiwan.org">
+                                           placeholder="tft@teach4taiwan.org" required="required">
                                 </div>
                             </div>
                             <div class="form-group" onmouseover ="displayExample('email')">
@@ -83,7 +83,7 @@
                                 <label for="input" class="col-sm-2 control-label">通訊地址</label>
                                 <div class="col-sm-10">
                                     <input type="address" class="form-control" name="address"
-                                           placeholder="106台北市大安區復興南路二段318號三樓">
+                                           placeholder="106台北市大安區復興南路二段318號三樓" required="required">
                                 </div>
                             </div>
                         </div>
