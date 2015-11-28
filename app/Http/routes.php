@@ -5,6 +5,9 @@ Route::pattern('id', '[0-9]+'); //規定ID格式
 Route::get('dashboard','PagesController@dashboard');
 Route::get('/','PagesController@dashboard');
 
+// 申請須知
+Route::get('applyLicense','applyLicenseController@index');
+
 Route::get      ('basic'            , ['as' => 'basic.index'  , 'uses' => 'BasicController@index']);    //顯示所有列表
 Route::get      ('basic/{id}'       , ['as' => 'basic.show'   , 'uses' => 'BasicController@show']);     //顯示某個人的資料
 Route::get      ('basic/create'     , ['as' => 'basic.create' , 'uses' => 'BasicController@create']);   //新增基本資料表單
