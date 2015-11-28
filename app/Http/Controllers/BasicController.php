@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Basic;
-use App\Http\Requests\BasicRequest;
 
 use Validator;
 
@@ -55,7 +54,6 @@ class BasicController extends Controller
         $input = $request->all();
         $messages = [
             'required' => ':attribute 選項必填',
-            ''
         ];
         //驗證規則
         $rules = [
