@@ -53,19 +53,27 @@ class BasicController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $v = Validator::make($request->all(), [
+        $messages = [
+            'required' => ':attribute 選項必填',
+            ''
+        ];
+        //驗證規則
+        $rules = [
             'name'      => 'required|min:2|max:20',
             'sex'       => 'required|max:1',
             'phone'     => ['required','regex:/0\d{1,2}(\d{6,8})/'],
             'cell_phone'=> ['required','regex:/09\d{8}/'],
+            'id_number' => ['required','regex:/^[A-Z]{1}[1-2]{1}[0-9]{8}$/'],
             'skype'     => 'required|max:50',
-            'email'     => 'required|email|max:50',
-            'sec_email' => 'email|max:50',
+            'email'     => 'required|email|max:30',
+            'sec_email' => 'email|max:30',
             'address'   => 'required|max:50'
-        ]);
-        $checks = $this->validate($request, [
+        ];
 
-        ]);
+        $v = Validator::make($request->all(),$rules ,$messages);
+//        $checks = $this->validate($request, [
+//
+//        ]);
         if ($v->fails())
         {
             return redirect()->back()->withErrors($v->errors())->withInput($input);

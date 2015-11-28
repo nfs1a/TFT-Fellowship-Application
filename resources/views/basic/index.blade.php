@@ -15,6 +15,7 @@
                                 <td>#</td>
                                 <td>姓名</td>
                                 <td>生理性別</td>
+                                <td>身分證字號</td>
                                 <td>生日</td>
                                 <td>手機</td>
                                 <td>Email</td>
@@ -27,6 +28,7 @@
                                     <td>{{ $var->id         }}</td>
                                     <td>{{ $var->name       }}</td>
                                     <td>{{ $var->sex        }}</td>
+                                    <td>{{ $var->id_number  }}</td>
                                     <td>{{ $var->birthday   }}</td>
                                     <td>{{ $var->phone      }}</td>
                                     <td>{{ $var->email      }}</td>
