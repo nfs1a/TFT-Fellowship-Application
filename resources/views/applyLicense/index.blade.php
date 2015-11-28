@@ -213,11 +213,9 @@
               <div class="panel-body">
                 <div class="row-fluid form-group">
                   <div class="col-md-3 col-md-offset-9">
-                    <a href='/dashboard'>
-                      <button id="proceed" name="proceed" class="btn btn-toc btn-primary btn-block" disabled>
-                      <b>PROCEED</b>
-                      </button>
-                    </a>
+                    <button id="proceed" name="proceed" class="btn btn-toc btn-primary btn-block" disabled>
+                      <a href='/dashboard' class="question">PROCEED</a>
+                    </button>
                   </div>
                 </div>
               </div>
