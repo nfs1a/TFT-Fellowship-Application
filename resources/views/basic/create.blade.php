@@ -18,6 +18,13 @@
                                     {{ $errors->first('name') }}
                                 </div>
                             </div>
+                            <div class="form-group" onmouseover ="displayExample('id_number')">
+                                <label for="input" class="col-md-2 control-label">身分證字號</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="id_number" placeholder="A123456789" value="{{ Input::old('id_number') }}" required="required" pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$">
+                                    {{ $errors->first('id_number') }}
+                                </div>
+                            </div>
                             <div class="form-group" onmouseover ="displayExample('sex')">
                                 <label for="input" class="col-md-2 control-label">生理性別</label>
                                 <div class="col-md-10">
@@ -143,6 +150,10 @@ function displayExample(dom)
     if(dom == 'sex'){
         exampleHelpText = '請輸入你的生理性別(必填)';
         exampleText = '男，女，或其他';
+    }
+    if(dom == 'id_number'){
+        exampleHelpText = '請輸入你的身分證字號(必填)';
+        exampleText = 'A123456789';
     }
     if(dom == 'birthday'){
         exampleHelpText = '請輸入你的生日';

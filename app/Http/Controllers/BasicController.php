@@ -63,6 +63,7 @@ class BasicController extends Controller
             'sex'       => 'required|max:1',
             'phone'     => ['required','regex:/0\d{1,2}(\d{6,8})/'],
             'cell_phone'=> ['required','regex:/09\d{8}/'],
+            'id_number' => ['required','regex:/^[A-Z]{1}[1-2]{1}[0-9]{8}$/'],
             'skype'     => 'required|max:50',
             'email'     => 'required|email|max:50',
             'sec_email' => 'email|max:50',

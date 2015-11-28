@@ -14,6 +14,7 @@ class Basic extends Model
         'name',
         'sex',
         'phone',
+        'id_number',
         'cell_phone',
         'skype',
         'email',
