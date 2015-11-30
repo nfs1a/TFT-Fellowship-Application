@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="/css/bootstrap-additions.css">
     <link rel="stylesheet" href="/css/bootstrap-social.css"><!--Load Css filters-->
     <link rel="stylesheet" href="/css/style.css"><!--fallback if cdn fails to load-->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//app.essoduke.org/js/twzipcode/jquery.twzipcode-1.7.3.min.js"></script>
+
     
 </head>
 <body>

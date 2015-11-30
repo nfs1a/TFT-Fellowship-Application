@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Basic;
 
 use Validator;
+use Log;
 
 class BasicController extends Controller
 {
@@ -52,6 +53,9 @@ class BasicController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        Log::info('--------');
+        Log::info($input);
+        Log::info('--------');
         $messages = [
             'required' => ':attribute 選項必填',
         ];
@@ -69,14 +73,14 @@ class BasicController extends Controller
         ];
 
         $v = Validator::make($request->all(),$rules ,$messages);
-//        $checks = $this->validate($request, [
-//
-//        ]);
         if ($v->fails())
         {
+            Log::info('error');
+            Log::info($v->errors());
             return redirect()->back()->withErrors($v->errors())->withInput($input);
         }
         else{
+            Log::info('successful');
             return redirect('/dashboard');
         }
     }
