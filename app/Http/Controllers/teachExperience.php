@@ -14,4 +14,14 @@ class teachExperience extends Controller
         return view('teachExperience.index');
     }
 
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        Log::info('--------');
+        Log::info($input);
+        Log::info('--------');
+
+        return redirect('/dashboard');
+    }
+
 }
