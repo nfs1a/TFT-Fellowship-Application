@@ -54,7 +54,7 @@
                         </div>  <!--基本訊息-->
                     </a>
                     <!--第二區塊：工作/社團經驗-->
-                    <a href="{{ url('workEperience') }}">
+                    <a href="{{ url('workExperience') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">

@@ -8,9 +8,11 @@ Route::get('/','PagesController@dashboard');
 // 申請須知
 Route::get('applyLicense','applyLicenseController@index');
 // 第二區塊：工作/社團經驗
-Route::get('workEperience','workEperience@index');
+Route::get('workExperience','workExperience@index');
+Route::post('workExperience/create','workExperience@store');
 // 第三區塊：教學/志工服務經驗
 Route::get('teachExperience','teachExperience@index');
+Route::post('teachExperience/create','workExperience@store');
 
 Route::get      ('basic'            , ['as' => 'basic.index'  , 'uses' => 'BasicController@index']);    //顯示所有列表
 Route::get      ('basic/{id}'       , ['as' => 'basic.show'   , 'uses' => 'BasicController@show']);     //顯示某個人的資料
