@@ -54,7 +54,7 @@
                         </div>  <!--基本訊息-->
                     </a>
                     <!--第二區塊：工作/社團經驗-->
-                    <a href="{{ url('workExperience') }}">
+                    <a href="{{ url('workExperience/create') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">
@@ -78,7 +78,7 @@
                         </div>  
                     </a>    
                     <!--第三區塊：教學/志工服務經驗-->
-                    <a href="{{ url('teachExperience') }}">
+                    <a href="{{ url('teachExperience/create') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">

@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Validator;
 use Log;
 
-class workExperience extends Controller
+class WorkExperienceController extends Controller
 {
-    public function index()
+    public function create()
     {
-        return view('workExperience.index');
+        return view('workExperience.create');
     }
 
     public function store(Request $request)
