@@ -43,24 +43,16 @@
                                     <div class="col-md-4">
                                         <input type="radio" name="sex" id="other" value="3"> 其他
                                     </div>
+                                    {{ $errors->first('sex') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('birthday')">
                                 <label for="input" class="col-md-2 control-label">生日</label>
 
                                 <div class="col-md-10">
-                                    <div class="col-md-4">
-                                        <input type="text" name="b_year" class="form-control" placeholder="西元年"
-                                               required="required" maxlength="4"/>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="text" name="b_month" class="form-control" placeholder="月"
-                                               required="required" maxlength="2"/>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="text" name="b_day" class="form-control" placeholder="日"
-                                               required="required" maxlength="2"/>
-                                    </div>
+                                    <input type="text" name="birthday" class="form-control date" placeholder="1991/01/33"
+                                        required="required" value="{{ Input::old('birthday') }}" />
+                                    {{ $errors->first('birthday') }}
                                 </div>
                             </div>
                             <div class="form-group">
@@ -68,7 +60,8 @@
 
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="phone" placeholder="0227386224"
-                                           required="required">
+                                           value="{{ Input::old('phone') }}" required="required">
+                                    {{ $errors->first('phone') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('phone')">
@@ -76,7 +69,8 @@
 
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="cell_phone" placeholder="0912345678"
-                                           required="required">
+                                           required="required" value="{{ Input::old('cell_phone') }}">
+                                    {{ $errors->first('cell_phone') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('skype')">
@@ -84,15 +78,17 @@
 
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="skype" placeholder="Skype"
-                                           required="required">
+                                           required="required" value="{{ Input::old('skype') }}">
+                                    {{ $errors->first('skype') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('email')">
                                 <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
 
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email"
-                                           placeholder="tft@teach4taiwan.org" required="required" maxlength="30">
+                                    <input type="email" class="form-control" name="email" placeholder="tft@teach4taiwan.org"
+                                        required="required" maxlength="30" value="{{ Input::old('email') }}">
+                                    {{ $errors->first('email') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('email')">
@@ -100,15 +96,23 @@
 
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" name="sec_email"
-                                           placeholder="tft@teach4taiwan.org" maxlength="30">
+                                           placeholder="tft@teach4taiwan.org" maxlength="30" value="{{ Input::old('sec_email') }}">
+                                    {{ $errors->first('sec_email') }}
                                 </div>
                             </div>
                             <div class="form-group" onmouseover="displayExample('address')">
                                 <label for="input" class="col-sm-2 control-label">通訊地址</label>
 
                                 <div class="col-sm-10">
-                                    <input type="address" class="form-control" name="address"
-                                           placeholder="106台北市大安區復興南路二段318號三樓" required="required" maxlength="50">
+                                    <div class="col-sm-12 form-inline" style="padding: 0px;">
+                                        <div class='address'>
+                                        </div>
+                                    </div>       
+                                    <div class="col-sm-12" style="padding: 0px;">                      
+                                        <input type="address" class="form-control" name="address"
+                                            placeholder="復興南路二段318號三樓" required="required" maxlength="50" value="{{ Input::old('address') }}">
+                                        {{ $errors->first('address') }}
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -118,9 +122,6 @@
             </form>
         </div>
     </div>
-
-@endsection
-
 
 <script>
     function displayExample(dom) {
@@ -169,4 +170,23 @@
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
         document.getElementById("exampleText").innerHTML = exampleText;
     }
+
+    $(function() {
+        $(".date").datepicker();
+        $(".address").twzipcode({
+            'css': ['form-control', 'form-control', 'form-control'],
+            'countyName'   : 'county',   // 預設值為 county
+            'districtName' : 'district', // 預設值為 district
+            'zipcodeName'  : 'zipcode',   // 預設值為 zipcode
+            'zipcodeSel'  : '106', // 此參數會優先於 countySel, districtSel
+            'countySel'   : '台北市',
+            'districtSel' : '大安區'
+        });
+    });
+
 </script>
+
+@endsection
+
+
+
