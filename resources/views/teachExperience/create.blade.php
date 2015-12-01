@@ -12,14 +12,15 @@
                     <div class="sectionPan panel panel-default col-md-7 shadow">
                         <div class="panel-body">
 
-                            <div>            
+                            <div>
                                 <!-- title -->
-                                <div class="legend">
+                                <div class="legend tfiBlueDark">
                                     教師資格
-                                </div> 
-                                <div>
-                                    請勾選你已認證之教師資格。
                                     <hr class="small-top">
+                                </div> 
+                                <div class="well well-lg">
+                                    請勾選你已認證之教師資格。
+                                    
                                 </div> 
                                 <!-- form content -->
                                 <div class="form-group" onmouseover="displayExample('certification')">
@@ -104,14 +105,14 @@
                                 </div>
                             </div>
                         
-                            <div>            
+                            <div>
                                 <!-- title -->
-                                <div class="legend">
+                                <div class="legend tfiBlueDark">
                                     教學或服務經驗
-                                </div> 
-                                <div>
-                                    請填寫你過往教學或志工服務經驗，至多三項，每題至多200字。
                                     <hr class="small-top">
+                                </div> 
+                                <div class="well well-lg">
+                                    請填寫你過往教學或志工服務經驗，至多三項，每題至多200字。
                                 </div> 
                                 @for ($i = 0; $i < 3; $i++)
                                     <div>

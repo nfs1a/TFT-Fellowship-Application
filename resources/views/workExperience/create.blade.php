@@ -14,12 +14,12 @@
 
                             <div>
                                 <!-- title -->
-                                <div class="legend">
-                                    專長（至多填三項）          
-                                </div>
-                                <div>
-                                    各領域專長不拘，如學科、語言、運動、音樂、表演藝術、生態、資訊等。
+                                <div class="legend tfiBlueDark">
+                                    專長
                                     <hr class="small-top">
+                                </div> 
+                                <div class="well well-lg">
+                                    各領域專長不拘，如學科、語言、運動、音樂、表演藝術、生態、資訊等，至多填三項。
                                 </div> 
                                 @for ($i = 0; $i < 3; $i++)
                                     <!-- Professional Experience 1 -->
@@ -49,13 +49,13 @@
 
                             <div>
                                 <!-- title -->
-                                <div class="legend">
+                                <div class="legend tfiBlueDark">
                                     工作或社團經驗       
-                                </div>
-                                <div>
-                                    請填寫你過往重要的工作或社團經驗，至多三項，每題至多200字。
                                     <hr class="small-top">
                                 </div> 
+                                <div class="well well-lg">
+                                    請填寫你過往重要的工作或社團經驗，至多三項，每題至多200字。
+                                </div>
                                 @for ($i = 0; $i < 3; $i++)
                                     <!-- Professional Experience 1 -->
                                     <div>
