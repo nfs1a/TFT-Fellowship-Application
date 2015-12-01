@@ -39,7 +39,7 @@
 
                                         <div class="col-md-10">
                                             <input type="text" class="form-control" name="position[]" placeholder="王大明"
-                                                   value="{{ Input::old('position[$i]') }}" required="required" maxlength="20">
+                                                   value="{{ Input::old('position')[$i] }}" required="required" maxlength="20">
                                             {{ $errors->first('position.'.$i) }}
                                         </div>
                                     </div>
@@ -48,19 +48,20 @@
 
                                         <div class="col-md-5">
                                             <input type="text" name="startDate[]" class="form-control date" placeholder="1991/01/33"
-                                                required="required" value="{{ Input::old('startDate[$i]') }}" />
+                                                required="required" value="{{ Input::old('startDate')[$i] }}" />
                                             {{ $errors->first('startDate.'.$i) }}
                                         </div>
                                          <div class="col-md-5">
                                             <input type="text" name="endDate[]" class="form-control date" placeholder="1991/01/33"
-                                                required="required" value="{{ Input::old('endDate[$i]') }}" />
+                                                required="required" value="{{ Input::old('endDate')[$i] }}" />
                                             {{ $errors->first('endDate.'.$i) }}
                                         </div>
                                     </div>
                                     <div class="form-group" onmouseover="displayExample('description')">
                                         <label for="input" class="col-md-2 control-label">簡述成就</label>
                                         <div class="col-md-10">
-                                            <textarea name="description[]" class="form-control" cols="40" value="{{ Input::old('description[$i]') }}" placeholder="簡述成就"></textarea>
+                                            <textarea name="description[]" class="form-control" cols="40" 
+                                                value="" placeholder="簡述成就">{{ Input::old('description')[$i] }}</textarea>
                                             {{ $errors->first('description.'.$i) }}
                                         </div>
                                     </div>
