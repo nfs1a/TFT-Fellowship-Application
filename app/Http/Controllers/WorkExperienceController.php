@@ -4,21 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use Validator;
+use App\Http\Requests\WorkExperienceRequest;
 use Log;
 
 class WorkExperienceController extends Controller
 {
     public function create()
     {
-        return view('workExperience.create');
+        return view('WorkExperience.create');
     }
 
-    public function store(Request $request)
+    public function store(WorkExperienceRequest $request)
     {
         $input = $request->all();
-        Log::info('--------');
+        Log::info('-------- WorkExperienceController: store --------');
         Log::info($input);
         Log::info('--------');
 
