@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BasicRequest;
 use App\Basic;
-
 use Validator;
 use Log;
+
+
 
 class BasicController extends Controller
 {
@@ -50,39 +50,14 @@ class BasicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BasicRequest $request)
     {
         $input = $request->all();
-        Log::info('--------');
+        Log::info('-------- BasicController: store --------');
         Log::info($input);
         Log::info('--------');
-        $messages = [
-            'required' => ':attribute 選項必填',
-        ];
-        //驗證規則
-        $rules = [
-            'name'      => 'required|min:2|max:20',
-            'sex'       => 'required|max:1',
-            'phone'     => ['required','regex:/0\d{1,2}(\d{6,8})/'],
-            'cell_phone'=> ['required','regex:/09\d{8}/'],
-            'id_number' => ['required','regex:/^[A-Z]{1}[1-2]{1}[0-9]{8}$/'],
-            'skype'     => 'required|max:50',
-            'email'     => 'required|email|max:30',
-            'sec_email' => 'email|max:30',
-            'address'   => 'required|max:50'
-        ];
 
-        $v = Validator::make($request->all(),$rules ,$messages);
-        if ($v->fails())
-        {
-            Log::info('error');
-            Log::info($v->errors());
-            return redirect()->back()->withErrors($v->errors())->withInput($input);
-        }
-        else{
-            Log::info('successful');
-            return redirect('/dashboard');
-        }
+        return redirect('/dashboard');
     }
 
     /**

@@ -22,7 +22,7 @@ Route::get('workExperience/create','WorkExperienceController@create');
 Route::post('workExperience/create','WorkExperienceController@store');
 // 第三區塊：教學/志工服務經驗
 Route::get('teachExperience/create','TeachExperienceController@create');
-Route::post('teachExperience/create','WorkExperienceController@store');
+Route::post('teachExperience/create','TeachExperienceController@store');
 // 第四區塊：Teach for Taiwan教師計畫簡答題 （小菜）
 Route::get      ('essay/create'     , ['as' => 'essay.create' , 'uses' => 'EssayController@create']);   //新增基本資料表單);
 Route::post     ('essay'            , ['as' => 'essay.store'  , 'uses' => 'EssayController@store']);    //新增使用者資料到資料庫

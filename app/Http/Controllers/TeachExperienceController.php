@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use Validator;
+use App\Http\Requests\TeachExperienceRequest;
 use Log;
 
 class TeachExperienceController extends Controller
@@ -15,10 +14,10 @@ class TeachExperienceController extends Controller
         return view('teachExperience.create');
     }
 
-    public function store(Request $request)
+    public function store(TeachExperienceRequest $request)
     {
         $input = $request->all();
-        Log::info('--------');
+        Log::info('-------- TeachExperienceController: store --------');
         Log::info($input);
         Log::info('--------');
 

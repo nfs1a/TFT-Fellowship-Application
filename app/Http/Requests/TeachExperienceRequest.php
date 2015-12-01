@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class BasicRequest extends Request
+class TeachExperienceRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,14 @@ class BasicRequest extends Request
     public function rules()
     {
 
-        return [
-            'name'      => 'required|min:2|max:20',
-            'sex'       => 'required|max:1',
-            'phone'     => ['required','regex:/0\d{1,2}(\d{6,8})/'],
-            'cell_phone'=> ['required','regex:/09\d{8}/'],
-            'skype'     => 'required|max:50',
-            'email'     => 'required|email|max:50',
-            'sec_email' => 'email|max:50',
-            'address'   => 'required|max:50'
-        ];
+        $rules = [];
+        // your arrays can be done like this
+        foreach($this->request->get('organization') as $key => $value)
+        {
+            $rules['organization.'.$key] = 'required|min:5'; // you can set rules for all the array items
+        }
+
+        return $rules;
     }
 
     public function messages()
@@ -43,3 +41,6 @@ class BasicRequest extends Request
         ];
     }
 }
+
+// Reference:
+// http://ericlbarnes.com/laravel-array-validation/
