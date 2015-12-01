@@ -11,6 +11,9 @@
                 <div class="row">
                     <div class="sectionPan panel panel-default col-md-7 shadow">
                         <div class="panel-body">
+                            <div class="legend tfiBlueDark">個人基本資料
+                                <hr class="small-top">
+                            </div>
                             <div class="form-group" onmouseover="displayExample('name')">
                                 <label for="input" class="col-md-2 control-label">姓名</label>
 
@@ -50,8 +53,9 @@
                                 <label for="input" class="col-md-2 control-label">生日</label>
 
                                 <div class="col-md-10">
-                                    <input type="text" name="birthday" class="form-control date" placeholder="1991/01/33"
-                                        required="required" value="{{ Input::old('birthday') }}" />
+                                    <input type="text" name="birthday" class="form-control date"
+                                           placeholder="1991/01/33"
+                                           required="required" value="{{ Input::old('birthday') }}"/>
                                     {{ $errors->first('birthday') }}
                                 </div>
                             </div>
@@ -86,8 +90,9 @@
                                 <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
 
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email" placeholder="tft@teach4taiwan.org"
-                                        required="required" maxlength="30" value="{{ Input::old('email') }}">
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="tft@teach4taiwan.org"
+                                           required="required" maxlength="30" value="{{ Input::old('email') }}">
                                     {{ $errors->first('email') }}
                                 </div>
                             </div>
@@ -96,7 +101,8 @@
 
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" name="sec_email"
-                                           placeholder="tft@teach4taiwan.org" maxlength="30" value="{{ Input::old('sec_email') }}">
+                                           placeholder="tft@teach4taiwan.org" maxlength="30"
+                                           value="{{ Input::old('sec_email') }}">
                                     {{ $errors->first('sec_email') }}
                                 </div>
                             </div>
@@ -107,12 +113,39 @@
                                     <div class="col-sm-12 form-inline" style="padding: 0px;">
                                         <div class='address'>
                                         </div>
-                                    </div>       
-                                    <div class="col-sm-12" style="padding: 0px;">                      
+                                    </div>
+                                    <div class="col-sm-12" style="padding: 0px;">
                                         <input type="address" class="form-control" name="address"
-                                            placeholder="復興南路二段318號三樓" required="required" maxlength="50" value="{{ Input::old('address') }}">
+                                               placeholder="復興南路二段318號三樓" required="required" maxlength="50"
+                                               value="{{ Input::old('address') }}">
                                         {{ $errors->first('address') }}
-                                    </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="legend tfiBlueDark">學歷經歷
+                                <hr class="small-top">
+                            </div>
+                            <div class="form-group" onmouseover="displayExample('status')">
+                                <label for="input" class="col-md-2 control-label">就學就業狀況</label>
+
+                                <div class="col-md-10">
+                                    <label>
+                                        <div class="radio">
+                                            <input type="radio" name="status" value="1">我是學生，今年六月還沒有要畢業。
+                                        </div>
+                                        <div class="radio">
+                                            <input type="radio" name="status" value="2">我是學生，預計今年六月畢業，正在找尋未來工作。
+                                        </div>
+                                        <div class="radio">
+                                            <input type="radio" name="status" value="3">我目前在工作，一邊在職進修。
+                                        </div>
+                                        <div class="radio">
+                                            <input type="radio" name="status" value="4">現階段有工作。
+                                        </div>
+                                        <div class="radio">
+                                            <input type="radio" name="status" value="5">現階段待業中，正在尋找未來工作。
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -123,68 +156,68 @@
         </div>
     </div>
 
-<script>
-    function displayExample(dom) {
-        var exampleHelpText = '...';
-        var exampleText = '...';
-        if (dom == 'name') {
-            exampleHelpText = '請輸入你的姓名(2~20個字)';
-            exampleText = '王大明';
+    <script>
+        function displayExample(dom) {
+            var exampleHelpText = '...';
+            var exampleText = '...';
+            if (dom == 'name') {
+                exampleHelpText = '請輸入你的姓名(2~20個字)';
+                exampleText = '王大明';
+            }
+            if (dom == 'sex') {
+                exampleHelpText = '請輸入你的生理性別(必填)';
+                exampleText = '男，女，或其他';
+            }
+            if (dom == 'id_number') {
+                exampleHelpText = '請輸入你的身分證字號(必填)';
+                exampleText = 'A123456789';
+            }
+            if (dom == 'birthday') {
+                exampleHelpText = '請輸入你的生日(必填)';
+                exampleText = '1991/01/33';
+            }
+            if (dom == 'phone') {
+                exampleHelpText = '請輸入室內電話(選填)';
+                exampleText = '0224895094';
+            }
+            if (dom == 'cell_phone') {
+                exampleHelpText = '請輸入你的手機';
+                exampleText = '09XXXXXXXX';
+            }
+            if (dom == 'skype') {
+                exampleHelpText = '請輸入你的 skype 帳號';
+                exampleText = 'Skype ID';
+            }
+            if (dom == 'email') {
+                exampleHelpText = '請輸入你的電子信箱';
+                exampleText = 'E-mail address';
+            }
+            if (dom == 'sec_email') {
+                exampleHelpText = '請輸入你的備用電子信箱(選填)';
+                exampleText = 'E-mail address';
+            }
+            if (dom == 'address') {
+                exampleHelpText = '請輸入你的地址';
+                exampleText = '地址';
+            }
+            document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
+            document.getElementById("exampleText").innerHTML = exampleText;
         }
-        if (dom == 'sex') {
-            exampleHelpText = '請輸入你的生理性別(必填)';
-            exampleText = '男，女，或其他';
-        }
-        if (dom == 'id_number') {
-            exampleHelpText = '請輸入你的身分證字號(必填)';
-            exampleText = 'A123456789';
-        }
-        if (dom == 'birthday') {
-            exampleHelpText = '請輸入你的生日(必填)';
-            exampleText = '1991/01/33';
-        }
-        if (dom == 'phone') {
-            exampleHelpText = '請輸入室內電話(選填)';
-            exampleText = '0224895094';
-        }
-        if (dom == 'cell_phone') {
-            exampleHelpText = '請輸入你的手機';
-            exampleText = '09XXXXXXXX';
-        }
-        if (dom == 'skype') {
-            exampleHelpText = '請輸入你的 skype 帳號';
-            exampleText = 'Skype ID';
-        }
-        if (dom == 'email') {
-            exampleHelpText = '請輸入你的電子信箱';
-            exampleText = 'E-mail address';
-        }
-        if (dom == 'sec_email') {
-            exampleHelpText = '請輸入你的備用電子信箱(選填)';
-            exampleText = 'E-mail address';
-        }
-        if (dom == 'address') {
-            exampleHelpText = '請輸入你的地址';
-            exampleText = '地址';
-        }
-        document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
-        document.getElementById("exampleText").innerHTML = exampleText;
-    }
 
-    $(function() {
-        $(".date").datepicker();
-        $(".address").twzipcode({
-            'css': ['form-control', 'form-control', 'form-control'],
-            'countyName'   : 'county',   // 預設值為 county
-            'districtName' : 'district', // 預設值為 district
-            'zipcodeName'  : 'zipcode',   // 預設值為 zipcode
-            'zipcodeSel'  : '106', // 此參數會優先於 countySel, districtSel
-            'countySel'   : '台北市',
-            'districtSel' : '大安區'
+        $(function () {
+            $(".date").datepicker();
+            $(".address").twzipcode({
+                'css': ['form-control', 'form-control', 'form-control'],
+                'countyName': 'county',   // 預設值為 county
+                'districtName': 'district', // 預設值為 district
+                'zipcodeName': 'zipcode',   // 預設值為 zipcode
+                'zipcodeSel': '106', // 此參數會優先於 countySel, districtSel
+                'countySel': '台北市',
+                'districtSel': '大安區'
+            });
         });
-    });
 
-</script>
+    </script>
 
 @endsection
 
