@@ -3,12 +3,29 @@
 Route::pattern('id', '[0-9]+'); // 規定ID格式
 
 // ------- 前台 -------
+// Account
+Route::get('/', 'AccountController@showLogin');
+Route::get('login', 'AccountController@showLogin');
+Route::post('login', 'AccountController@login');
+Route::get('signup', 'AccountController@showsignup');
+Route::post('signup', 'AccountController@signup');
+Route::get('logout', 'AccountController@logout');
+Route::get('reset', 'AccountController@reset');
+// Reset Password Email
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password Reset Route
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 // 首頁
-Route::get('/','ApplyLicenseController@index');
+//Route::get('/','ApplyLicenseController@index');
 // 申請須知
 Route::get('applyLicense','ApplyLicenseController@index');
 // dashboard
-Route::get('dashboard','PagesController@dashboard');
+//Route::get('dashboard','PagesController@dashboard');
+Route::get('dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
+
 // 第一區塊：基本資料
 Route::get      ('basic'            , ['as' => 'basic.index'  , 'uses' => 'BasicController@index']);    //顯示所有列表
 Route::get      ('basic/{id}'       , ['as' => 'basic.show'   , 'uses' => 'BasicController@show']);     //顯示某個人的資料
