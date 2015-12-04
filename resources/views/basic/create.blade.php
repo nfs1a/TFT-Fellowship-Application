@@ -233,19 +233,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <label for="EducationFmo_labelArea"><span>＊</span>地區：</label><select
-                                    id="EducationFmo_area3" name="EducationFmo[area]">
-                                <option value="0">請選擇</option>
-                                <option value="7001000000">亞洲</option>
-                                <option value="7002000000">大洋洲</option>
-                                <option value="7003000000">美洲</option>
-                                <option value="7004000000">歐洲</option>
-                                <option value="7005000000">非洲</option>
-                            </select><select id="EducationFmo_schoolCountry3"
-                                             name="EducationFmo[schoolCountry]">
-                            </select><span id="EducationFmo_schoolCountry3_err" class="error"
-                                           style="display:none;display:none"></span></p>
-                            <p>
+
                                 <label for="EducationFmo_labelEducationTime"><span>＊</span>就學期間：</label></p>
 
                             <div class="menu_artfix">
@@ -402,29 +390,6 @@
                                                                   class="button gray cancel_resume_edit_degree"
                                                                   type="button" value=" 取消 "></p>
             <p></p>
-                            <select class="mobile-vendor-1">
-                                <option value="motorola">Motorola</option>
-                                <option value="nokia">Nokia</option>
-                                <option value="android">Android</option>
-                            </select>
-
-                            <select class="model-1">
-                                <option></option>
-                            </select>
-
-
-
-                            <select class="mobile-vendor-2">
-                                <option value="motorola">Motorola</option>
-                                <option value="nokia">Nokia</option>
-                                <option value="android">Android</option>
-                            </select>
-
-                            <select class="model-2">
-                                <option></option>
-                            </select>
-            <p>&nbsp;</p>
-
         </div>
     </div>
     </div>
@@ -484,7 +449,7 @@
         $(function () {
             $(".date").datepicker();
             $(".address").twzipcode({
-                'css': ['form-control', 'form-control', 'form-control'],
+                'css': ['form-control', 'form-control', 'form-control col-sm-3'],
                 'countyName': 'county',   // 預設值為 county
                 'districtName': 'district', // 預設值為 district
                 'zipcodeName': 'zipcode',   // 預設值為 zipcode
