@@ -211,7 +211,7 @@
                                 </div>
                                 <div class="col-sm-5">
                                     <select class="form-control majorSubClass" name="majorSubClass">
-                                        <option></option>
+                                        <option value="0">請選擇</option>
                                     </select>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                                 </div>
                                 <div class="col-sm-5">
                                     <select class="form-control eduSubArea" name="eduSubArea">
-                                        <option></option>
+                                        <option value="0">請選擇</option>
                                     </select>
                                 </div>
                             </div>
@@ -461,13 +461,15 @@
 
         function dynamicSelect($mainClass, $subClass, selectValues){
             $mainClass.change(function() {
-                $subClass.empty().append(function() {
-                    var output = '';
-                    $.each(selectValues[$mainClass.val()], function(key, value) {
-                        output += '<option value'+ value +'>' + key + '</option>';
+                if(selectValues[$mainClass.val()]){
+                    $subClass.empty().append(function() {
+                        var output = '';
+                        $.each(selectValues[$mainClass.val()], function(key, value) {
+                            output += '<option value'+ value +'>' + key + '</option>';
+                        });
+                        return output;
                     });
-                    return output;
-                });
+                }
             }).change();
         }
         $(function () {
