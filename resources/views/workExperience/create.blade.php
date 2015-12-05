@@ -41,6 +41,14 @@
     function displayExample(dom) {
         var exampleHelpText = '...';
         var exampleText = '...';
+        if (dom == 'expertise') {
+            exampleHelpText = '專長';
+            exampleText = '專長';
+        }
+        if (dom == 'introduction') {
+            exampleHelpText = '專長說明';
+            exampleText = '專長說明';
+        }
         if (dom == 'organization') {
             exampleHelpText = '請輸入單位名稱';
             exampleText = '組織名稱';
@@ -56,14 +64,6 @@
         if (dom == 'description') {
             exampleHelpText = '請簡述在該單位任內成就';
             exampleText = '簡述';
-        }
-        if (dom == 'expertise') {
-            exampleHelpText = '專長';
-            exampleText = '專長';
-        }
-        if (dom == 'introduction') {
-            exampleHelpText = '專長說明';
-            exampleText = '專長說明';
         }
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
         document.getElementById("exampleText").innerHTML = exampleText;
