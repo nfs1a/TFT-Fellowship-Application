@@ -27,7 +27,7 @@
                             @include('partials/_hint')
                         </div>
                     </div>
-                    
+
                 </div>
             </form>
         </div>
@@ -37,6 +37,10 @@
     function displayExample(dom) {
         var exampleHelpText = '...';
         var exampleText = '...';
+        if (dom == 'certification') {
+            exampleHelpText = '請勾選你已認證之教師資格';
+            exampleText = '勾選';
+        }
         if (dom == 'organization') {
             exampleHelpText = '請輸入單位名稱';
             exampleText = '組織名稱';
@@ -52,10 +56,6 @@
         if (dom == 'description') {
             exampleHelpText = '請簡述在該單位任內成就';
             exampleText = '簡述';
-        }
-        if (dom == 'certification') {
-            exampleHelpText = '請勾選你已認證之教師資格';
-            exampleText = '勾選';
         }
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
         document.getElementById("exampleText").innerHTML = exampleText;
