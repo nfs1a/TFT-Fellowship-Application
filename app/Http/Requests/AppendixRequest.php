@@ -25,7 +25,7 @@ class AppendixRequest extends Request
     {
 
         $rules = [
-            'name' => 'required'
+            // 'name' => 'required'
         ];
         return $rules;
     }
@@ -33,7 +33,7 @@ class AppendixRequest extends Request
     public function messages()
     {
         return [
-            'required' => '這個欄位是必填欄位',
+            // 'required' => '這個欄位是必填欄位',
         ];
     }
 }
