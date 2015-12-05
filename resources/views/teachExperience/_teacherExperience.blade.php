@@ -52,10 +52,8 @@
                 <div class="form-group" onmouseover="displayExample('description')">
                     <label for="input" class="col-md-2 control-label">簡述成就</label>
                     <div class="col-md-10">
-                        <textarea name="description[]" class="form-control" cols="40" 
-                            value="" placeholder="簡述成就" maxlength="200">
-                            {{ Input::old('description')[$i] }}
-                        </textarea>
+                        <textarea name="description[]" class="form-control" cols="40" maxlength="200"
+                            placeholder="簡述成就..." >{{ Input::old('description')[$i] }}</textarea>
                         {{ $errors->first('description.'.$i) }}
                     </div>
                 </div>
