@@ -8,7 +8,7 @@
 
                 <!-- sectionTitle -->
                 <div class="row sectionTitle">
-                    <h1>教學經驗</h1>
+                    <h1>教學或服務經驗</h1>
                 </div>
 
                 <!-- sectionBody -->
