@@ -28,7 +28,7 @@ class AccountController extends Controller {
         if(Auth::attempt($userdata)){
                 return Redirect::to('dashboard');
         } else {
-                echo 'Try again';
+                return Redirect::to('login')->withErrors(['密碼錯誤, 請重試', 'The Message']);
         }
     }
 

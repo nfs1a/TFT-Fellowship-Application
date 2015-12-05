@@ -6,6 +6,7 @@ Route::pattern('id', '[0-9]+'); // 規定ID格式
 // Account
 Route::get('/', 'AccountController@showLogin');
 Route::get('login', 'AccountController@showLogin');
+Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 Route::post('login', 'AccountController@login');
 Route::get('signup', 'AccountController@showsignup');
 Route::post('signup', 'AccountController@signup');
@@ -14,10 +15,9 @@ Route::get('reset', 'AccountController@reset');
 // Reset Password Email
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
-
 // Password Reset Route
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');
+Route::post('password/reset/', 'Auth\PasswordController@postReset');
 // 首頁
 //Route::get('/','ApplyLicenseController@index');
 // 申請須知
