@@ -27,6 +27,8 @@ Route::post('teachExperience/create','TeachExperienceController@store');
 Route::get      ('essay/create'     , ['as' => 'essay.create' , 'uses' => 'EssayController@create']);   //新增基本資料表單);
 Route::post     ('essay'            , ['as' => 'essay.store'  , 'uses' => 'EssayController@store']);    //新增使用者資料到資料庫
 // 第五區塊：附件區
+Route::get('appendix/create','AppendixController@create');
+Route::post('appendix/create','AppendixController@store');
 // 最終詳細規定：License
 // 第六區塊：串金流歐付寶
 
