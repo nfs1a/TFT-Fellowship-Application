@@ -3,7 +3,7 @@
 @section('content')
     <div id="page">
         <div class="container">
-            <form action="{{ url('teachExperience/create') }}" method="post" name="dynamicForm" class="form-horizontal">
+            <form action="{{ url('appendix/create') }}" method="post" name="dynamicForm" class="form-horizontal" enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 <!-- sectionTitle -->
@@ -41,25 +41,37 @@
     function displayExample(dom) {
         var exampleHelpText = '...';
         var exampleText = '...';
-        if (dom == 'certification') {
-            exampleHelpText = '請勾選你已認證之教師資格';
-            exampleText = '勾選';
+        if (dom == 'resume') {
+            exampleHelpText = '個人簡歷及自薦';
+            exampleText = '個人簡歷及自薦';
         }
-        if (dom == 'organization') {
-            exampleHelpText = '請輸入單位名稱';
-            exampleText = '組織名稱';
+        if (dom == 'idCard') {
+            exampleHelpText = '身分證圖檔';
+            exampleText = '身分證圖檔';
         }
-        if (dom == 'position') {
-            exampleHelpText = '請輸入職稱';
-            exampleText = '職稱';
+        if (dom == 'qualification') {
+            exampleHelpText = '最高學歷證明文件';
+            exampleText = '最高學歷證明文件';
         }
-        if (dom == 'startendDate') {
-            exampleHelpText = '請輸入開始時間及結束時間';
-            exampleText = '時間';
+        if (dom == 'soldierProof') {
+            exampleHelpText = '役畢與免役證明';
+            exampleText = '役畢與免役證明';
         }
-        if (dom == 'description') {
-            exampleHelpText = '請簡述在該單位任內成就';
-            exampleText = '簡述';
+        if (dom == 'transcript') {
+            exampleHelpText = '大學或研究所在校歷年成績單';
+            exampleText = '大學或研究所在校歷年成績單';
+        }
+        if (dom == 'teacherCertification') {
+            exampleHelpText = '合格教師證或教程修畢證明';
+            exampleText = '合格教師證或教程修畢證明';
+        }
+        if (dom == 'languageCertification') {
+            exampleHelpText = '語言能力證明文件';
+            exampleText = '語言能力證明文件';
+        }
+        if (dom == 'otherCertification') {
+            exampleHelpText = '其他相關證明文件';
+            exampleText = '其他相關證明文件';
         }
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
         document.getElementById("exampleText").innerHTML = exampleText;
