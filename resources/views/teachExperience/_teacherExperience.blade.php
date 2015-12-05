@@ -13,6 +13,7 @@
     <div>
         @for ($i = 0; $i < 3; $i++)
             <div>
+                <!-- organization[]: 組織單位 -->
                 <div class="form-group" onmouseover="displayExample('organization')">
                     <label for="input" class="col-md-2 control-label">組織單位</label>
 
@@ -22,6 +23,7 @@
                         {{ $errors->first('organization.'.$i) }}
                     </div>
                 </div>
+                <!-- position[]: 職稱 -->
                 <div class="form-group" onmouseover="displayExample('position')">
                     <label for="input" class="col-md-2 control-label">職稱</label>
 
@@ -31,6 +33,7 @@
                         {{ $errors->first('position.'.$i) }}
                     </div>
                 </div>
+                <!-- startendDate[]: 起迄時間 -->
                 <div class="form-group" onmouseover="displayExample('startendDate')">
                     <label for="input" class="col-md-2 control-label">起迄時間</label>
 
@@ -45,6 +48,7 @@
                         {{ $errors->first('endDate.'.$i) }}
                     </div>
                 </div>
+                <!-- description[]: 簡述成就 -->
                 <div class="form-group" onmouseover="displayExample('description')">
                     <label for="input" class="col-md-2 control-label">簡述成就</label>
                     <div class="col-md-10">

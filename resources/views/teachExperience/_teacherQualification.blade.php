@@ -52,7 +52,7 @@
                 已取得
             </label>
         </div>
-        <!-- certification: certification 中學教師證 -->
+        <!-- certification: secondary 中學教師證 -->
         <div class="form-group" onmouseover="displayExample('certification')">
             <label for="input" class="col-md-2 control-label">中學教師證</label>
 
