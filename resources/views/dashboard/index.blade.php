@@ -126,7 +126,7 @@
                         </div> 
                     </a>
                     <!--第五區塊：附件區-->
-                    <a href="{{ url('') }}">
+                    <a href="{{ url('/appendix/create') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">
