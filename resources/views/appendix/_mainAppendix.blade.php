@@ -17,6 +17,7 @@
             <label for="input" class="col-md-3 control-label">個人簡歷及自薦</label>
             <div class="col-md-9">
                 <input type="file" class="form-control" name="resume" required>
+                {{ $errors->first('resume') }}
             </div>
         </div>
         <!-- idCard: 身分證圖檔 -->
@@ -24,6 +25,7 @@
             <label for="input" class="col-md-3 control-label">身分證圖檔</label>
             <div class="col-md-9">
                 <input type="file" class="form-control" name="idCard" required>
+                {{ $errors->first('idCard') }}
             </div>
         </div>
         <!-- qualification: 最高學歷證明文件 -->
@@ -31,6 +33,7 @@
             <label for="input" class="col-md-3 control-label">最高學歷證明文件</label>
             <div class="col-md-9">
                 <input type="file" class="form-control" name="qualification" required>
+                {{ $errors->first('qualification') }}
             </div>
         </div>
         <!-- soldierProof: 男性請附役畢與免役證明 -->
@@ -38,6 +41,7 @@
             <label for="input" class="col-md-3 control-label">役畢與免役證明</label>
             <div class="col-md-9">
                 <input type="file" class="form-control" name="soldierProof" >
+                {{ $errors->first('soldierProof') }}
             </div>
         </div>
         <hr class="small-top">

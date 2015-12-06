@@ -25,10 +25,14 @@ class AppendixRequest extends Request
     {
 
         $rules = [
-            'resume' => 'required',
-            'idCard' => 'required',
-            'qualification' => 'required',
-
+            'resume' => 'required|mimes:pdf',
+            'idCard' => 'required|mimes:pdf',
+            'qualification' => 'required|mimes:pdf',
+            'soldierProof' => 'mimes:pdf',
+            'transcript' => 'mimes:pdf',
+            'teacherCertification' => 'mimes:pdf',
+            'languageCertification' => 'mimes:pdf',
+            'otherCertification' => 'mimes:pdf'
         ];
         return $rules;
     }
@@ -36,7 +40,8 @@ class AppendixRequest extends Request
     public function messages()
     {
         return [
-            'required' => '這個欄位是必填欄位'
+            'required' => '這個欄位是必填欄位',
+            'mimes' => '只接受 pdf 格式'
         ];
     }
 }
