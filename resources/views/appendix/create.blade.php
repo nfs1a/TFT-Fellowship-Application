@@ -31,7 +31,6 @@
                             @include('partials/_hint')
                         </div>
                     </div>
-
                 </div>
             </form>
         </div>
@@ -76,6 +75,21 @@
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
         document.getElementById("exampleText").innerHTML = exampleText;
     }
+
+    // 上傳檔案預覽
+    // http://stackoverflow.com/questions/12368910/html-display-image-after-selecting-filename
+    // http://jsbin.com/urarem/3/edit?html,css,js,output
+    $('input').on('change',function (){
+        var input = this;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#'+input.name).html('<a href="javascript: void(0)" disabled>preview</a><div class="box"><iframe src="'+e.target.result+'" width = "300px" height = "300px"></iframe></div>');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
 </script>
 
 @endsection
