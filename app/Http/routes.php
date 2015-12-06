@@ -1,17 +1,46 @@
 <?php
+use SocialNorm\Exceptions\ApplicationRejectedException;
+use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 
 Route::pattern('id', '[0-9]+'); // 規定ID格式
 
 // ------- 前台 -------
 // Account
-Route::get('/', 'AccountController@showLogin');
 Route::get('login', 'AccountController@showLogin');
+Route::get('/', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 Route::post('login', 'AccountController@login');
 Route::get('signup', 'AccountController@showsignup');
 Route::post('signup', 'AccountController@signup');
 Route::get('logout', 'AccountController@logout');
 Route::get('reset', 'AccountController@reset');
+
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
+// Redirect to Facebook for authorization
+Route::get('{provider}/authorize', function($provider) {
+    return SocialAuth::authorize($provider);
+});
+
+// Facebook redirects here after authorization
+Route::get('{provider}/login', function($provider) {
+
+    SocialAuth::login($provider, function($user, $userDetails) { 
+
+    	$authuser = Auth::user();
+        if (!$authuser){
+        	$user->email = $userDetails->email;
+        	$user->facebook_id = $userDetails->id;
+        	$user->save();
+        }
+    });
+    $authuser = Auth::user();
+    if ($authuser){
+    	return Redirect::intended();
+    }
+
+});
 // Reset Password Email
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');

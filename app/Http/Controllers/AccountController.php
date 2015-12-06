@@ -12,6 +12,8 @@ use Auth;
 use Redirect;
 use Hash;
 use App\User;
+use SocialNorm\Exceptions\ApplicationRejectedException;
+use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 
 class AccountController extends Controller {
 
@@ -55,11 +57,16 @@ class AccountController extends Controller {
     	return Redirect::to('login');
     }
 
-        public function reset()
+    public function reset()
     {
     	    $credentials = array('email' => Input::get('email'));
  
     return Password::remind($credentials);
+    }
+
+        public function socialauth($provider)
+    {
+        return SocialAuth::authorize($provider);
     }
 
 }

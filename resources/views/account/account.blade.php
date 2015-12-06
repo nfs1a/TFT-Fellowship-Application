@@ -19,7 +19,23 @@
 </head>
 
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '948077125272735',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <div id="container">
         <div id="navbar">
             <nav role="navigation" class="navbar navbar-fixed-top navbar-default background_white">
@@ -27,7 +43,7 @@
                     <ul id="navmain" class="nav navbar-nav navbar-left">
                         <li><a href=
                         <?php
-                         echo '' . URL::to('login') . '';
+                         echo '' . URL::to('home') . '';
                         ?>
                         class="navbar-brand"
                         >TEACH<span class="tfiBlue">FOR</span><span>TAIWAN</span></a></li>
@@ -74,7 +90,7 @@
                                     </div>
                                     <div class="row-fluid form-group">
                                         <div class="col-md-10 col-md-offset-1">
-                                            <input type="email" placeholder="Email Address" name="email" id="register_email" maxlength="80" class="form-control valid">
+                                            <input type="email" placeholder="Email Address" name="email" class="form-control valid">
                                         </div>
                                     </div>
                                     <div class="row-fluid form-group">
@@ -95,7 +111,11 @@
                                             <div class="col-md-4">
                                                 <button id="register_submit" type="submit" name="Create" class="btn btn-primary btn-block"><b>註冊</b></button>
                                             </div>
-                                            <div class="col-md-8"><a type="submit" name="FBCreate" href="http://apply.teachforindia.org/user/auth/facebook" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>用Facebook註冊</a></div>
+                                            <div class="col-md-8"><a type="submit" name="FBCreate" href=
+                                            <?php
+                                            echo '' . URL::to('facebook/authorize') . '';
+                                            ?>
+                                             class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>用Facebook註冊</a></div>
                                         </div>
                                     </div>
                                     <div class="row-fluid form-group">
@@ -153,7 +173,11 @@
                                                 <button type="submit" name="Begin" id="login_submit" class="btn btn-primary btn-block"><b>登入</b>
                                                 </button>
                                             </div>
-                                            <div class="col-md-8"><a type="submit" name="Login" href="http://apply.teachforindia.org/user/auth/facebook" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>用Facebook登入</a>
+                                            <div class="col-md-8"><a type="submit" name="Login" href=
+                                            <?php
+                                            echo '' . URL::to('facebook/authorize') . '';
+                                            ?>
+                                             class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>用Facebook登入</a>
                                             </div>
                                         </div>
                                     </div>
