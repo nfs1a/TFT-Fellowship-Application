@@ -6,7 +6,7 @@
     <hr class="small-top">
 </div> 
 <!-- form description --> 
-<div class="well well-lg">
+<div class="" style="margin-bottom: 30px;">
     其他附件區      
 </div>
 <!-- form content --> 

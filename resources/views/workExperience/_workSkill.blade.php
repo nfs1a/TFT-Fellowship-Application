@@ -6,7 +6,7 @@
     <hr class="small-top">
 </div> 
 <!-- form description --> 
-<div class="well well-lg">
+<div class="" style="margin-bottom: 30px;">
     各領域專長不拘，如學科、語言、運動、音樂、表演藝術、生態、資訊等，至多填三項。
 </div> 
 <!-- form content -->
@@ -27,7 +27,7 @@
             <label for="input" class="col-md-2 control-label">敘述</label>
             <div class="col-md-10">
                 <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                    required="required" value="" placeholder="簡述成就">{{ Input::old('introduction')[0] }}</textarea>
+                    required="required" value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[0] }}</textarea>
                 {{ $errors->first('introduction.0') }}
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <label for="input" class="col-md-2 control-label">敘述</label>
                 <div class="col-md-10">
                     <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                        value="" placeholder="簡述成就">{{ Input::old('introduction')[$i] }}</textarea>
+                        value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[$i] }}</textarea>
                     {{ $errors->first('introduction.'.$i) }}
                 </div>
             </div>

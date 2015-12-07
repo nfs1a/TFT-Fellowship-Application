@@ -6,8 +6,8 @@
         <hr class="small-top">
     </div> 
     <!-- form description -->
-    <div class="well well-lg">
-        請勾選你已認證之教師資格。
+    <div class="" style="margin-bottom: 30px;">
+        請勾選符合您現況的敘述。
     </div> 
     <!-- form content -->
     <div>

@@ -6,7 +6,7 @@
     <hr class="small-top">
 </div> 
 <!-- form description --> 
-<div class="well well-lg">
+<div class="" style="margin-bottom: 30px;">
     請填寫你過往重要的工作或社團經驗，至多三項，每題至多200字。
 </div>
 <!-- form content --> 
@@ -51,7 +51,7 @@
             <label for="input" class="col-md-2 control-label">簡述成就</label>
             <div class="col-md-10">
                 <textarea name="description[]" class="form-control" cols="40" maxlength="200"
-                    placeholder="簡述成就..." >{{ Input::old('description')[0] }}</textarea>
+                    placeholder="簡述成就..." style="margin-left: 0px;">{{ Input::old('description')[0] }}</textarea>
                 {{ $errors->first('description.0') }}
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <label for="input" class="col-md-2 control-label">簡述成就</label>
                 <div class="col-md-10">
                     <textarea name="description[]" class="form-control" cols="40" maxlength="200"
-                        placeholder="簡述成就..." >{{ Input::old('description')[$i] }}</textarea>
+                        placeholder="簡述成就..." style="margin-left: 0px;">{{ Input::old('description')[$i] }}</textarea>
                     {{ $errors->first('description.'.$i) }}
                 </div>
             </div>
