@@ -29,8 +29,11 @@ Route::post     ('essay'            , ['as' => 'essay.store'  , 'uses' => 'Essay
 // 第五區塊：附件區
 Route::get('appendix/create','AppendixController@create');
 Route::post('appendix/create','AppendixController@store');
-// 最終詳細規定：License
 // 第六區塊：串金流歐付寶
+// 資料預覽頁面
+Route::get('preview','PreviewController@index');
+// 感謝頁面
+
 
 // ------- 後台 -------
 
