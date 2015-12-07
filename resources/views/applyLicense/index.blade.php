@@ -31,7 +31,7 @@
                       <i class="fa fa-arrow-right"></i>
                     </div>
                     <div class="col-md-11">
-                      <label class="notice">您瞭解Teach For Taiwan教師計畫是有給薪之全職計畫，並非志工計畫，本計畫必須承諾完整兩年的服務期間，時間從2016年7月1日起至2018年6月30日為止。</label>
+                      <label class="notice">您瞭解 Teach For Taiwan 教師計畫是兩年、有給薪之全職計畫，並非志工計畫，本計畫必須承諾完整兩年的服務期間，時間從2016年6月26日起至2018年6月30日為止？</label>
                     </div>
                   </div>
                   <div class="col-md-1">
@@ -66,7 +66,7 @@
                       <i class="fa fa-arrow-right"></i>
                     </div>
                     <div class="col-md-11">
-                      <label class="notice">在第三屆以前，你曾經申請過TFT教師計畫嗎？</label>
+                      <label class="notice">您瞭解，您必須完成 Teach For Taiwan 為期6週之暑期密集培訓，方能取得服務資格，並參與配對及分發。</label>
                     </div>
                   </div>
                   <div class="col-md-1">
@@ -101,7 +101,7 @@
                       <i class="fa fa-arrow-right"></i>
                     </div>
                     <div class="col-md-11">
-                      <label class="notice">請選擇你過去申請過的TFT計畫屆別</label>
+                      <label class="notice">您瞭解，對於 Teach For Taiwan 的願景、任務以及核心價值之實踐，始於兩年教學計劃，當您完成本計畫成為TFT校友時，仍將持續實踐TFT價值。</label>
                     </div>
                   </div>
                   <div class="col-md-1">
@@ -127,51 +127,41 @@
                 </div>
               </div>
             </div> 
-            <!-- 第四題 -->       
+            <!-- 第四題 -->    
             <div class="panel panel-default panel-terms">
               <div class="panel-body">
                 <div class="row-fluid form-group">
-                  <div class="col-md-9">
+                  <div class="col-md-10">
                     <div class="col-md-1">
                       <i class="fa fa-arrow-right"></i>
                     </div>
                     <div class="col-md-11">
-                      <label class="notice">你是否參與過TFT後勤團隊？</label>
+                      <label class="notice">您是否具有中華民國籍？</label>
                     </div>
                   </div>
                   <div class="col-md-1">
                     <div data-toggle="buttons" class="btn-toolbar">
-                      <label id="q4_a1" class="btn btn-toc btn-block" style="">
+                      <label id="q4_yes" class="btn btn-toc btn-block" style="">
                         <div class="question">
-                          校園大使
+                          YES
                         </div>
-                      <input id="q4_btn_a1" type="radio" name="Info[q4]" value="yes">
+                      <input id="q4_btn_yes" type="radio" name="Info[q4]" value="yes">
                       </label>
                     </div>
                   </div>
                   <div class="col-md-1">
                     <div data-toggle="buttons" class="btn-toolbar">
-                      <label id="q4_a2" class="btn btn-toc btn-block" style="">
+                      <label id="q4_no" class="btn btn-toc btn-block" style="">
                         <div class="question">
-                          實習生
+                          NO
                         </div>
-                        <input id="q4_btn_a2" type="radio" name="Info[q4]" value="no">
+                        <input id="q4_btn_no" type="radio" name="Info[q4]" value="no" checked>
                       </label>
                     </div>
-                  </div>
-                  <div class="col-md-1">
-                    <div data-toggle="buttons" class="btn-toolbar">
-                      <label id="q4_a3" class="btn btn-toc btn-block" style="">
-                        <div class="question">
-                          志工
-                        </div>
-                        <input id="q4_btn_a3" type="radio" name="Info[q4]" value="no">
-                      </label>
-                    </div>
-                  </div>    
+                  </div>   
                 </div>
               </div>
-            </div>   
+            </div> 
             <!-- 第五題 -->     
             <div class="panel panel-default panel-terms">
               <div class="panel-body">
@@ -181,7 +171,7 @@
                       <i class="fa fa-arrow-right"></i>
                     </div>
                     <div class="col-md-11">
-                      <label class="notice">你有犯罪紀錄嗎？</label>
+                      <label class="notice">您是否有違反教師法第 14 條第 1項各款及教育人員任用條例第 31 條、第 33 條各款的情形？</label>
                     </div>
                   </div>
                   <div class="col-md-1">
@@ -201,6 +191,76 @@
                           NO
                         </div>
                         <input id="q5_btn_no" type="radio" name="Info[q5]" value="no" checked>
+                      </label>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>        
+            <!-- 第六題 -->     
+            <div class="panel panel-default panel-terms">
+              <div class="panel-body">
+                <div class="row-fluid form-group">
+                  <div class="col-md-10">
+                    <div class="col-md-1">
+                      <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <div class="col-md-11">
+                      <label class="notice">您是否持有（或即將取得）教育部認可之大學畢業學歷？（應屆畢業生最遲可於2016年7月31日前補驗畢業證書）</label>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div data-toggle="buttons" class="btn-toolbar">
+                      <label id="q6_yes" class="btn btn-toc btn-block" style="">
+                        <div class="question">
+                          YES
+                        </div>
+                      <input id="q6_btn_yes" type="radio" name="Info[q6]" value="yes">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div data-toggle="buttons" class="btn-toolbar">
+                      <label id="q6_no" class="btn btn-toc btn-block" style="">
+                        <div class="question">
+                          NO
+                        </div>
+                        <input id="q6_btn_no" type="radio" name="Info[q6]" value="no" checked>
+                      </label>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>        
+            <!-- 第七題 -->     
+            <div class="panel panel-default panel-terms">
+              <div class="panel-body">
+                <div class="row-fluid form-group">
+                  <div class="col-md-10">
+                    <div class="col-md-1">
+                      <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <div class="col-md-11">
+                      <label class="notice">您是否願意在全新的陌生環境中工作？</label>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div data-toggle="buttons" class="btn-toolbar">
+                      <label id="q7_yes" class="btn btn-toc btn-block" style="">
+                        <div class="question">
+                          YES
+                        </div>
+                      <input id="q7_btn_yes" type="radio" name="Info[q7]" value="yes">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div data-toggle="buttons" class="btn-toolbar">
+                      <label id="q7_no" class="btn btn-toc btn-block" style="">
+                        <div class="question">
+                          NO
+                        </div>
+                        <input id="q7_btn_no" type="radio" name="Info[q7]" value="no" checked>
                       </label>
                     </div>
                   </div> 
@@ -266,6 +326,18 @@
       $('#q3_no').css('background-color', '#c0392b')
       $('#q3_no').css('border-color', '#c0392b')
     });
+    $('#q4_btn_yes').click(function(){
+      $('#q4_no').css('background-color', '#d3d7d7');
+      $('#q4_no').css('border-color', '#d3d7d7');
+      $('#q4_yes').css('background-color', '#64b92a')
+      $('#q4_yes').css('border-color', '#64b92a');
+    });
+    $('#q4_btn_no').click(function(){
+      $('#q4_yes').css('background-color', '#d3d7d7');
+      $('#q4_yes').css('border-color', '#d3d7d7');
+      $('#q4_no').css('background-color', '#c0392b')
+      $('#q4_no').css('border-color', '#c0392b')
+    });
     $('#q5_btn_yes').click(function(){
       $('#q5_no').css('background-color', '#d3d7d7');
       $('#q5_no').css('border-color', '#d3d7d7');
@@ -278,32 +350,30 @@
       $('#q5_no').css('background-color', '#c0392b')
       $('#q5_no').css('border-color', '#c0392b')
     });
-    $('#q4_btn_a1').click(function(){
-      $('#q4_a2').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a2').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a3').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a3').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a1').css('background-color', '#64b92a')
-      $('#q4_a1').css('border-color', '#64b92a');
+    $('#q6_btn_yes').click(function(){
+      $('#q6_no').css('background-color', '#d3d7d7');
+      $('#q6_no').css('border-color', '#d3d7d7');
+      $('#q6_yes').css('background-color', '#64b92a')
+      $('#q6_yes').css('border-color', '#64b92a');
     });
-    $('#q4_btn_a2').click(function(){
-      $('#q4_a1').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a1').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a3').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a3').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a2').css('background-color', '#64b92a')
-      $('#q4_a2').css('border-color', '#64b92a');
-    });    
-    $('#q4_btn_a3').click(function(){
-      $('#q4_a1').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a1').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a2').css('background-color', 'rgb(211, 215, 215)')
-      $('#q4_a2').css('border-color', 'rgb(211, 215, 215)');
-      $('#q4_a3').css('background-color', '#64b92a')
-      $('#q4_a3').css('border-color', '#64b92a');
+    $('#q6_btn_no').click(function(){
+      $('#q6_yes').css('background-color', '#d3d7d7');
+      $('#q6_yes').css('border-color', '#d3d7d7');
+      $('#q6_no').css('background-color', '#c0392b')
+      $('#q6_no').css('border-color', '#c0392b')
     });
-
-
+    $('#q7_btn_yes').click(function(){
+      $('#q7_no').css('background-color', '#d3d7d7');
+      $('#q7_no').css('border-color', '#d3d7d7');
+      $('#q7_yes').css('background-color', '#64b92a')
+      $('#q7_yes').css('border-color', '#64b92a');
+    });
+    $('#q7_btn_no').click(function(){
+      $('#q7_yes').css('background-color', '#d3d7d7');
+      $('#q7_yes').css('border-color', '#d3d7d7');
+      $('#q7_no').css('background-color', '#c0392b')
+      $('#q7_no').css('border-color', '#c0392b')
+    });
 
     $('.modal-body').on('click', function(e){
 
@@ -312,7 +382,10 @@
       var q3 = $("input[name='Info[q3]']:checked").val();
       var q4 = $("input[name='Info[q4]']:checked").val();
       var q5 = $("input[name='Info[q5]']:checked").val();      
-      if( q1 === 'yes' && q2 === 'yes' && q3 === 'yes' && q5 === 'yes' && q4 != undefined){
+      var q6 = $("input[name='Info[q6]']:checked").val();      
+      var q7 = $("input[name='Info[q7]']:checked").val();      
+      if( q1 === 'yes' && q2 === 'yes' && q3 === 'yes' && 
+          q5 === 'no' && q6 === 'yes' && q7 === 'yes'){
         $('#proceed').removeAttr("disabled");
       }
       else{
