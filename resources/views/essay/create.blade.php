@@ -55,7 +55,12 @@
                             </div>
                         </div>
                     </div>
-                    @include('partials/_hint')
+                                        <!-- sectionBody: Right -->
+                    <div class="pull-right col-md-5 hidden-xs hidden-sm">
+                        <div class="affix col-md-5" data-offset-top="60" data-offset-bottom="1000">
+                            @include('partials/_hint')
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
