@@ -11,7 +11,7 @@ class WorkExperienceController extends Controller
 {
     public function create()
     {
-        return view('WorkExperience.create');
+        return view('workExperience.create');
     }
 
     public function store(WorkExperienceRequest $request)
