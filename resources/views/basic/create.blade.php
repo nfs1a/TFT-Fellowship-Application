@@ -14,328 +14,8 @@
                             <div class="legend tfiBlueDark">個人基本資料
                                 <hr class="small-top">
                             </div>
-                            <div class="form-group" onmouseover="displayExample('name')">
-                                <label for="input" class="col-md-2 control-label">姓名</label>
-
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="name" placeholder="王大明"
-                                           value="{{ Input::old('name') }}" required="required" maxlength="20">
-                                    {{ $errors->first('name') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('id_number')">
-                                <label for="input" class="col-md-2 control-label">身分證字號</label>
-
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="id_number" placeholder="A123456789"
-                                           value="{{ Input::old('id_number') }}" required="required"
-                                           pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$">
-                                    {{ $errors->first('id_number') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('sex')">
-                                <label for="input" class="col-md-2 control-label">生理性別</label>
-
-                                <div class="col-md-10">
-                                    <div class="col-md-4">
-                                        <input type="radio" name="sex" id="boy" value="1" required="required"> 男
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" name="sex" id="gril" value="2"> 女
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" name="sex" id="other" value="3"> 其他
-                                    </div>
-                                    {{ $errors->first('sex') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('birthday')">
-                                <label for="input" class="col-md-2 control-label">生日</label>
-
-                                <div class="col-md-10">
-                                    <input type="text" name="birthday" class="form-control date"
-                                           placeholder="1991/01/33"
-                                           required="required" value="{{ Input::old('birthday') }}"/>
-                                    {{ $errors->first('birthday') }}
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input" class="col-sm-2 control-label">室內電話</label>
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="phone" placeholder="0227386224"
-                                           value="{{ Input::old('phone') }}" required="required">
-                                    {{ $errors->first('phone') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('phone')">
-                                <label for="input" class="col-sm-2 control-label">手機號碼</label>
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="cell_phone" placeholder="0912345678"
-                                           required="required" value="{{ Input::old('cell_phone') }}">
-                                    {{ $errors->first('cell_phone') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('skype')">
-                                <label for="input" class="col-sm-2 control-label">Skype帳號</label>
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="skype" placeholder="Skype"
-                                           required="required" value="{{ Input::old('skype') }}">
-                                    {{ $errors->first('skype') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('email')">
-                                <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
-
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email"
-                                           placeholder="tft@teach4taiwan.org"
-                                           required="required" maxlength="30" value="{{ Input::old('email') }}">
-                                    {{ $errors->first('email') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('email')">
-                                <label for="input" class="col-sm-2 control-label">備用電子郵件</label>
-
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="sec_email"
-                                           placeholder="tft@teach4taiwan.org" maxlength="30"
-                                           value="{{ Input::old('sec_email') }}">
-                                    {{ $errors->first('sec_email') }}
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('address')">
-                                <label for="input" class="col-sm-2 control-label">通訊地址</label>
-
-                                <div class="col-sm-10">
-                                    <div class="col-sm-12 form-inline" style="padding: 0px;">
-                                        <div class='address'>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="padding: 0px;">
-                                        <input type="address" class="form-control" name="address"
-                                               placeholder="復興南路二段318號三樓" required="required" maxlength="50"
-                                               value="{{ Input::old('address') }}">
-                                        {{ $errors->first('address') }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="legend tfiBlueDark">學歷經歷
-                                <hr class="small-top">
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('status')">
-                                <label for="input" class="col-md-2 control-label">就學就業狀況</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="Status">
-                                        <option value="0" selected="selected">選一個</option>
-                                        <option value="1">我是學生，今年六月還沒有要畢業。</option>
-                                        <option value="2">我是學生，預計今年六月畢業，正在找尋未來工作。</option>
-                                        <option value="3">我目前在工作，一邊在職進修。</option>
-                                        <option value="4">現階段有工作。</option>
-                                        <option value="5">現階段待業中，正在尋找未來工作。</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('school')">
-                                <label for="input" class="col-sm-2 control-label">學校名稱</label>
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="school1" placeholder="國立ＯＯ大學">
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('degreeLevel')">
-                                <label for="input" class="col-sm-2 control-label">學位</label>
-
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="degreeLevel">
-                                        <option value="0" selected="selected">選一個</option>
-                                        <option value="1">博士</option>
-                                        <option value="2">碩士</option>
-                                        <option value="3">大學</option>
-                                        <option value="4">四技</option>
-                                        <option value="5">二技</option>
-                                        <option value="6">二專</option>
-                                        <option value="7">三專</option>
-                                        <option value="8">五專</option>
-                                        <option value="9">高中</option>
-                                        <option value="10">高職</option>
-                                        <option value="11">國中(含)以下</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('major')">
-                                <label for="input" class="col-sm-2 control-label">科系名稱</label>
-
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="major" placeholder="幼兒教育學系">
-                                </div>
-                            </div>
-
-                            <div class="form-group" onmouseover="displayExample('degreeLevel')">
-                                <label for="input" class="col-sm-2 control-label">科系類別</label>
-
-                                <div class="col-sm-5">
-                                    <select class="form-control majorMainClass" name="majorMainClass">
-                                        <option value="0">請選擇</option>
-                                        <option value="3001000000">教育學科類</option>
-                                        <option value="3002000000">藝術學科類</option>
-                                        <option value="3003000000">語文及人文學科類</option>
-                                        <option value="3004000000">經濟社會及心理學科類</option>
-                                        <option value="3005000000">法律學科類</option>
-                                        <option value="3006000000">商業及管理學科類</option>
-                                        <option value="3007000000">自然科學學科類</option>
-                                        <option value="3008000000">數學及電算機科學學科類</option>
-                                        <option value="3009000000">醫藥衛生學科類</option>
-                                        <option value="3010000000">工業技藝及機械學科類</option>
-                                        <option value="3011000000">工程學科類</option>
-                                        <option value="3012000000">建築及都市規劃學科類</option>
-                                        <option value="3013000000">農林漁牧學科類</option>
-                                        <option value="3014000000">家政相關學科類</option>
-                                        <option value="3015000000">運輸通信學科類</option>
-                                        <option value="3016000000">觀光服務學科類</option>
-                                        <option value="3017000000">大眾傳播學科類</option>
-                                        <option value="3018000000">其他學科類</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-5">
-                                    <select class="form-control majorSubClass" name="majorSubClass">
-                                        <option value="0">請選擇</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('eduArea')">
-                                <label for="input" class="col-sm-2 control-label">地區</label>
-
-                                <div class="col-sm-5">
-                                    <select class="form-control eduMainArea" name="eduMainArea">
-                                        <option value="0">請選擇</option>
-                                        <option value="7001000000">亞洲</option>
-                                        <option value="7002000000">大洋洲</option>
-                                        <option value="7003000000">美洲</option>
-                                        <option value="7004000000">歐洲</option>
-                                        <option value="7005000000">非洲</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-5">
-                                    <select class="form-control eduSubArea" name="eduSubArea">
-                                        <option value="0">請選擇</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('eduArea')">
-                                <label for="input" class="col-sm-2 control-label">就學期間<br>（開始）</label>
-
-                                <div class="col-sm-4">
-                                    <select class="form-control eduPeriod" name="eduPeriod">
-                                        <option value="0"></option>
-                                        <option value="2022">西元2022 / 民國111</option>
-                                        <option value="2021">西元2021 / 民國110</option>
-                                        <option value="2020">西元2020 / 民國109</option>
-                                        <option value="2019">西元2019 / 民國108</option>
-                                        <option value="2018">西元2018 / 民國107</option>
-                                        <option value="2017">西元2017 / 民國106</option>
-                                        <option value="2016">西元2016 / 民國105</option>
-                                        <option value="2015">西元2015 / 民國104</option>
-                                        <option value="2014">西元2014 / 民國103</option>
-                                        <option value="2013">西元2013 / 民國102</option>
-                                        <option value="2012">西元2012 / 民國101</option>
-                                        <option value="2011">西元2011 / 民國100</option>
-                                        <option value="2010">西元2010 / 民國99</option>
-                                        <option value="2009">西元2009 / 民國98</option>
-                                        <option value="2008">西元2008 / 民國97</option>
-                                        <option value="2007">西元2007 / 民國96</option>
-                                        <option value="2006">西元2006 / 民國95</option>
-                                        <option value="2005">西元2005 / 民國94</option>
-                                        <option value="2004">西元2004 / 民國93</option>
-                                        <option value="2003">西元2003 / 民國92</option>
-                                        <option value="2002">西元2002 / 民國91</option>
-                                        <option value="2001">西元2001 / 民國90</option>
-                                        <option value="2000">西元2000 / 民國89</option>
-                                        <option value="1999">西元1999 / 民國88</option>
-                                        <option value="1998">西元1998 / 民國87</option>
-                                        <option value="1997">西元1997 / 民國86</option>
-                                        <option value="1996">西元1996 / 民國85</option>
-                                        <option value="1995">西元1995 / 民國84</option>
-                                        <option value="1994">西元1994 / 民國83</option>
-                                        <option value="1993">西元1993 / 民國82</option>
-                                        <option value="1992">西元1992 / 民國81</option>
-                                        <option value="1991">西元1991 / 民國80</option>
-                                        <option value="1990">西元1990 / 民國79</option>
-                                        <option value="1989">西元1989 / 民國78</option>
-                                        <option value="1988">西元1988 / 民國77</option>
-                                        <option value="1987">西元1987 / 民國76</option>
-                                        <option value="1986">西元1986 / 民國75</option>
-                                        <option value="1985">西元1985 / 民國74</option>
-                                        <option value="1984">西元1984 / 民國73</option>
-                                        <option value="1983">西元1983 / 民國72</option>
-                                        <option value="1982">西元1982 / 民國71</option>
-                                        <option value="1981">西元1981 / 民國70</option>
-                                        <option value="1980">西元1980 / 民國69</option>
-                                        <option value="1979">西元1979 / 民國68</option>
-                                        <option value="1978">西元1978 / 民國67</option>
-                                        <option value="1977">西元1977 / 民國66</option>
-                                        <option value="1976">西元1976 / 民國65</option>
-                                        <option value="1975">西元1975 / 民國64</option>
-                                        <option value="1974">西元1974 / 民國63</option>
-                                        <option value="1973">西元1973 / 民國62</option>
-                                        <option value="1972">西元1972 / 民國61</option>
-                                        <option value="1971">西元1971 / 民國60</option>
-                                        <option value="1970">西元1970 / 民國59</option>
-                                        <option value="1969">西元1969 / 民國58</option>
-                                        <option value="1968">西元1968 / 民國57</option>
-                                        <option value="1967">西元1967 / 民國56</option>
-                                        <option value="1966">西元1966 / 民國55</option>
-                                        <option value="1965">西元1965 / 民國54</option>
-                                        <option value="1964">西元1964 / 民國53</option>
-                                        <option value="1963">西元1963 / 民國52</option>
-                                        <option value="1962">西元1962 / 民國51</option>
-                                        <option value="1961">西元1961 / 民國50</option>
-                                        <option value="1960">西元1960 / 民國49</option>
-                                        <option value="1959">西元1959 / 民國48</option>
-                                        <option value="1958">西元1958 / 民國47</option>
-                                        <option value="1957">西元1957 / 民國46</option>
-                                        <option value="1956">西元1956 / 民國45</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1">
-                                    <label for="input" class="control-label">年</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select class="form-control eduPeriod" name="eduPeriod">
-                                        <option value="0"></option>
-                                        <option value="01">1</option>
-                                        <option value="02">2</option>
-                                        <option value="03">3</option>
-                                        <option value="04">4</option>
-                                        <option value="05">5</option>
-                                        <option value="06">6</option>
-                                        <option value="07">7</option>
-                                        <option value="08">8</option>
-                                        <option value="09">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1">
-                                    <label for="input" class="control-label">月</label>
-                                </div>
-                            </div>
-                            <div class="form-group" onmouseover="displayExample('degreeLevel')">
-                                <label for="input" class="col-sm-2 control-label">學位</label>
-
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="eduStatus">
-                                        <option value="0" selected="selected">選一個</option>
-                                        <option value="1">已畢業</option>
-                                        <option value="2">應屆畢業</option>
-                                        <option value="3">肄業</option>
-                                        <option value="4">就學中</option>
-                                    </select>
-                                </div>
-                            </div>
+                            @include('basic/_basic')
+                            @include('basic/_eduExperience')
                         </div>
                     </div>
                     <div class="pull-right col-md-5 hidden-xs hidden-sm">
@@ -426,7 +106,7 @@
         $(function () {
             var majorSelectValues = {
                 "3001000000": {
-                    "教育學科類": "3001000000",
+//                    "教育學科類": "3001000000",
                     "綜合教育相關": "3001001000",
                     "普通科目教育相關": "3001002000",
                     "專業科目教育相關": "3001003000",
@@ -434,7 +114,7 @@
                     "其他教育相關": "3001005000"
                 },
                 "3002000000": {
-                    "藝術學科類": "3002000000",
+//                    "藝術學科類": "3002000000",
                     "美術學相關": "3002001000",
                     "雕塑藝術相關": "3002002000",
                     "美術工藝相關": "3002003000",
@@ -445,7 +125,7 @@
                     "藝術商業設計": "3002008000"
                 },
                 "3003000000": {
-                    "語文及人文學科類": "3003000000",
+//                    "語文及人文學科類": "3003000000",
                     "本國語文相關": "3003001000",
                     "英美語文相關": "3003002000",
                     "日文相關科系": "3003003000",
@@ -457,7 +137,7 @@
                     "其他人文學相關": "3003009000"
                 },
                 "3004000000": {
-                    "經濟社會及心理學科類": "3004000000",
+//                    "經濟社會及心理學科類": "3004000000",
                     "經濟學相關": "3004001000",
                     "政治學相關": "3004002000",
                     "社會學相關": "3004003000",
@@ -466,11 +146,11 @@
                     "其他經社心理相關": "3004008000"
                 },
                 "3005000000": {
-                    "法律學科類": "3005000000",
+//                    "法律學科類": "3005000000",
                     "法律相關科系": "3005001000"
                 },
                 "3006000000": {
-                    "商業及管理學科類": "3006000000",
+//                    "商業及管理學科類": "3006000000",
                     "一般商業學類": "3006001000",
                     "文書管理相關": "3006002000",
                     "會計學相關": "3006003000",
@@ -487,7 +167,7 @@
                     "其他商業及管理相關": "3006014000"
                 },
                 "3007000000": {
-                    "自然科學學科類": "3007000000",
+//                    "自然科學學科類": "3007000000",
                     "生物學相關": "3007001000",
                     "化學相關": "3007002000",
                     "地質學相關": "3007003000",
@@ -497,7 +177,7 @@
                     "其他自然科學相關": "3007007000"
                 },
                 "3008000000": {
-                    "數學及電算機科學學科類": "3008000000",
+//                    "數學及電算機科學學科類": "3008000000",
                     "一般數學相關": "3008001000",
                     "數理統計相關": "3008002000",
                     "應用數學相關": "3008003000",
@@ -505,7 +185,7 @@
                     "其他數學及電算機科學相關": "3008005000"
                 },
                 "3009000000": {
-                    "醫藥衛生學科類": "3009000000",
+//                    "醫藥衛生學科類": "3009000000",
                     "公共衛生相關": "3009001000",
                     "醫學系相關": "3009002000",
                     "中醫學系": "3009003000",
@@ -520,7 +200,7 @@
                     "其他醫藥衛生相關": "3009012000"
                 },
                 "3010000000": {
-                    "工業技藝及機械學科類": "3010000000",
+//                    "工業技藝及機械學科類": "3010000000",
                     "電機電子維護相關": "3010001000",
                     "金屬加工相關": "3010002000",
                     "機械維護相關": "3010003000",
@@ -531,7 +211,7 @@
                     "其他工業技藝相關": "3010008000"
                 },
                 "3011000000": {
-                    "工程學科類": "3011000000",
+//                    "工程學科類": "3011000000",
                     "測量工程相關": "3011001000",
                     "工業設計相關": "3011002000",
                     "化學工程相關": "3011003000",
@@ -551,14 +231,14 @@
                     "其他工程相關": "3011017000"
                 },
                 "3012000000": {
-                    "建築及都市規劃學科類": "3012000000",
+//                    "建築及都市規劃學科類": "3012000000",
                     "建築相關": "3012001000",
                     "景觀設計相關": "3012002000",
                     "都巿規劃相關": "3012003000",
                     "其他建築及都市規劃學類": "3012004000"
                 },
                 "3013000000": {
-                    "農林漁牧學科類": "3013000000",
+//                    "農林漁牧學科類": "3013000000",
                     "農業相關": "3013001000",
                     "畜牧相關": "3013002000",
                     "園藝相關": "3013003000",
@@ -572,7 +252,7 @@
                     "其他農林漁牧相關": "3013011000"
                 },
                 "3014000000": {
-                    "家政相關學科類": "3014000000",
+//                    "家政相關學科類": "3014000000",
                     "綜合家政相關": "3014001000",
                     "食品營養相關": "3014002000",
                     "兒童保育相關": "3014003000",
@@ -581,7 +261,7 @@
                     "其他家政相關": "3014006000"
                 },
                 "3015000000": {
-                    "運輸通信學科類": "3015000000",
+//                    "運輸通信學科類": "3015000000",
                     "運輸管理相關": "3015001000",
                     "航空相關": "3015002000",
                     "航海相關": "3015003000",
@@ -590,14 +270,14 @@
                     "其他運輸通信相關": "3015006000"
                 },
                 "3016000000": {
-                    "觀光服務學科類": "3016000000",
+//                    "觀光服務學科類": "3016000000",
                     "儀容服務學類": "3016001000",
                     "餐旅服務相關": "3016002000",
                     "觀光事務相關": "3016003000",
                     "其他觀光服務相關": "3016004000"
                 },
                 "3017000000": {
-                    "大眾傳播學科類": "3017000000",
+//                    "大眾傳播學科類": "3017000000",
                     "新聞學相關": "3017002000",
                     "廣播電視相關": "3017003000",
                     "公共關係相關": "3017004000",
@@ -607,7 +287,7 @@
                     "其他大眾傳播相關": "3017007000"
                 },
                 "3018000000": {
-                    "其他學科類": "3018000000",
+//                    "其他學科類": "3018000000",
                     "普通科": "3018001000",
                     "警政相關": "3018002000",
                     "軍事相關": "3018003000",
@@ -818,13 +498,27 @@
                     "塞內加爾": "7005059000"
                 }
             };
-            var $majorMainClass = $('select.majorMainClass');
-            var $majorSubClass = $('select.majorSubClass');
-            var $areaMainClass = $('select.eduMainArea');
-            var $areaSubClass = $('select.eduSubArea');
+            var $majorMainClass0 = $('select.majorMainClass[name="majorMainClass[0]"]');
+            var $majorSubClass0 = $('select.majorSubClass[name="majorSubClass[0]"]');
+            var $areaMainClass0 = $('select.eduMainArea[name="eduMainArea[0]"]');
+            var $areaSubClass0 = $('select.eduSubArea[name="eduSubArea[0]"]');
 
-            dynamicSelect($majorMainClass, $majorSubClass, majorSelectValues);
-            dynamicSelect($areaMainClass, $areaSubClass, areaSelectValues);
+            var $majorMainClass1 = $('select.majorMainClass[name="majorMainClass[1]"]');
+            var $majorSubClass1 = $('select.majorSubClass[name="majorSubClass[1]"]');
+            var $areaMainClass1 = $('select.eduMainArea[name="eduMainArea[1]"]');
+            var $areaSubClass1 = $('select.eduSubArea[name="eduSubArea[1]"]');
+
+            var $majorMainClass2 = $('select.majorMainClass[name="majorMainClass[2]"]');
+            var $majorSubClass2 = $('select.majorSubClass[name="majorSubClass[2]"]');
+            var $areaMainClass2 = $('select.eduMainArea[name="eduMainArea[2]"]');
+            var $areaSubClass2 = $('select.eduSubArea[name="eduSubArea[2]"]');
+
+            dynamicSelect($majorMainClass0, $majorSubClass0, majorSelectValues);
+            dynamicSelect($areaMainClass0, $areaSubClass0, areaSelectValues);
+            dynamicSelect($majorMainClass1, $majorSubClass1, majorSelectValues);
+            dynamicSelect($areaMainClass1, $areaSubClass1, areaSelectValues);
+            dynamicSelect($majorMainClass2, $majorSubClass2, majorSelectValues);
+            dynamicSelect($areaMainClass2, $areaSubClass2, areaSelectValues);
         });
 
     </script>
