@@ -13,7 +13,7 @@
                 <!-- sectionBody -->
                 <div class="row sectionBody">
                     <div style="float: right;">
-                        <a href="http://pdfmyurl.com?url=url('/preview')">備份此頁面為PDF檔</a>
+                        <a href="http://pdfmyurl.com?url={{ url('/preview') }}">備份此頁面為PDF檔</a>
                     </div>
                     <!-- sectionBody: Left -->
                     <div class="sectionPan panel panel-default col-md-12 shadow">
