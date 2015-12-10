@@ -38,7 +38,7 @@
 
     <div class="col-md-10">
         <input type="text" name="birthday" class="form-control date"
-               placeholder="1991/01/33"
+               placeholder="1991/03/21"
                required="required" value="{{ Input::old('birthday') }}"/>
         {{ $errors->first('birthday') }}
     </div>
