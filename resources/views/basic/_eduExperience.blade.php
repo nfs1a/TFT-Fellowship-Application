@@ -184,7 +184,7 @@
         <label for="input" class="control-label">年</label>
     </div>
     <div class="col-sm-4">
-        <select class="form-control eduPeriod" name="eduPeriodStartMon[]" required="required"
+ss        <select class="form-control eduPeriod" name="eduPeriodStartMon[]" required="required"
                 required="required">
             <option value="0"></option>
             <option value="01">1</option>
@@ -206,6 +206,112 @@
         <label for="input" class="control-label">月</label>
     </div>
 </div>
+
+<div class="form-group" onmouseover="displayExample('eduArea')">
+    <label for="input" class="col-sm-2 control-label">就學期間<br>（結束）</label>
+
+    <div class="col-sm-4">
+        <select class="form-control eduPeriod" name="eduPeriodEndYear[]" required="required"
+                required="required">
+            <option value="0"></option>
+            <option value="2022">西元2022</option>
+            <option value="2021">西元2021</option>
+            <option value="2020">西元2020</option>
+            <option value="2019">西元2019</option>
+            <option value="2018">西元2018</option>
+            <option value="2017">西元2017</option>
+            <option value="2016">西元2016</option>
+            <option value="2015">西元2015</option>
+            <option value="2014">西元2014</option>
+            <option value="2013">西元2013</option>
+            <option value="2012">西元2012</option>
+            <option value="2011">西元2011</option>
+            <option value="2010">西元2010</option>
+            <option value="2009">西元2009</option>
+            <option value="2008">西元2008</option>
+            <option value="2007">西元2007</option>
+            <option value="2006">西元2006</option>
+            <option value="2005">西元2005</option>
+            <option value="2004">西元2004</option>
+            <option value="2003">西元2003</option>
+            <option value="2002">西元2002</option>
+            <option value="2001">西元2001</option>
+            <option value="2000">西元2000</option>
+            <option value="1999">西元1999</option>
+            <option value="1998">西元1998</option>
+            <option value="1997">西元1997</option>
+            <option value="1996">西元1996</option>
+            <option value="1995">西元1995</option>
+            <option value="1994">西元1994</option>
+            <option value="1993">西元1993</option>
+            <option value="1992">西元1992</option>
+            <option value="1991">西元1991</option>
+            <option value="1990">西元1990</option>
+            <option value="1989">西元1989</option>
+            <option value="1988">西元1988</option>
+            <option value="1987">西元1987</option>
+            <option value="1986">西元1986</option>
+            <option value="1985">西元1985</option>
+            <option value="1984">西元1984</option>
+            <option value="1983">西元1983</option>
+            <option value="1982">西元1982</option>
+            <option value="1981">西元1981</option>
+            <option value="1980">西元1980</option>
+            <option value="1979">西元1979</option>
+            <option value="1978">西元1978</option>
+            <option value="1977">西元1977</option>
+            <option value="1976">西元1976</option>
+            <option value="1975">西元1975</option>
+            <option value="1974">西元1974</option>
+            <option value="1973">西元1973</option>
+            <option value="1972">西元1972</option>
+            <option value="1971">西元1971</option>
+            <option value="1970">西元1970</option>
+            <option value="1969">西元1969</option>
+            <option value="1968">西元1968</option>
+            <option value="1967">西元1967</option>
+            <option value="1966">西元1966</option>
+            <option value="1965">西元1965</option>
+            <option value="1964">西元1964</option>
+            <option value="1963">西元1963</option>
+            <option value="1962">西元1962</option>
+            <option value="1961">西元1961</option>
+            <option value="1960">西元1960</option>
+            <option value="1959">西元1959</option>
+            <option value="1958">西元1958</option>
+            <option value="1957">西元1957</option>
+            <option value="1956">西元1956</option>
+        </select>
+        {{ $errors->first('eduPeriodEndYear.0') }}
+    </div>
+
+    <div class="col-sm-1">
+        <label for="input" class="control-label">年</label>
+    </div>
+    <div class="col-sm-4">
+        <select class="form-control eduPeriod" name="eduPeriodEndMon[]" required="required"
+                          required="required">
+            <option value="0"></option>
+            <option value="01">1</option>
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+            <option value="05">5</option>
+            <option value="06">6</option>
+            <option value="07">7</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        {{ $errors->first('eduPeriodEndMon.0') }}
+    </div>
+    <div class="col-sm-1">
+        <label for="input" class="control-label">月</label>
+    </div>
+</div>
+
 <div class="form-group" onmouseover="displayExample('eduStatus')">
     <label for="input" class="col-sm-2 control-label">學業狀態</label>
 
@@ -429,6 +535,112 @@
             <label for="input" class="control-label">月</label>
         </div>
     </div>
+
+    <div class="form-group" onmouseover="displayExample('eduArea')">
+        <label for="input" class="col-sm-2 control-label">就學期間<br>（結束）</label>
+
+        <div class="col-sm-4">
+            <select class="form-control eduPeriod" name="eduPeriodEndYear[]"
+                    required="required">
+                <option value="0"></option>
+                <option value="2022">西元2022</option>
+                <option value="2021">西元2021</option>
+                <option value="2020">西元2020</option>
+                <option value="2019">西元2019</option>
+                <option value="2018">西元2018</option>
+                <option value="2017">西元2017</option>
+                <option value="2016">西元2016</option>
+                <option value="2015">西元2015</option>
+                <option value="2014">西元2014</option>
+                <option value="2013">西元2013</option>
+                <option value="2012">西元2012</option>
+                <option value="2011">西元2011</option>
+                <option value="2010">西元2010</option>
+                <option value="2009">西元2009</option>
+                <option value="2008">西元2008</option>
+                <option value="2007">西元2007</option>
+                <option value="2006">西元2006</option>
+                <option value="2005">西元2005</option>
+                <option value="2004">西元2004</option>
+                <option value="2003">西元2003</option>
+                <option value="2002">西元2002</option>
+                <option value="2001">西元2001</option>
+                <option value="2000">西元2000</option>
+                <option value="1999">西元1999</option>
+                <option value="1998">西元1998</option>
+                <option value="1997">西元1997</option>
+                <option value="1996">西元1996</option>
+                <option value="1995">西元1995</option>
+                <option value="1994">西元1994</option>
+                <option value="1993">西元1993</option>
+                <option value="1992">西元1992</option>
+                <option value="1991">西元1991</option>
+                <option value="1990">西元1990</option>
+                <option value="1989">西元1989</option>
+                <option value="1988">西元1988</option>
+                <option value="1987">西元1987</option>
+                <option value="1986">西元1986</option>
+                <option value="1985">西元1985</option>
+                <option value="1984">西元1984</option>
+                <option value="1983">西元1983</option>
+                <option value="1982">西元1982</option>
+                <option value="1981">西元1981</option>
+                <option value="1980">西元1980</option>
+                <option value="1979">西元1979</option>
+                <option value="1978">西元1978</option>
+                <option value="1977">西元1977</option>
+                <option value="1976">西元1976</option>
+                <option value="1975">西元1975</option>
+                <option value="1974">西元1974</option>
+                <option value="1973">西元1973</option>
+                <option value="1972">西元1972</option>
+                <option value="1971">西元1971</option>
+                <option value="1970">西元1970</option>
+                <option value="1969">西元1969</option>
+                <option value="1968">西元1968</option>
+                <option value="1967">西元1967</option>
+                <option value="1966">西元1966</option>
+                <option value="1965">西元1965</option>
+                <option value="1964">西元1964</option>
+                <option value="1963">西元1963</option>
+                <option value="1962">西元1962</option>
+                <option value="1961">西元1961</option>
+                <option value="1960">西元1960</option>
+                <option value="1959">西元1959</option>
+                <option value="1958">西元1958</option>
+                <option value="1957">西元1957</option>
+                <option value="1956">西元1956</option>
+            </select>
+            {{ $errors->first('eduPeriodEndYear.'.$i) }}
+        </div>
+
+        <div class="col-sm-1">
+            <label for="input" class="control-label">年</label>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control eduPeriod" name="eduPeriodEndMon[]"
+                    required="required">
+                <option value="0"></option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            {{ $errors->first('eduPeriodEndMon.'.$i) }}
+        </div>
+        <div class="col-sm-1">
+            <label for="input" class="control-label">月</label>
+        </div>
+    </div>
+
     <div class="form-group" onmouseover="displayExample('eduStatus')">
         <label for="input" class="col-sm-2 control-label">學業狀態</label>
 
