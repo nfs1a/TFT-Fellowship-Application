@@ -42,7 +42,7 @@
                 exampleHelpText = '請輸入你的生理性別(必填)';
                 exampleText = '男，女，或其他';
             }
-            if (dom == 'id_number') {
+            if (dom == 'idNumber') {
                 exampleHelpText = '請輸入你的身分證字號(必填)';
                 exampleText = 'A123456789';
             }
@@ -54,7 +54,7 @@
                 exampleHelpText = '請輸入室內電話(選填)';
                 exampleText = '0224895094';
             }
-            if (dom == 'cell_phone') {
+            if (dom == 'cellPhone') {
                 exampleHelpText = '請輸入你的手機';
                 exampleText = '09XXXXXXXX';
             }

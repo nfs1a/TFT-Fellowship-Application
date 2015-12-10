@@ -7,12 +7,12 @@
         {{ $errors->first('name') }}
     </div>
 </div>
-<div class="form-group" onmouseover="displayExample('id_number')">
+<div class="form-group" onmouseover="displayExample('idNumber')">
     <label for="input" class="col-md-2 control-label">身分證字號</label>
 
     <div class="col-md-10">
-        <input type="text" class="form-control" name="id_number" placeholder="A123456789"
-               value="{{ Input::old('id_number') }}" required="required"
+        <input type="text" class="form-control" name="idNumber" placeholder="A123456789"
+               value="{{ Input::old('idNumber') }}" required="required"
                pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$">
         {{ $errors->first('id_number') }}
     </div>
@@ -56,9 +56,9 @@
     <label for="input" class="col-sm-2 control-label">手機號碼</label>
 
     <div class="col-sm-10">
-        <input type="text" class="form-control" name="cell_phone" placeholder="0912345678"
-               required="required" value="{{ Input::old('cell_phone') }}">
-        {{ $errors->first('cell_phone') }}
+        <input type="text" class="form-control" name="cellPhone" placeholder="0912345678"
+               required="required" value="{{ Input::old('cellPhone') }}">
+        {{ $errors->first('cellPhone') }}
     </div>
 </div>
 <div class="form-group" onmouseover="displayExample('skype')">
@@ -84,10 +84,10 @@
     <label for="input" class="col-sm-2 control-label">備用電子郵件</label>
 
     <div class="col-sm-10">
-        <input type="email" class="form-control" name="sec_email"
+        <input type="email" class="form-control" name="secEmail"
                placeholder="tft@teach4taiwan.org" maxlength="30"
-               value="{{ Input::old('sec_email') }}">
-        {{ $errors->first('sec_email') }}
+               value="{{ Input::old('secEmail') }}">
+        {{ $errors->first('secEmail') }}
     </div>
 </div>
 <div class="form-group" onmouseover="displayExample('address')">
