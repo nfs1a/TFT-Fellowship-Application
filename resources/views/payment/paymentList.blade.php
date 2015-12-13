@@ -32,9 +32,9 @@ $oPayment->Send['IgnorePayment'] ="Alipay#Tenpay#TopUpUsed#AccountLink";//把不
 // 加入選購商品資料。
 array_push($oPayment->Send['Items'], array('Name' => "TFT 2016 報名費", 'Price' => (int)"100", 'Currency' => "元", 'Quantity' => (int) "1", 'URL' => "http://www.teach4taiwan.org/faqs.html"));
 
-// Instert payment data into database
+// Instert payment data into data
 $PaymentController = new app\Http\Controllers\PaymentController();
-$PaymentController->dashboard();
+$PaymentController->insertPayment($time);
 
 /* 產生訂單 */
 $oPayment->CheckOut();
