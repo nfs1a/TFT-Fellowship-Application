@@ -150,7 +150,7 @@
                         </div> 
                     </a>
                     <!--第六區塊：串金流歐付寶--> 
-                    <a href="{{ url('') }}">
+                    <a href="{{ url('paymentList') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">
