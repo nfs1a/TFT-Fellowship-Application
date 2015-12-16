@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BasicRequest;
-use App\Basic;
-use Validator;
-use Log;
+//use App\Basic;
+//use Validator;
+//use Log;
+//use Request;
 
 
+//use App\Http\Requests\PostStoreRequest;
+//use App\Http\Requests\CommentStoreRequest;
 
 class BasicController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $basic = Basic::all();
@@ -34,73 +31,38 @@ class BasicController extends Controller
         return view('basic.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('basic.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(BasicRequest $request)
     {
-        $input = $request->all();
-        Log::info('-------- BasicController: store --------');
-        Log::info($input);
-        Log::info('--------');
-
-        return redirect('/dashboard');
+        $input=$request->all();
+        return $input;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $query = Basic::find($id);
         return view('basic.show',compact('query'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
