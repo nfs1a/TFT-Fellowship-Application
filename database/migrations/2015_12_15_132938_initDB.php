@@ -12,21 +12,31 @@ class InitDB extends Migration
      */
     public function up()
     {
-        Schema::create('progress',function(Blueprint $table)
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password', 60);
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('progresses',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('basic');
-            $table->integer('work');
-            $table->integer('teach');
-            $table->integer('essay');
-            $table->integer('appendix');
-            $table->integer('allpay');
+            $table->integer('basic')->default(0);
+            $table->integer('work')->default(0);
+            $table->integer('teach')->default(0);
+            $table->integer('essay')->default(0);
+            $table->integer('appendix')->default(0);
+            $table->integer('allpay')->default(0);
         });
 
         Schema::create('basic',function(Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name');         //姓名
             $table->string('idNumber');     //身分證字號
             $table->integer('sex');         //性別
@@ -43,7 +53,7 @@ class InitDB extends Migration
         Schema::create('eduHistory',function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('basicID');
+            $table->integer('basic_id');
             $table->string('school');
             $table->integer('degreeLevel');
             $table->integer('majorMainClass');
@@ -65,7 +75,7 @@ class InitDB extends Migration
         Schema::create('expertise',function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('workExperience_id');
+            $table->integer('work_id');
             $table->string('expertise');
             $table->text('introduction');
         });
@@ -73,7 +83,7 @@ class InitDB extends Migration
         Schema::create('workExpertise',function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('workExperience_id');
+            $table->integer('work_id');
             $table->string('organization');
             $table->string('position');
             $table->dateTime('startDate');
@@ -94,7 +104,7 @@ class InitDB extends Migration
         Schema::create('teachExperience',function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('teachExperience_id');
+            $table->integer('teach_id');
             $table->string('organization');
             $table->string('position');
             $table->dateTime('startDate');
