@@ -14,7 +14,7 @@
             <ul id="navmainright" class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        tft@teach4taiwan.org
+                        {{ $loginUser }}
                         <span class="caret"></span>
                     </a>
                     <ul role="menu" class="dropdown-menu">

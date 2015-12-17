@@ -5,7 +5,7 @@
 <div id="page">
 
     <div id="dashboard" class="container page ">
-        <div class="row sectionTitle"><h1>Application Dashboard {{ $loginUser }}</h1></div>
+        <div class="row sectionTitle"><h1>Application Dashboard </h1></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-12 well background-white ">
@@ -44,7 +44,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->basic == 1 )
+                                        @if( $user->progress->basic == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -69,7 +69,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->work == 1 )
+                                        @if( $user->progress->work == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -94,7 +94,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->teach == 1 )
+                                        @if( $user->progress->teach == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -119,7 +119,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->essay == 1 )
+                                        @if( $user->progress->essay == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -144,7 +144,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->appendix == 1 )
+                                        @if( $user->progress->appendix == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -169,7 +169,7 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( isset($user['progress']) and $user->progress->allpay == 1 )
+                                        @if( $user->progress->allpay == 1 )
                                             @include('dashboard/_complete')
                                         @else
                                             @include('dashboard/_inprogress')
@@ -183,9 +183,11 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <button type="submit" class="btn btn-primary pull-right btn-lg btn-block" disabled="disabled">
-                尚有未完成/送出
-            </button>
+            <a href="{{ url('preview') }}">
+                <button type="submit" class="btn btn-primary pull-right btn-lg btn-block" {{ $isPass == 0 ? "disabled":"" }}>
+                    送出
+                </button>
+            </a>
         </div>
     </div>
 </div>

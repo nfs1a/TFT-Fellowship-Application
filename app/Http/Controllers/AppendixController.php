@@ -7,12 +7,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AppendixRequest;
 use Log;
 use Input;
+use Auth;
 
 class AppendixController extends Controller
 {
     public function create()
     {
-        return view('appendix.create');
+        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $data = compact('loginUser');
+        return view('appendix.create',$data);
     }
 
     public function fileUpload($fileName)
@@ -40,7 +43,11 @@ class AppendixController extends Controller
             $fileUrl = AppendixController::fileUpload($key);
             Log::info($key . ' => ' . $fileUrl);
         }
-        Log::info('-------- AppendixController: end --------');
+
+        $progress = Auth::user()->progress;
+        $progress->appendix = 1;
+        Auth::user()->progress()->save($progress);
+
         return redirect('/dashboard');
     }
 

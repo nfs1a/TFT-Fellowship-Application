@@ -4,14 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BasicRequest;
-//use App\Basic;
-//use Validator;
-//use Log;
-//use Request;
+use Log;
 
-
-//use App\Http\Requests\PostStoreRequest;
-//use App\Http\Requests\CommentStoreRequest;
+use Auth;
+use App\Progress;
 
 class BasicController extends Controller
 {
@@ -34,14 +30,21 @@ class BasicController extends Controller
 
     public function create()
     {
-        return view('basic.create');
+        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $data = compact('loginUser');
+        return view('basic.create',$data);
     }
 
 
     public function store(BasicRequest $request)
     {
-        $input=$request->all();
-        return $input;
+        //$input = $request->all();
+
+        $progress = Auth::user()->progress;
+        $progress->basic = 1;
+        Auth::user()->progress()->save($progress);
+
+        return redirect('/dashboard');
     }
 
 
