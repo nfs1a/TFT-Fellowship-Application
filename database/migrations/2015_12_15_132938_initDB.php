@@ -33,7 +33,7 @@ class InitDB extends Migration
             $table->integer('allpay')->default(0);
         });
 
-        Schema::create('basic',function(Blueprint $table)
+        Schema::create('basics',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
@@ -50,7 +50,7 @@ class InitDB extends Migration
             $table->integer('status');      //目前就學工作狀態
         });
 
-        Schema::create('eduHistory',function(Blueprint $table)
+        Schema::create('eduHistories',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('basic_id');
@@ -67,12 +67,12 @@ class InitDB extends Migration
             $table->integer('eduStatus');
         });
 
-        Schema::create('work',function(Blueprint $table)
+        Schema::create('works',function(Blueprint $table)
         {
             $table->increments('id');
         });
 
-        Schema::create('expertise',function(Blueprint $table)
+        Schema::create('expertises',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('work_id');
@@ -80,7 +80,7 @@ class InitDB extends Migration
             $table->text('introduction');
         });
 
-        Schema::create('workExpertise',function(Blueprint $table)
+        Schema::create('workExpertises',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('work_id');
@@ -91,7 +91,7 @@ class InitDB extends Migration
             $table->text('description');
         });
 
-        Schema::create('teach',function(Blueprint $table)
+        Schema::create('teaches',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
@@ -101,7 +101,7 @@ class InitDB extends Migration
             $table->integer('special');
         });
 
-        Schema::create('teachExperience',function(Blueprint $table)
+        Schema::create('teachExperiences',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('teach_id');
@@ -112,7 +112,7 @@ class InitDB extends Migration
             $table->text('description');
         });
 
-        Schema::create('essay',function(Blueprint $table)
+        Schema::create('essaies',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
@@ -121,7 +121,7 @@ class InitDB extends Migration
             $table->text('impressive');
         });
 
-        Schema::create('appendix',function(Blueprint $table)
+        Schema::create('appendixes',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
