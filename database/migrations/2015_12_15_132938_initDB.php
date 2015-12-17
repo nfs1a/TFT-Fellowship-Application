@@ -31,6 +31,7 @@ class InitDB extends Migration
             $table->integer('essay')->default(0);
             $table->integer('appendix')->default(0);
             $table->integer('allpay')->default(0);
+            $table->timestamps();
         });
 
         Schema::create('basics',function(Blueprint $table)
@@ -48,6 +49,7 @@ class InitDB extends Migration
             $table->string('secEmail');     //備用電子郵件
             $table->string('address');      //地址
             $table->integer('status');      //目前就學工作狀態
+            $table->timestamps();
         });
 
         Schema::create('eduHistories',function(Blueprint $table)
@@ -65,11 +67,13 @@ class InitDB extends Migration
             $table->integer('eduPeriodEndYear');
             $table->integer('eduPeriodEndMon');
             $table->integer('eduStatus');
+            $table->timestamps();
         });
 
         Schema::create('works',function(Blueprint $table)
         {
             $table->increments('id');
+            $table->timestamps();
         });
 
         Schema::create('expertises',function(Blueprint $table)
@@ -78,6 +82,7 @@ class InitDB extends Migration
             $table->integer('work_id');
             $table->string('expertise');
             $table->text('introduction');
+            $table->timestamps();
         });
 
         Schema::create('workExpertises',function(Blueprint $table)
@@ -89,6 +94,7 @@ class InitDB extends Migration
             $table->dateTime('startDate');
             $table->dateTime('endDate');
             $table->text('description');
+            $table->timestamps();
         });
 
         Schema::create('teaches',function(Blueprint $table)
@@ -99,6 +105,7 @@ class InitDB extends Migration
             $table->integer('elementary');
             $table->integer('secondary');
             $table->integer('special');
+            $table->timestamps();
         });
 
         Schema::create('teachExperiences',function(Blueprint $table)
@@ -110,6 +117,7 @@ class InitDB extends Migration
             $table->dateTime('startDate');
             $table->dateTime('endDate');
             $table->text('description');
+            $table->timestamps();
         });
 
         Schema::create('essaies',function(Blueprint $table)
@@ -119,6 +127,7 @@ class InitDB extends Migration
             $table->text('motivation');
             $table->text('experience');
             $table->text('impressive');
+            $table->timestamps();
         });
 
         Schema::create('appendixes',function(Blueprint $table)
@@ -133,6 +142,7 @@ class InitDB extends Migration
             $table->string('teacherCertification');
             $table->string('languageCertification');
             $table->string('otherCertification');
+            $table->timestamps();
         });
     }
 
