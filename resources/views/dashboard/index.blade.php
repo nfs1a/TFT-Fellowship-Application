@@ -5,7 +5,7 @@
 <div id="page">
 
     <div id="dashboard" class="container page ">
-        <div class="row sectionTitle"><h1>Application Dashboard</h1></div>
+        <div class="row sectionTitle"><h1>Application Dashboard {{ $loginUser }}</h1></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-12 well background-white ">
@@ -44,10 +44,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->basic == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -68,10 +69,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->work == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -92,10 +94,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->teach == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -116,10 +119,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->essay == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -140,10 +144,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->appendix == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -164,10 +169,11 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        <p class="panel-status-inprogress">
-                                            In Progress
-                                            <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                        </p>
+                                        @if( $user->progress->allpay == 0 )
+                                            @include('dashboard/_inprogress')
+                                        @else
+                                            @include('dashboard/_complete')
+                                        @endif
                                     </div>
                                 </div>
                             </div>
