@@ -26,13 +26,16 @@ class BasicRequest extends Request
 
         return [
             'name'      => 'required|min:2|max:20',
-            'sex'       => 'required|max:1',
-            'phone'     => ['required','regex:/0\d{1,2}(\d{6,8})/'],
-            'cell_phone'=> ['required','regex:/09\d{8}/'],
+            'idNumber'  => 'required|max:10|min:10',
+            'sex'       => 'required|digits:1',
+            'birthday'  => 'required|date',
+            'phone'     => 'required|max:15|min:9',
+            'cellPhone' => 'required|max:15|min:10',
             'skype'     => 'required|max:50',
             'email'     => 'required|email|max:50',
-            'sec_email' => 'email|max:50',
-            'address'   => 'required|max:50'
+            'secEmail'  => 'required|email|max:50',
+            'address'   => 'required|max:50',
+            'status'    => 'required|digits:1'
         ];
     }
 

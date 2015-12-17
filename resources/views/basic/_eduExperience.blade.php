@@ -184,7 +184,7 @@
         <label for="input" class="control-label">年</label>
     </div>
     <div class="col-sm-4">
-ss        <select class="form-control eduPeriod" name="eduPeriodStartMon[]" required="required"
+        <select class="form-control eduPeriod" name="eduPeriodStartMon[]" required="required"
                 required="required">
             <option value="0"></option>
             <option value="01">1</option>

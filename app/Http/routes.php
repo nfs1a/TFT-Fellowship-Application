@@ -37,6 +37,11 @@ Route::get('preview','PreviewController@index');
 
 // ------- 後台 -------
 
+Route::get('logout', function(){
+
+    Auth::logout();
+    return Redirect::to('/');
+});
 
 
 // Route::get('mail_test', function()

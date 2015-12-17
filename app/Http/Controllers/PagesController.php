@@ -12,11 +12,14 @@ use Auth;
 
 class PagesController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function dashboard()
     {
         if (Auth::check()){
-        	$loginUser = Auth::check() ? Auth::user()->name : null;
-        	$user = Auth::user()->with('progress')->first();
+        	$loginUser = Auth::check() ? Auth::user()->id : null;
+        	$user = User::with('progress')->get()->find(Auth::user()->id);
         } else {
         	$user = new User;
             $user->name = 'test'.rand(0,100);

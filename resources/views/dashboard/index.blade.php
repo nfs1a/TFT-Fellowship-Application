@@ -44,10 +44,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->basic == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->basic == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
@@ -69,10 +69,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->work == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->work == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
@@ -94,10 +94,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->teach == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->teach == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
@@ -119,10 +119,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->essay == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->essay == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
@@ -144,10 +144,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->appendix == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->appendix == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
@@ -169,10 +169,10 @@
                                         Contact Details
                                     </p>
                                     <div>
-                                        @if( $user->progress->allpay == 0 )
-                                            @include('dashboard/_inprogress')
-                                        @else
+                                        @if( isset($user['progress']) and $user->progress->allpay == 1 )
                                             @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
                                         @endif
                                     </div>
                                 </div>
