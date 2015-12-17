@@ -85,7 +85,7 @@ class InitDB extends Migration
             $table->timestamps();
         });
 
-        Schema::create('workExpertises',function(Blueprint $table)
+        Schema::create('workExperiences',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('work_id');
