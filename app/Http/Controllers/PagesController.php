@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use Auth;
-
+use App\Progress;
 class PagesController extends Controller
 {
     /**
@@ -28,9 +28,15 @@ class PagesController extends Controller
             $user->save();
             Auth::login($user);
             $user = Auth::user();
+            $progress = new Progress;
+            Auth::user()->progress()->save($progress);
             $loginUser = Auth::check() ? Auth::user()->name : null;
         }
-        $data = compact("loginUser", "user");
+        $progress = Auth::user()->progress();
+        $progress->allpay=1;
+        $isPass = array_product(get_object_vars($progress));
+        $data = compact("loginUser", "user", "isPass");
+
         return view('dashboard.index', $data);
     }
 
@@ -39,3 +45,4 @@ class PagesController extends Controller
         return view('dashboard.basic');
     }
 }
+

@@ -6,20 +6,24 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TeachExperienceRequest;
 use Log;
+use Auth;
 
 class TeachExperienceController extends Controller
 {
     public function create()
     {
-        return view('teachExperience.create');
+        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $data = compact('loginUser');
+        return view('teachExperience.create',$data);
     }
 
     public function store(TeachExperienceRequest $request)
     {
         $input = $request->all();
-        Log::info('-------- TeachExperienceController: store --------');
-        Log::info($input);
-        Log::info('--------');
+
+        $progress = Auth::user()->progress;
+        $progress->teach = 1;
+        Auth::user()->progress()->save($progress);
 
         return redirect('/dashboard');
     }
