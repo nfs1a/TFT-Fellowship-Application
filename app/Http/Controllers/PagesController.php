@@ -32,10 +32,10 @@ class PagesController extends Controller
             Auth::user()->progress()->save($progress);
             $loginUser = Auth::check() ? Auth::user()->name : null;
         }
-        $progress = Auth::user()->progress();
-        $progress->allpay=1;
-        $isPass = array_product(get_object_vars($progress));
-        $data = compact("loginUser", "user", "isPass");
+        $progress = Auth::user()->progress()->first();
+        $progress->allpay = 1;
+        $isPass = $progress['basic'] * $progress['work'] * $progress['teach'] * $progress['essay'] * $progress['appendix'] * $progress['allpay'];
+        $data = compact("loginUser", "user", "isPass", 'progress');
 
         return view('dashboard.index', $data);
     }
