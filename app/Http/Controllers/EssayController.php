@@ -23,12 +23,11 @@ class EssayController extends Controller
     public function store(EssayRequest $request)
     {
         $input = $request->all();
-        Auth::user()->work()->first()->expertises()->truncate();
+        Auth::user()->essay()->truncate();
         foreach ([0, 1, 2] as $i) {
-            $essays = new Expertise;
-            $expertise->expertise = $input['expertise'][$i];
-            $expertise->introduction = $input['introduction'][$i];
-            Auth::user()->work()->first()->expertises()->save($expertise);
+            $essays = new Essay;
+            $essays->essay= $input['essay'][$i];
+            Auth::user()->essay()->save($essays);
         }
         $progress = Auth::user()->progress;
         $progress->essay = 1;
