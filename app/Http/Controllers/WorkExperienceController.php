@@ -27,7 +27,7 @@ class WorkExperienceController extends Controller
         // Log::info('------- WorkExperienceController: store -------'); 
         // Log::info(count($input['organization']));        
         // Log::info('===============================================\n\n');
-        Auth::user()->work()->first()->expertises()->truncate();
+        Auth::user()->work()->first()->expertises()->delete();
         foreach ([0,1,2] as $i) {
             $expertise = new Expertise;
             $expertise->expertise = $input['expertise'][$i];
@@ -39,7 +39,7 @@ class WorkExperienceController extends Controller
         // Log::info(Auth::user()->work()->first()->expertises()->get());        
         // Log::info('===============================================\n\n');
 
-        Auth::user()->work()->first()->workExperiences()->truncate();
+        Auth::user()->work()->first()->workExperiences()->delete();
         foreach ([0,1,2] as $i) {
             $workExperience = new WorkExperience;
             $workExperience->organization = $input['organization'][$i];

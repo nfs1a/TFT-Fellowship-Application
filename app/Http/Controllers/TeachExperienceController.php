@@ -27,7 +27,7 @@ class TeachExperienceController extends Controller
         // Log::info($input);        
         // Log::info('===============================================\n\n');
 
-        Auth::user()->teach()->truncate();
+        Auth::user()->teach()->delete();
         $teach = new Teach;
         $teach->preschool = $input['preschool'];
         $teach->elementary = $input['elementary'];
@@ -35,7 +35,7 @@ class TeachExperienceController extends Controller
         $teach->special = $input['special'];
         Auth::user()->teach()->save($teach);
 
-        Auth::user()->teach()->first()->teachExperiences()->truncate();
+        Auth::user()->teach()->first()->teachExperiences()->delete();
         foreach ([0,1,2] as $i) {
             $teachExperience = new teachExperience;
             $teachExperience->organization = $input['organization'][$i];
