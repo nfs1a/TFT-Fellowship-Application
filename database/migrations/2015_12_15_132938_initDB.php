@@ -73,6 +73,7 @@ class InitDB extends Migration
         Schema::create('works',function(Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('user_id');
             $table->timestamps();
         });
 
