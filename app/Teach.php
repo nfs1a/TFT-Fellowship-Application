@@ -10,4 +10,8 @@ class Teach extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function teachExperiences()
+    {
+        return $this->hasMany('App\teachExperience');
+    }
 }
