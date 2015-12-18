@@ -124,9 +124,9 @@ class InitDB extends Migration
         {
             $table->increments('id');
             $table->integer('user_id');
+            $table->text('essay0');
             $table->text('essay1');
             $table->text('essay2');
-            $table->text('essay3');
             $table->timestamps();
         });
 

@@ -22,7 +22,7 @@
                                         - 你在帶領的是怎麼樣的一群人？持續多久時間？
                                         - 你達到什麼目標？
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"></textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[0] }}</textarea>
                                     {{ $errors->first('essay.0') }}
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                         這是因為參與TFT計劃本身就是一個重大的承諾，申請者不僅僅是要承諾成為一個兩年全職老師，
                                         為了在兩年之後你的學生及學校能造成一些影響或改變，遇到挑戰時我們希望你能努力不懈、持之以恆。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"></textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[1] }}</textarea>
                                     {{ $errors->first('essay.1') }}
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"></textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[2] }}</textarea>
                                     {{ $errors->first('essay.2') }}
                                 </div>
                             </div>
