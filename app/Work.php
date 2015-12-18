@@ -10,4 +10,12 @@ class Work extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function workExperiences()
+    {
+        return $this->hasMany('App\WorkExperience');
+    }
+    public function expertises()
+    {
+        return $this->hasMany('App\Expertise');
+    }
 }
