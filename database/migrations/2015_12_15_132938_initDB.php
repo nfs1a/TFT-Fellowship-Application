@@ -120,7 +120,7 @@ class InitDB extends Migration
             $table->timestamps();
         });
 
-        Schema::create('essaies',function(Blueprint $table)
+        Schema::create('essays',function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id');
