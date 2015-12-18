@@ -11,6 +11,7 @@ use Auth;
 use App\Progress;
 use App\WorkExperience;
 use App\Expertise;
+use App\Work;
 
 class WorkExperienceController extends Controller
 {
@@ -27,6 +28,11 @@ class WorkExperienceController extends Controller
         // Log::info('------- WorkExperienceController: store -------'); 
         // Log::info(count($input['organization']));        
         // Log::info('===============================================\n\n');
+        
+        Auth::user()->work()->delete();
+        $work = new Work;
+        Auth::user()->work()->save($work);
+
         Auth::user()->work()->first()->expertises()->delete();
         foreach ([0,1,2] as $i) {
             $expertise = new Expertise;
