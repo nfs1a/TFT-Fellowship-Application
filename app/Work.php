@@ -14,4 +14,8 @@ class Work extends Model
     {
         return $this->hasMany('App\WorkExperience');
     }
+    public function expertises()
+    {
+        return $this->hasMany('App\Expertise');
+    }
 }
