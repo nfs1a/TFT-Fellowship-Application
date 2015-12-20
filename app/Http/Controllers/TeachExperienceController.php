@@ -15,8 +15,14 @@ class TeachExperienceController extends Controller
 {
     public function create()
     {
+        $userTeach = Auth::user()->teach()->first();
+        $teachExperiences = isset(Auth::user()->teach()->with('teachExperiences')->first()->teachExperiences)? Auth::user()->teach()->with('teachExperiences')->first()->teachExperiences: null;
+        Log::info('------- TeachExperienceController: create -------'); 
+        Log::info($userTeach);        
+        Log::info($teachExperiences);        
+        Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        $data = compact('loginUser');
+        $data = compact('loginUser', 'userTeach', 'teachExperiences');
         return view('teachExperience.create',$data);
     }
 
@@ -49,9 +55,6 @@ class TeachExperienceController extends Controller
         Log::info('------- TeachExperienceController: store -------'); 
         Log::info(Auth::user()->teach()->with('teachExperiences')->get());        
         Log::info('===============================================\n\n');
-
-
-
 
         $progress = Auth::user()->progress;
         $progress->teach = 1;

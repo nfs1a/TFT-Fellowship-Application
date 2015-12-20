@@ -96,3 +96,20 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+
+        $preSchool = {{ $preSchool = isset($userTeach->preSchool)? $userTeach->preSchool: 'undefined' }};
+        $preSchool = {{ $preSchool = Input::old('preSchool')? Input::old('preSchool'): $preSchool }};
+        $("input[name='preschool'][value='"+$preSchool+"'").attr("checked",true); 
+        $elementary = {{ $elementary = isset($userTeach->elementary)? $userTeach->elementary: 'undefined' }};
+        $elementary = {{ $elementary = Input::old('elementary')? Input::old('elementary'): $elementary }};
+        $("input[name='elementary'][value='"+$elementary+"'").attr("checked",true); 
+        $secondary = {{ $secondary = isset($userTeach->secondary)? $userTeach->secondary: 'undefined' }};
+        $secondary = {{ $secondary = Input::old('secondary')? Input::old('secondary'): $secondary }};
+        $("input[name='secondary'][value='"+$secondary+"'").attr("checked",true); 
+        $special = {{ $special = isset($userTeach->special)? $userTeach->special: 'undefined' }};
+        $special = {{ $special = Input::old('special')? Input::old('special'): $special }};
+        $("input[name='special'][value='"+$special+"'").attr("checked",true); 
+    });
+</script>>

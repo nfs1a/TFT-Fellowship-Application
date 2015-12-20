@@ -75,19 +75,6 @@
             document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
             document.getElementById("exampleText").innerHTML = exampleText;
         }
-        $(function () {
-            $(".date").datepicker();
-            $(".address").twzipcode({
-                'css': ['form-control', 'form-control', 'form-control col-sm-3'],
-                'countyName': 'county',   // 預設值為 county
-                'districtName': 'district', // 預設值為 district
-                'zipcodeName': 'zipcode',   // 預設值為 zipcode
-                'zipcodeSel': '106', // 此參數會優先於 countySel, districtSel
-                'countySel': '台北市',
-                'districtSel': '大安區'
-            });
-        });
-
         function dynamicSelect($mainClass, $subClass, selectValues) {
             $mainClass.change(function () {
                 if (selectValues[$mainClass.val()]) {

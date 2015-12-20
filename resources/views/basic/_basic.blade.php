@@ -128,7 +128,7 @@
 <div class="form-group" onmouseover="displayExample('status')">
     <label for="input" class="col-md-2 control-label">就學就業狀況</label>
 
-    <div class="col-sm-10">
+    <div class="col-sm-10 status">
         <select class="form-control" name="status" required="required">
             <option value="0" selected="selected">選一個</option>
             <option value="1">我是學生，今年六月還沒有要畢業。</option>
@@ -140,3 +140,35 @@
         {{ $errors->first('status') }}
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".date").datepicker();
+    });
+    $(function () {
+        $zipcode = {{ $zipcode = isset($userBasic->zipcode)? $userBasic->zipcode: '106' }};
+        $zipcode = {{ $zipcode = Input::old('zipcode')? Input::old('zipcode'): $zipcode }};
+        $county = "{{ $county = isset($userBasic->county)? $userBasic->county: '台北市' }}";
+        $county = "{{ $county = Input::old('county')? Input::old('county'): $county }}";
+        $district = "{{ $district = isset($userBasic->district)? $userBasic->district: '大安區' }}";
+        $district = "{{ $district = Input::old('district')? Input::old('district'): $district }}";
+        $(".address").twzipcode({
+            'css': ['form-control', 'form-control', 'form-control col-sm-3'],
+            'countyName': 'county',   // 預設值為 county
+            'districtName': 'district', // 預設值為 district
+            'zipcodeName': 'zipcode',   // 預設值為 zipcode
+            'zipcodeSel': $zipcode, // 此參數會優先於 countySel, districtSel
+            'countySel': $county,
+            'districtSel': $district
+        });
+    });
+    $(function () {
+        $sex = {{ $sex = isset($userBasic->sex)? $userBasic->sex: 'undefined' }};
+        $sex = {{ $sex = Input::old('sex')? Input::old('sex'): $sex }};
+        $("input[name='sex'][value='"+$sex+"'").attr("checked",true); 
+
+        $status = {{ $status = isset($userBasic->status)? $userBasic->status: 'undefined' }};
+        $status = {{ $status = Input::old('status')? Input::old('status'): $status }};
+        $("div.status select").val($status);
+    });
+</script>
