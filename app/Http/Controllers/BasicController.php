@@ -8,37 +8,71 @@ use Log;
 
 use Auth;
 use App\Progress;
+use App\Basic;
+use App\EduHistory;
 
 class BasicController extends Controller
 {
-    public function index()
-    {
-        $basic = Basic::all();
-
-        $post_type = '基本資料列表';
-        //把性別代號轉換成文字
-        foreach($basic as $var){
-            if($var->sex == 1 ) $var->sex = '男';
-            elseif ($var->sex == 2 ) $var->sex = '女';
-            else $var->sex = '其他';
-        }
-        $data = compact('basic','post_type');
-
-        return view('basic.index', $data);
-    }
-
-
     public function create()
     {
+        $userBasic = Auth::user()->basic()->first();
+        $eduHistorys = isset(Auth::user()->basic()->with('eduHistorys')->first()->eduHistorys)? Auth::user()->basic()->with('eduHistorys')->first()->eduHistorys: null;
+        // Log::info('------- BasicController: create -------'); 
+        // Log::info($userBasic);        
+        // Log::info($eduHistorys);        
+        // Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        $data = compact('loginUser');
+        $data = compact('loginUser', 'userBasic', 'eduHistorys');
         return view('basic.create',$data);
     }
 
 
     public function store(BasicRequest $request)
     {
-        //$input = $request->all();
+
+        $input = $request->all();
+        Log::info('------- BasicController: store/input -------'); 
+        Log::info($input);        
+        Log::info('===============================================\n\n');
+
+        Auth::user()->basic()->delete();
+        $basic = new Basic;
+        $basic->name = $input['name'];
+        $basic->idNumber = $input['idNumber'];
+        $basic->sex = $input['sex'];
+        $basic->birthday = $input['birthday'];
+        $basic->phone = $input['phone'];
+        $basic->cellPhone = $input['cellPhone'];
+        $basic->skype = $input['skype'];
+        $basic->email = $input['email'];
+        $basic->secEmail = $input['secEmail'];
+        $basic->county = $input['county'];
+        $basic->district = $input['district'];
+        $basic->zipcode = $input['zipcode'];
+        $basic->address = $input['address'];
+        $basic->status = $input['status'];
+        // Log::info('------- BasicController: store/basic -------'); 
+        // Log::info($basic);        
+        // Log::info('===============================================\n\n');
+        Auth::user()->basic()->save($basic);
+
+        Auth::user()->basic()->first()->eduHistorys()->delete();
+        foreach ([0,1,2] as $i) {
+            $eduHistory = new EduHistory;
+            $eduHistory->school = $input['school'][$i];
+            $eduHistory->degreeLevel = $input['degreeLevel'][$i];
+            $eduHistory->major = $input['major'][$i];
+            $eduHistory->majorMainClass = $input['majorMainClass'][$i];
+            $eduHistory->majorSubClass = $input['majorSubClass'][$i];
+            $eduHistory->eduMainArea = $input['eduMainArea'][$i];
+            $eduHistory->eduSubArea = $input['eduSubArea'][$i];
+            $eduHistory->eduPeriodStartYear = $input['eduPeriodStartYear'][$i];
+            $eduHistory->eduPeriodStartMon = $input['eduPeriodStartMon'][$i];
+            $eduHistory->eduPeriodEndYear = $input['eduPeriodEndYear'][$i];
+            $eduHistory->eduPeriodEndMon = $input['eduPeriodEndMon'][$i];
+            $eduHistory->eduStatus = $input['eduStatus'][$i];
+            Auth::user()->basic()->first()->eduHistorys()->save($eduHistory);
+        }
 
         $progress = Auth::user()->progress;
         $progress->basic = 1;
@@ -47,27 +81,4 @@ class BasicController extends Controller
         return redirect('/dashboard');
     }
 
-
-    public function show($id)
-    {
-        $query = Basic::find($id);
-        return view('basic.show',compact('query'));
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
 }

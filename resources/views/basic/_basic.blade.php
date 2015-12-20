@@ -2,8 +2,10 @@
     <label for="input" class="col-md-2 control-label">姓名</label>
 
     <div class="col-md-10">
+        {{--*/ $name = isset($userBasic->name)? $userBasic->name: '' /*--}}
+        {{--*/ $name = Input::old('name')? Input::old('name'): $name /*--}}
         <input type="text" class="form-control" name="name" placeholder="王大明"
-               value="{{ Input::old('name') }}" required="required" maxlength="20">
+               value="{{ $name }}" required="required" maxlength="20">
         {{ $errors->first('name') }}
     </div>
 </div>
@@ -11,8 +13,10 @@
     <label for="input" class="col-md-2 control-label">身分證字號</label>
 
     <div class="col-md-10">
+        {{--*/ $idNumber = isset($userBasic->idNumber)? $userBasic->idNumber: '' /*--}}
+        {{--*/ $idNumber = Input::old('idNumber')? Input::old('idNumber'): $idNumber /*--}}
         <input type="text" class="form-control" name="idNumber" placeholder="A123456789"
-               value="{{ Input::old('idNumber') }}" required="required"
+               value="{{ $idNumber }}" required="required"
                pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$">
         {{ $errors->first('id_number') }}
     </div>
@@ -37,9 +41,11 @@
     <label for="input" class="col-md-2 control-label">生日</label>
 
     <div class="col-md-10">
+        {{--*/ $birthday = isset($userBasic->birthday)? $userBasic->birthday: '' /*--}}
+        {{--*/ $birthday = Input::old('birthday')? Input::old('birthday'): $birthday /*--}}
         <input type="text" name="birthday" class="form-control date"
                placeholder="1991/03/21"
-               required="required" value="{{ Input::old('birthday') }}"/>
+               required="required" value="{{ $birthday }}"/>
         {{ $errors->first('birthday') }}
     </div>
 </div>
@@ -47,8 +53,10 @@
     <label for="input" class="col-sm-2 control-label">室內電話</label>
 
     <div class="col-sm-10">
+        {{--*/ $phone = isset($userBasic->phone)? $userBasic->phone: '' /*--}}
+        {{--*/ $phone = Input::old('phone')? Input::old('phone'): $phone /*--}}
         <input type="text" class="form-control" name="phone" placeholder="0227386224"
-               value="{{ Input::old('phone') }}" required="required">
+               value="{{ $phone }}" required="required">
         {{ $errors->first('phone') }}
     </div>
 </div>
@@ -56,8 +64,10 @@
     <label for="input" class="col-sm-2 control-label">手機號碼</label>
 
     <div class="col-sm-10">
+        {{--*/ $cellPhone = isset($userBasic->cellPhone)? $userBasic->cellPhone: '' /*--}}
+        {{--*/ $cellPhone = Input::old('cellPhone')? Input::old('cellPhone'): $cellPhone /*--}}
         <input type="text" class="form-control" name="cellPhone" placeholder="0912345678"
-               required="required" value="{{ Input::old('cellPhone') }}">
+               required="required" value="{{ $cellPhone }}">
         {{ $errors->first('cellPhone') }}
     </div>
 </div>
@@ -65,8 +75,10 @@
     <label for="input" class="col-sm-2 control-label">Skype帳號</label>
 
     <div class="col-sm-10">
+        {{--*/ $skype = isset($userBasic->skype)? $userBasic->skype: '' /*--}}
+        {{--*/ $skype = Input::old('skype')? Input::old('skype'): $skype /*--}}
         <input type="text" class="form-control" name="skype" placeholder="Skype"
-               required="required" value="{{ Input::old('skype') }}">
+               required="required" value="{{ $skype }}">
         {{ $errors->first('skype') }}
     </div>
 </div>
@@ -74,9 +86,11 @@
     <label for="input" class="col-sm-2 control-label">主要電子郵件</label>
 
     <div class="col-sm-10">
+        {{--*/ $email = isset($userBasic->email)? $userBasic->email: '' /*--}}
+        {{--*/ $email = Input::old('email')? Input::old('email'): $email /*--}}
         <input type="email" class="form-control" name="email"
                placeholder="tft@teach4taiwan.org"
-               required="required" maxlength="30" value="{{ Input::old('email') }}">
+               required="required" maxlength="30" value="{{ $email }}">
         {{ $errors->first('email') }}
     </div>
 </div>
@@ -84,9 +98,11 @@
     <label for="input" class="col-sm-2 control-label">備用電子郵件</label>
 
     <div class="col-sm-10">
+        {{--*/ $secEmail = isset($userBasic->secEmail)? $userBasic->secEmail: '' /*--}}
+        {{--*/ $secEmail = Input::old('secEmail')? Input::old('secEmail'): $secEmail /*--}}
         <input type="email" class="form-control" name="secEmail"
                placeholder="tft@teach4taiwan.org" maxlength="30"
-               value="{{ Input::old('secEmail') }}">
+               value="{{ $secEmail }}">
         {{ $errors->first('secEmail') }}
     </div>
 </div>
@@ -99,9 +115,11 @@
             </div>
         </div>
         <div class="col-sm-12" style="padding: 0px;">
+            {{--*/ $address = isset($userBasic->address)? $userBasic->address: '' /*--}}
+            {{--*/ $address = Input::old('address')? Input::old('address'): $address /*--}}
             <input type="address" class="form-control" name="address"
                    placeholder="復興南路二段318號三樓" required="required" maxlength="50"
-                   value="{{ Input::old('address') }}">
+                   value="{{ $address }}">
             {{ $errors->first('address') }}
         </div>
     </div>

@@ -20,10 +20,10 @@ class WorkExperienceController extends Controller
         $userWork = Auth::user()->work()->with('expertises', 'workExperiences');
         $expertises = isset($userWork->first()->expertises)? $userWork->first()->expertises: null;
         $workExperiences = isset($userWork->first()->workExperiences)? $userWork->first()->workExperiences: null;
-        // Log::info('------- WorkExperienceController: store -------'); 
-        // Log::info($expertises);        
-        // Log::info($workExperiences);        
-        // Log::info('===============================================\n\n');
+        Log::info('------- WorkExperienceController: store -------'); 
+        Log::info($expertises);        
+        Log::info($workExperiences);        
+        Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->name : null;
         $data = compact('loginUser', 'expertises', 'workExperiences');
         return view('workExperience.create', $data);

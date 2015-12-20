@@ -10,4 +10,8 @@ class Basic extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function eduHistorys()
+    {
+        return $this->hasMany('App\EduHistory');
+    }
 }
