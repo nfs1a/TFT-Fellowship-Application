@@ -339,8 +339,10 @@
         <label for="input" class="col-sm-2 control-label">學校名稱</label>
 
         <div class="col-sm-10">
+            {{--*/ $school = isset($eduHistorys[$i]->school)? $eduHistorys[$i]->school: '' /*--}}
+            {{--*/ $school = isset(Input::old('school')[$i])? Input::old('school')[$i]: $school /*--}}
             <input type="text" class="form-control" name="school[]" placeholder="國立ＯＯ大學"
-                   value="{{ Input::old('school')[$i] }}">
+                   value="{{ $school }}">
         </div>
         {{ $errors->first('school.'.$i) }}
     </div>
@@ -369,8 +371,10 @@
         <label for="input" class="col-sm-2 control-label">科系名稱</label>
 
         <div class="col-sm-10">
+            {{--*/ $major = isset($eduHistorys[$i]->major)? $eduHistorys[$i]->major: '' /*--}}
+            {{--*/ $major = isset(Input::old('major')[$i])? Input::old('major')[$i]: $major /*--}}
             <input type="text" class="form-control" name="major[]" placeholder="幼兒教育學系"
-                   value="{{ Input::old('major')[$i] }}">
+                   value="{{ $major }}">
         </div>
         {{ $errors->first('major.'.$i) }}
     </div>
