@@ -8,7 +8,6 @@
                 <!-- sectionTitle -->
                 <div class="row sectionTitle">
                     <h1>資料預覽</h1>
-                    {{ $user }}
                 </div>
                 
                 <!-- sectionBody -->
