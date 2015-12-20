@@ -96,3 +96,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $preSchool = {{ $userTeach->preSchool }};
+        $("input[name='preschool'][value='"+$preSchool+"'").attr("checked",true); 
+        $elementary = {{ $userTeach->elementary }};
+        $("input[name='elementary'][value='"+$elementary+"'").attr("checked",true); 
+        $secondary = {{ $userTeach->secondary }};
+        $("input[name='secondary'][value='"+$secondary+"'").attr("checked",true); 
+        $special = {{ $userTeach->special }};
+        $("input[name='special'][value='"+$special+"'").attr("checked",true); 
+    });
+</script>>
