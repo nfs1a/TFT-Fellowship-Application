@@ -18,8 +18,12 @@ class WorkExperienceController extends Controller
     public function create()
     {
         $userWork = Auth::user()->work()->with('expertises', 'workExperiences');
-        $expertises = $userWork->first()->expertises;
-        $workExperiences = $userWork->first()->workExperiences;
+        $expertises = isset($userWork->first()->expertises)? $userWork->first()->expertises: null;
+        $workExperiences = isset($userWork->first()->workExperiences)? $userWork->first()->workExperiences: null;
+        // Log::info('------- WorkExperienceController: store -------'); 
+        // Log::info($expertises);        
+        // Log::info($workExperiences);        
+        // Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->name : null;
         $data = compact('loginUser', 'expertises', 'workExperiences');
         return view('workExperience.create', $data);
