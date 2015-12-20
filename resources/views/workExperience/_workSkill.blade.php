@@ -17,8 +17,10 @@
             <label for="input" class="col-md-2 control-label">專長</label>
 
             <div class="col-md-10">
+                {{--*/ $expertise = isset($expertises[0]->expertise)? $expertises[0]->expertise: '' /*--}}
+                {{--*/ $expertise = isset(Input::old('expertise')[0])? Input::old('expertise')[0]: $expertise /*--}}
                 <input type="text" class="form-control" name="expertise[]" placeholder="組織單位"
-                       value="{{ Input::old('expertise')[0] }}" required="required" maxlength="10">
+                       value="{{ $expertise }}" required="required" maxlength="10">
                 {{ $errors->first('expertise.0') }}
             </div>
         </div>
@@ -26,8 +28,10 @@
         <div class="form-group" onmouseover="displayExample('introduction')">
             <label for="input" class="col-md-2 control-label">敘述</label>
             <div class="col-md-10">
+                {{--*/ $introduction = isset($expertises[0]->introduction)? $expertises[0]->introduction: '' /*--}}
+                {{--*/ $introduction = isset(Input::old('introduction')[0])? Input::old('introduction')[0]: $introduction /*--}}
                 <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                    required="required" value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[0] }}</textarea>
+                    required="required" value="" placeholder="簡述成就" style="margin-left: 0px;">{{ $introduction }}</textarea>
                 {{ $errors->first('introduction.0') }}
             </div>
         </div>
@@ -40,8 +44,10 @@
                 <label for="input" class="col-md-2 control-label">專長</label>
 
                 <div class="col-md-10">
+                    {{--*/ $expertise = isset($expertises[$i]->expertise)? $expertises[$i]->expertise: '' /*--}}
+                    {{--*/ $expertise = isset(Input::old('expertise')[$i])? Input::old('expertise')[$i]: $expertise /*--}}
                     <input type="text" class="form-control" name="expertise[]" placeholder="組織單位"
-                           value="{{ Input::old('expertise')[$i] }}" maxlength="10">
+                           value="{{ $expertise }}" maxlength="10">
                     {{ $errors->first('expertise.'.$i) }}
                 </div>
             </div>
@@ -49,8 +55,10 @@
             <div class="form-group" onmouseover="displayExample('introduction')">
                 <label for="input" class="col-md-2 control-label">敘述</label>
                 <div class="col-md-10">
+                    {{--*/ $introduction = isset($expertises[$i]->introduction)? $expertises[$i]->introduction: '' /*--}}
+                    {{--*/ $introduction = isset(Input::old('introduction')[$i])? Input::old('introduction')[$i]: $introduction /*--}}
                     <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                        value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[$i] }}</textarea>
+                        value="" placeholder="簡述成就" style="margin-left: 0px;">{{ $introduction }}</textarea>
                     {{ $errors->first('introduction.'.$i) }}
                 </div>
             </div>

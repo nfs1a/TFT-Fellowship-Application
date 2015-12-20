@@ -47,6 +47,9 @@ class InitDB extends Migration
             $table->string('skype');        //skype
             $table->string('email')->unique();        //電子郵件
             $table->string('secEmail');     //備用電子郵件
+            $table->string('county');      //地址
+            $table->string('district');      //地址
+            $table->string('zipcode');      //地址
             $table->string('address');      //地址
             $table->integer('status');      //目前就學工作狀態
             $table->timestamps();
@@ -58,6 +61,7 @@ class InitDB extends Migration
             $table->integer('basic_id');
             $table->string('school');
             $table->integer('degreeLevel');
+            $table->integer('major');
             $table->integer('majorMainClass');
             $table->integer('majorSubClass');
             $table->integer('eduMainArea');

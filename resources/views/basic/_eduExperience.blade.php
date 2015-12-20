@@ -6,8 +6,10 @@
     <label for="input" class="col-sm-2 control-label">學校名稱</label>
 
     <div class="col-sm-10">
+        {{--*/ $school = isset($eduHistorys[0]->school)? $eduHistorys[0]->school: '' /*--}}
+        {{--*/ $school = isset(Input::old('school')[0])? Input::old('school')[0]: $school /*--}}            
         <input type="text" class="form-control" name="school[]" placeholder="國立ＯＯ大學"
-               required="required" value="{{ Input::old('school[0]') }}">
+               required="required" value="{{ $school }}">
     </div>
     {{ $errors->first('school.0') }}
 </div>
@@ -36,8 +38,10 @@
     <label for="input" class="col-sm-2 control-label">科系名稱</label>
 
     <div class="col-sm-10">
+        {{--*/ $major = isset($eduHistorys[0]->major)? $eduHistorys[0]->major: '' /*--}}
+        {{--*/ $major = isset(Input::old('major')[0])? Input::old('major')[0]: $major /*--}}            
         <input type="text" class="form-control" name="major[]" placeholder="幼兒教育學系"
-               required="required" value="{{ Input::old('major[0]') }}">
+               required="required" value="{{ $major }}">
     </div>
     {{ $errors->first('major.0') }}
 </div>

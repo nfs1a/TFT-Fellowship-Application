@@ -11,14 +11,22 @@ use Auth;
 use App\Progress;
 use App\WorkExperience;
 use App\Expertise;
+use App\Work;
 
 class WorkExperienceController extends Controller
 {
     public function create()
     {
+        $userWork = Auth::user()->work()->with('expertises', 'workExperiences');
+        $expertises = isset($userWork->first()->expertises)? $userWork->first()->expertises: null;
+        $workExperiences = isset($userWork->first()->workExperiences)? $userWork->first()->workExperiences: null;
+        Log::info('------- WorkExperienceController: store -------'); 
+        Log::info($expertises);        
+        Log::info($workExperiences);        
+        Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        $data = compact('loginUser');
-        return view('workExperience.create',$data);
+        $data = compact('loginUser', 'expertises', 'workExperiences');
+        return view('workExperience.create', $data);
     }
 
     public function store(WorkExperienceRequest $request)
@@ -27,6 +35,11 @@ class WorkExperienceController extends Controller
         // Log::info('------- WorkExperienceController: store -------'); 
         // Log::info(count($input['organization']));        
         // Log::info('===============================================\n\n');
+        
+        Auth::user()->work()->delete();
+        $work = new Work;
+        Auth::user()->work()->save($work);
+
         Auth::user()->work()->first()->expertises()->delete();
         foreach ([0,1,2] as $i) {
             $expertise = new Expertise;
