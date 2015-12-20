@@ -18,8 +18,7 @@
 
             <div class="col-md-10">
                 <input type="text" class="form-control" name="expertise[]" placeholder="組織單位"
-                       value="{{ Input::old('expertise')[0] }}" required="required" maxlength="10">
-                {{ $errors->first('expertise.0') }}
+                       value="{{ Input::old('expertise')[0]? Input::old('expertise')[0]: $expertises[0]->expertise }}" required="required" maxlength="10">
             </div>
         </div>
         <!-- introduction[]: 敘述 -->
@@ -27,7 +26,7 @@
             <label for="input" class="col-md-2 control-label">敘述</label>
             <div class="col-md-10">
                 <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                    required="required" value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[0] }}</textarea>
+                    required="required" value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[0]? Input::old('introduction')[0]: $expertises[0]->introduction }}</textarea>
                 {{ $errors->first('introduction.0') }}
             </div>
         </div>
@@ -41,7 +40,7 @@
 
                 <div class="col-md-10">
                     <input type="text" class="form-control" name="expertise[]" placeholder="組織單位"
-                           value="{{ Input::old('expertise')[$i] }}" maxlength="10">
+                           value="{{ Input::old('expertise')[$i]? Input::old('expertise')[$i]: $expertises[$i]->expertise }}" maxlength="10">
                     {{ $errors->first('expertise.'.$i) }}
                 </div>
             </div>
@@ -50,7 +49,7 @@
                 <label for="input" class="col-md-2 control-label">敘述</label>
                 <div class="col-md-10">
                     <textarea name="introduction[]" class="form-control" cols="30" maxlength="30"
-                        value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[$i] }}</textarea>
+                        value="" placeholder="簡述成就" style="margin-left: 0px;">{{ Input::old('introduction')[$i]? Input::old('introduction')[$i]: $expertises[$i]->introduction }}</textarea>
                     {{ $errors->first('introduction.'.$i) }}
                 </div>
             </div>

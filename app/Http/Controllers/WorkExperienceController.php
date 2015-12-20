@@ -17,9 +17,12 @@ class WorkExperienceController extends Controller
 {
     public function create()
     {
+        $userWork = Auth::user()->work()->with('expertises', 'workExperiences');
+        $expertises = $userWork->first()->expertises;
+        $workExperiences = $userWork->first()->workExperiences;
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        $data = compact('loginUser');
-        return view('workExperience.create',$data);
+        $data = compact('loginUser', 'expertises', 'workExperiences');
+        return view('workExperience.create', $data);
     }
 
     public function store(WorkExperienceRequest $request)
