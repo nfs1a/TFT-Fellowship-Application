@@ -22,11 +22,11 @@
     </div>
 </div>
 <div class="form-group" onmouseover="displayExample('sex')">
-    <label for="input" class="col-md-2 control-label">生理性別 </label>
+    <label for="input" class="col-md-2 control-label">生理性別</label>
 
     <div class="col-md-10">
         <div class="col-md-4">
-            <input type="radio" name="sex" id="boy" value="1" required="required" > 男
+            <input type="radio" name="sex" id="boy" value="1" required="required"> 男
         </div>
         <div class="col-md-4">
             <input type="radio" name="sex" id="gril" value="2"> 女
@@ -130,6 +130,7 @@
 
     <div class="col-sm-10 status">
         <select class="form-control" name="status" required="required">
+            <option value="0" selected="selected">選一個</option>
             <option value="1">我是學生，今年六月還沒有要畢業。</option>
             <option value="2">我是學生，預計今年六月畢業，正在找尋未來工作。</option>
             <option value="3">我目前在工作，一邊在職進修。</option>
@@ -164,8 +165,8 @@
     $(function () {
         $sex = {{ $sex = isset($userBasic->sex)? $userBasic->sex: 'undefined' }};
         $sex = {{ $sex = Input::old('sex')? Input::old('sex'): $sex }};
-//        $("input[name='sex'][value='"+$sex+"'").attr("checked",true);
-        $("input[name='sex'][value='"+$sex+"']").attr("checked",true);
+        $("input[name='sex'][value='"+$sex+"']").attr("checked",true); 
+
         $status = {{ $status = isset($userBasic->status)? $userBasic->status: 'undefined' }};
         $status = {{ $status = Input::old('status')? Input::old('status'): $status }};
         $("div.status select").val($status);
