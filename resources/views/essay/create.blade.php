@@ -16,13 +16,15 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-12">
-                                    <p style="white-space: pre-line;" class="large-label col-md-12">請與我們分享你近期（最好在最近四年內）一個重要的領導經驗，例如帶領一個團隊、一群人或另一個人。
+                                    <p style="white-space: pre-line;" class="large-label col-md-12">
+                                        請與我們分享你近期（最好在最近四年內）一個重要的領導經驗，例如帶領一個團隊、一群人或另一個人。
                                         - 在此經驗中，你所扮演的角色或位置是什麼？
                                         - 在這個角色中，你的責任為何？
                                         - 你在帶領的是怎麼樣的一群人？持續多久時間？
                                         - 你達到什麼目標？
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[0] }}</textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]"
+                                              required="required">{{ Input::old('essay')[0] ? Input::old('essay')[0]:$userEssay->essay0 }}</textarea>
                                     {{ $errors->first('essay.0') }}
                                 </div>
                             </div>
@@ -31,12 +33,14 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-12">
-                                    <p style="white-space: pre-line;" class="large-label col-md-12">請描述過往無論是生活、求學、工作、志工、社團的經驗中，你曾經遭遇過什麼挫折，以及這些經驗對於你成為一個出色的TFT老師有何影響？
+                                    <p style="white-space: pre-line;" class="large-label col-md-12">
+                                        請描述過往無論是生活、求學、工作、志工、社團的經驗中，你曾經遭遇過什麼挫折，以及這些經驗對於你成為一個出色的TFT老師有何影響？
                                         我們要看見你過去敢於承諾，遇挑戰時能堅持不懈。
                                         這是因為參與TFT計劃本身就是一個重大的承諾，申請者不僅僅是要承諾成為一個兩年全職老師，
                                         為了在兩年之後你的學生及學校能造成一些影響或改變，遇到挑戰時我們希望你能努力不懈、持之以恆。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[1] }}</textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]"
+                                              required="required">{{ Input::old('essay')[1] ? Input::old('essay')[1]:$userEssay->essay1 }}</textarea>
                                     {{ $errors->first('essay.1') }}
                                 </div>
                             </div>
@@ -45,18 +49,20 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-12">
-                                    <p style="white-space: pre-line;" class="large-label col-md-12">- 請說明你申請Teach for Taiwan教師計畫的動機。
+                                    <p style="white-space: pre-line;" class="large-label col-md-12">- 請說明你申請Teach for
+                                        Taiwan教師計畫的動機。
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ Input::old('essay')[2] }}</textarea>
+                                    <textarea class="form-control" rows="10" name="essay[]"
+                                              required="required">{{ Input::old('essay')[2] ? Input::old('essay')[2]:$userEssay->essay2 }}</textarea>
                                     {{ $errors->first('essay.2') }}
                                 </div>
                             </div>
                         </div>
                     </div>
-                                        <!-- sectionBody: Right -->
+                    <!-- sectionBody: Right -->
                     <div class="pull-right col-md-5 hidden-xs hidden-sm">
                         <div class="affix col-md-5" data-offset-top="60" data-offset-bottom="1000">
                             @include('partials/_hint')
