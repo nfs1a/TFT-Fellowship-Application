@@ -22,17 +22,17 @@
     </div>
 </div>
 <div class="form-group" onmouseover="displayExample('sex')">
-    <label for="input" class="col-md-2 control-label">生理性別</label>
+    <label for="input" class="col-md-2 control-label">生理性別 </label>
 
     <div class="col-md-10">
         <div class="col-md-4">
-            <input type="radio" name="sex" id="boy" value="1" required="required"> 男
+            <input type="radio" name="sex" id="boy" value="1" required="required" {{ (Input::old('sex')? Input::old('sex'): $sex)==1 ? 'checked' : null }}> 男
         </div>
         <div class="col-md-4">
-            <input type="radio" name="sex" id="gril" value="2"> 女
+            <input type="radio" name="sex" id="gril" value="2" {{ (Input::old('sex')? Input::old('sex'): $sex)==2 ? 'checked' : null }}> 女
         </div>
         <div class="col-md-4">
-            <input type="radio" name="sex" id="other" value="3"> 其他
+            <input type="radio" name="sex" id="other" value="3"{{ (Input::old('sex')? Input::old('sex'): $sex)==3 ? 'checked' : null }}> 其他
         </div>
         {{ $errors->first('sex') }}
     </div>
