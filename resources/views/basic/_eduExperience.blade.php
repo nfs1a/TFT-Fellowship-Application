@@ -321,7 +321,7 @@
 
     <div class="col-sm-10">
         <select class="form-control" name="eduStatus[]" required="required">
-            <option value="0" selected="selected">選一個</option>
+            <option value="0">選一個</option>
             <option value="1">已畢業</option>
             <option value="2">應屆畢業</option>
             <option value="3">肄業</option>

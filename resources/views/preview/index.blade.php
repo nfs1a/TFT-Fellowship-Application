@@ -20,7 +20,7 @@
                         <div class="panel-body">
                             <div>
                                 @include('preview/_basic')
-                                @include('preview/_workExperience')
+                                @include('preview/_workExperience',)
                                 @include('preview/_teachExperience')
                                 @include('preview/_essay')
                                 @include('preview/_appendix')
