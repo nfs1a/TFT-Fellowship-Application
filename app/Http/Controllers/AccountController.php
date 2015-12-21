@@ -14,6 +14,7 @@ use Hash;
 use App\User;
 use SocialNorm\Exceptions\ApplicationRejectedException;
 use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+use App\Progress;
 
 class AccountController extends Controller {
 
@@ -47,6 +48,15 @@ class AccountController extends Controller {
                 'password'=>Hash::make(Input::get('password')) );
                 $user = new User($userdata);
                 $user->save();
+
+            $user->name = Input::get('username');
+            $user->email = Input::get('email');
+            $user->password = Hash::make(Input::get('password'));
+            $user->save();
+            Auth::login($user);
+            $user = Auth::user();
+            $progress = new Progress;
+            Auth::user()->progress()->save($progress);
                
                 return Redirect::to('login');
     }
