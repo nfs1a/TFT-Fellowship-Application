@@ -165,7 +165,7 @@
     $(function () {
         $sex = {{ $sex = isset($userBasic->sex)? $userBasic->sex: 'undefined' }};
         $sex = {{ $sex = Input::old('sex')? Input::old('sex'): $sex }};
-        $("input[name='sex'][value='"+$sex+"'").attr("checked",true); 
+        $("input[name='sex'][value='"+$sex+"']").attr("checked",true); 
 
         $status = {{ $status = isset($userBasic->status)? $userBasic->status: 'undefined' }};
         $status = {{ $status = Input::old('status')? Input::old('status'): $status }};
