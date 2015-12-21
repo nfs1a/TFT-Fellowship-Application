@@ -32,6 +32,7 @@ Route::post('appendix/create','AppendixController@store');
 // 第六區塊：串金流歐付寶
 // 資料預覽頁面
 Route::get('preview','PreviewController@index');
+Route::get('preview_','PreviewController@index_');
 // 感謝頁面
 
 

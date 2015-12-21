@@ -26,13 +26,13 @@
 
     <div class="col-md-10">
         <div class="col-md-4">
-            <input type="radio" name="sex" id="boy" value="1" required="required" {{ (Input::old('sex')? Input::old('sex'): $userBasic->sex)==1 ? 'checked' : null }}> 男
+            <input type="radio" name="sex" id="boy" value="1" required="required" > 男
         </div>
         <div class="col-md-4">
-            <input type="radio" name="sex" id="gril" value="2" {{ (Input::old('sex')? Input::old('sex'): $userBasic->sex)==2 ? 'checked' : null }}> 女
+            <input type="radio" name="sex" id="gril" value="2"> 女
         </div>
         <div class="col-md-4">
-            <input type="radio" name="sex" id="other" value="3"{{ (Input::old('sex')? Input::old('sex'): $userBasic->sex)==3 ? 'checked' : null }}> 其他
+            <input type="radio" name="sex" id="other" value="3"> 其他
         </div>
         {{ $errors->first('sex') }}
     </div>
@@ -130,11 +130,11 @@
 
     <div class="col-sm-10 status">
         <select class="form-control" name="status" required="required">
-            <option value="1" {{ (Input::old('status')? Input::old('status'): $userBasic->status)==1 ? 'selected' : null }}>我是學生，今年六月還沒有要畢業。</option>
-            <option value="2" {{ (Input::old('status')? Input::old('status'): $userBasic->status)==2 ? 'selected' : null }}>我是學生，預計今年六月畢業，正在找尋未來工作。</option>
-            <option value="3" {{ (Input::old('status')? Input::old('status'): $userBasic->status)==3 ? 'selected' : null }}>我目前在工作，一邊在職進修。</option>
-            <option value="4" {{ (Input::old('status')? Input::old('status'): $userBasic->status)==4 ? 'selected' : null }}>現階段有工作。</option>
-            <option value="5" {{ (Input::old('status')? Input::old('status'): $userBasic->status)==5 ? 'selected' : null }}>現階段待業中，正在尋找未來工作。</option>
+            <option value="1">我是學生，今年六月還沒有要畢業。</option>
+            <option value="2">我是學生，預計今年六月畢業，正在找尋未來工作。</option>
+            <option value="3">我目前在工作，一邊在職進修。</option>
+            <option value="4">現階段有工作。</option>
+            <option value="5">現階段待業中，正在尋找未來工作。</option>
         </select>
         {{ $errors->first('status') }}
     </div>
@@ -164,8 +164,8 @@
     $(function () {
         $sex = {{ $sex = isset($userBasic->sex)? $userBasic->sex: 'undefined' }};
         $sex = {{ $sex = Input::old('sex')? Input::old('sex'): $sex }};
-        $("input[name='sex'][value='"+$sex+"'").attr("checked",true); 
-
+//        $("input[name='sex'][value='"+$sex+"'").attr("checked",true);
+        $("input[name='sex'][value='"+$sex+"']").attr("checked",true);
         $status = {{ $status = isset($userBasic->status)? $userBasic->status: 'undefined' }};
         $status = {{ $status = Input::old('status')? Input::old('status'): $status }};
         $("div.status select").val($status);
