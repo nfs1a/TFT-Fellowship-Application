@@ -9,12 +9,15 @@ use Log;
 use Input;
 use Auth;
 
+use App\Appendix;
+
 class AppendixController extends Controller
 {
     public function create()
     {
+        $userAppendix = Auth::user()->appendix()->first();
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        $data = compact('loginUser');
+        $data = compact('loginUser', 'userAppendix');
         return view('appendix.create',$data);
     }
 
@@ -39,10 +42,24 @@ class AppendixController extends Controller
         $input = $request->all();
         Log::info('-------- AppendixController: store --------');
 
-        foreach ($input as $key => $value) {
-            $fileUrl = AppendixController::fileUpload($key);
-            Log::info($key . ' => ' . $fileUrl);
+        if( Auth::user()->appendix()->first() ){
+            Log::info('1\n\n');
+            $appendix = Auth::user()->appendix()->first();
+        } else {
+            Log::info('2\n\n');
+            $appendix = new Appendix;   
         }
+
+        foreach ($input as $key => $value) {
+            Log::info($input);
+            if(Input::hasFile($key)){
+                $fileUrl = AppendixController::fileUpload($key);
+                $appendix->$key = $fileUrl;
+            }
+        }
+        Auth::user()->appendix()->save($appendix);
+        
+        Log::info('===============================================\n\n');
 
         $progress = Auth::user()->progress;
         $progress->appendix = 1;
