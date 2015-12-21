@@ -141,12 +141,12 @@ class InitDB extends Migration
             $table->integer('user_id');
             $table->string('resume');
             $table->string('idCard');
-            $table->string('qualification');
-            $table->string('soldierProof');
-            $table->string('transcript');
-            $table->string('teacherCertification');
-            $table->string('languageCertification');
-            $table->string('otherCertification');
+            $table->string('qualification')->nullable();
+            $table->string('soldierProof')->nullable();
+            $table->string('transcript')->nullable();
+            $table->string('teacherCertification')->nullable();
+            $table->string('languageCertification')->nullable();
+            $table->string('otherCertification')->nullable();
             $table->timestamps();
         });
     }
