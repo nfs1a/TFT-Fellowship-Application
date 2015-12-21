@@ -25,9 +25,9 @@ class AppendixRequest extends Request
     {
 
         $rules = [
-            'resume' => 'required|mimes:pdf',
-            'idCard' => 'required|mimes:pdf',
-            'qualification' => 'required|mimes:pdf',
+            'resume' => 'mimes:pdf',
+            'idCard' => 'mimes:pdf',
+            'qualification' => 'mimes:pdf',
             'soldierProof' => 'mimes:pdf',
             'transcript' => 'mimes:pdf',
             'teacherCertification' => 'mimes:pdf',
