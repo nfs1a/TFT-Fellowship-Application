@@ -811,3 +811,14 @@ a.btn.btn-success.btn-lg.btn-warning:hover {
     line-height: 20px;
     padding-top: 15px;
 }
+
+.box{
+    display: none;
+    width: 100%;
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
