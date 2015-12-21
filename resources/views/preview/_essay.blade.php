@@ -2,52 +2,36 @@
 
 <!-- form title -->
 <div class="legend tfiBlueDark">
-    短文
+    簡答題
     <hr class="small-top">
-</div> 
-<!-- form content --> 
+</div>
+<!-- form content -->
+
 <div>
     <div>
-        <!-- organization[]: 組織單位 -->
-        <div class="row">
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-2">姓名</label>
-                <div class="col-md-10">
-                    姓名 ...
-                </div>
-            </div>
-        </div>
+        <table class="table table-bordered table-striped">
+            <colgroup>
+                <col class="col-xs-1">
+                <col class="col-xs-7">
+            </colgroup>
+
+            <tbody>
+            <tr>
+                <th scope="row">領導經驗</th>
+                <td>{{ $user->essay->essay0 }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">經驗影響</th>
+                <td>{{ $user->essay->essay1 }}</td>
+            </tr>
+
+            <tr>
+                <th scope="row">問題三</th>
+                <td>{{ $user->essay->essay2 }}</td>
+            </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>

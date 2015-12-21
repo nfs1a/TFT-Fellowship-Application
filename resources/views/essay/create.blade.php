@@ -23,8 +23,10 @@
                                         - 你在帶領的是怎麼樣的一群人？持續多久時間？
                                         - 你達到什麼目標？
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"
-                                              required="required">{{ Input::old('essay')[0] ? Input::old('essay')[0]:$userEssay->essay0 }}</textarea>
+                                    {{--{{ Input::old('essay')[0] ? Input::old('essay')[0]:$userEssay->essay0 }}--}}
+                                    {{--*/ $essay0 = isset($userEssay->essay0)? $userEssay->essay0: '' /*--}}
+                                    {{--*/ $essay0 = isset(Input::old('essay')[0])? Input::old('essay')[0]: $essay0 /*--}}
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ $essay0 }}</textarea>
                                     {{ $errors->first('essay.0') }}
                                 </div>
                             </div>
@@ -39,8 +41,9 @@
                                         這是因為參與TFT計劃本身就是一個重大的承諾，申請者不僅僅是要承諾成為一個兩年全職老師，
                                         為了在兩年之後你的學生及學校能造成一些影響或改變，遇到挑戰時我們希望你能努力不懈、持之以恆。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"
-                                              required="required">{{ Input::old('essay')[1] ? Input::old('essay')[1]:$userEssay->essay1 }}</textarea>
+                                    {{--*/ $essay1 = isset($userEssay->essay1)? $userEssay->essay1: '' /*--}}
+                                    {{--*/ $essay1 = isset(Input::old('essay')[1])? Input::old('essay')[1]: $essay1 /*--}}
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ $essay1 }}</textarea>
                                     {{ $errors->first('essay.1') }}
                                 </div>
                             </div>
@@ -55,8 +58,9 @@
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                         - 請說明你申請Teach for Taiwan教師計畫的動機。
                                     </p>
-                                    <textarea class="form-control" rows="10" name="essay[]"
-                                              required="required">{{ Input::old('essay')[2] ? Input::old('essay')[2]:$userEssay->essay2 }}</textarea>
+                                    {{--*/ $essay2 = isset($userEssay->essay2)? $userEssay->essay2: '' /*--}}
+                                    {{--*/ $essay2 = isset(Input::old('essay')[2])? Input::old('essay')[2]: $essay2 /*--}}
+                                    <textarea class="form-control" rows="10" name="essay[]" required="required">{{ $essay2 }}</textarea>
                                     {{ $errors->first('essay.2') }}
                                 </div>
                             </div>
