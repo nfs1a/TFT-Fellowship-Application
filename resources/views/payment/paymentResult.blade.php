@@ -6,7 +6,8 @@
     <body>
 <?php
 header("Content-Type:text/html; charset=utf-8");
-include_once(app_path().'\ThirdPartyClass\AllPay.Payment.Integration.php');
+include_once(app_path().'/ThirdPartyClass/AllPay.Payment.Integration.php');
+
 try{
 	$oPayment = new AllInOne();
     /* 服務參數 */
@@ -30,10 +31,12 @@ try{
 		default: break;
 	}
 		// Instert payment data into database
-	$PaymentController = new app\Http\Controllers\PaymentController();
-	$PaymentController->insertPaymentSuccessResult($trade_no, $payment_type, $payment_date);
+
 	}
 	// 其他資料處理。
+	$PaymentController = new app\Http\Controllers\PaymentController();
+    $PaymentController->insertPaymentSuccessResult($trade_no, $payment_date, $payment_type);
+
 	
 	} else {}
 	}
