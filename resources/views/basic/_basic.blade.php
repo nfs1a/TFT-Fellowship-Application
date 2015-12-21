@@ -130,12 +130,11 @@
 
     <div class="col-sm-10 status">
         <select class="form-control" name="status" required="required">
-            <option value="0" selected="selected">選一個</option>
-            <option value="1">我是學生，今年六月還沒有要畢業。</option>
-            <option value="2">我是學生，預計今年六月畢業，正在找尋未來工作。</option>
-            <option value="3">我目前在工作，一邊在職進修。</option>
-            <option value="4">現階段有工作。</option>
-            <option value="5">現階段待業中，正在尋找未來工作。</option>
+            <option value="1" {{ (Input::old('status')? Input::old('status'): $status)==1 ? 'selected' : null }}>我是學生，今年六月還沒有要畢業。</option>
+            <option value="2" {{ (Input::old('status')? Input::old('status'): $status)==2 ? 'selected' : null }}>我是學生，預計今年六月畢業，正在找尋未來工作。</option>
+            <option value="3" {{ (Input::old('status')? Input::old('status'): $status)==3 ? 'selected' : null }}>我目前在工作，一邊在職進修。</option>
+            <option value="4" {{ (Input::old('status')? Input::old('status'): $status)==4 ? 'selected' : null }}>現階段有工作。</option>
+            <option value="5" {{ (Input::old('status')? Input::old('status'): $status)==5 ? 'selected' : null }}>現階段待業中，正在尋找未來工作。</option>
         </select>
         {{ $errors->first('status') }}
     </div>
