@@ -5,4 +5,4 @@ Homestead.json
 .env
 .idea
 /public/user-upload/
-/storage/database.sqlite
+storage/database.sqlite
