@@ -61,7 +61,7 @@
                 exampleText = 'Skype ID';
             }
             if (dom == 'email') {
-                exampleHelpText = '請輸入你的電子信箱';
+                exampleHelpText = '請輸入你的電子信箱 ';
                 exampleText = 'E-mail address';
             }
             if (dom == 'sec_email') {
