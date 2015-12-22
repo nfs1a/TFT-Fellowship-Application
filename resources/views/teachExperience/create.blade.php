@@ -38,11 +38,11 @@
         var exampleHelpText = '...';
         var exampleText = '...';
         if (dom == 'certification') {
-            exampleHelpText = '請勾選你已認證之教師資格';
-            exampleText = '勾選';
+            exampleHelpText = '請勾選符合您現況的敘述';
+            exampleText = '已修畢教程，預計今年取得。';
         }
         if (dom == 'organization') {
-            exampleHelpText = '請輸入單位名稱';
+            exampleHelpText = '請填寫你過往重要的教學或服務經驗，至少填一項，至多三項，每題至多200字。';
             exampleText = '組織名稱';
         }
         if (dom == 'position') {
@@ -54,7 +54,7 @@
             exampleText = '時間';
         }
         if (dom == 'description') {
-            exampleHelpText = '請簡述在該單位任內成就';
+            exampleHelpText = '請敘述教學或服務期間的經驗';
             exampleText = '簡述';
         }
         document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
