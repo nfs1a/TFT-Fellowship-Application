@@ -33,8 +33,8 @@
             var exampleHelpText = '...';
             var exampleText = '...';
             if (dom == 'name') {
-                exampleHelpText = '請輸入你的姓名(2~20個字)';
-                exampleText = '王大明';
+                exampleHelpText = '請輸入您的中文全名。(2~20個字)';
+                exampleText = '熊小編';
             }
             if (dom == 'sex') {
                 exampleHelpText = '請輸入你的生理性別(必填)';
