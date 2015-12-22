@@ -5,12 +5,12 @@
 <div id="page">
 
     <div id="dashboard" class="container page ">
-        <div class="row sectionTitle"><h1>Application Dashboard</h1></div>
+        <div class="row sectionTitle"><h1>Application Dashboard </h1></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-12 well background-white ">
                     <h3 class="text-center tfiOrange ">
-                        Welcome to the Teach For India - Fellowship Application.
+                        Welcome to the Teach For Taiwan - Fellowship Application.
                     </h3><br>
 
                     <p class="text-center">
@@ -29,134 +29,165 @@
             </div>
             <div>
                 <div class='col-md-12'>
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    基本資訊
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
+                    <!--第一區塊：個人資料-->
+                    <a href="{{ url('basic/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        基本資訊
                                     </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->basic == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  <!--基本訊息-->
+                    </a>
+                    <!--第二區塊：工作/社團經驗-->
+                    <a href="{{ url('workExperience/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        工作/社團經驗
+                                    </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->work == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </a>    
+                    <!--第三區塊：教學/志工服務經驗-->
+                    <a href="{{ url('teachExperience/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        教學/志工服務經驗
+                                    </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->teach == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </a>
+                    <!--第四區塊：教師計畫簡答題 -->
+                    <a href="{{ url('essay/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        第四區塊：教師計畫簡答題
+                                    </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->essay == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </a>
+                    <!--第五區塊：附件區-->
+                    <a href="{{ url('/appendix/create') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        第五區塊：附件區
+                                    </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->appendix == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </a>
+                    <!--第六區塊：串金流歐付寶--> 
+                    <a href="{{ url('') }}">
+                        <div class="float-shadow col-md-4">
+                            <div class="panel panel-default panel-dashboard">
+                                <div class="panel-body">
+                                    <p class="panel-head">
+                                        <i class="fa fa-th-list"> </i>
+                                        串金流歐付寶
+                                    </p>
+
+                                    <p class="panel-description">
+                                        Start by entering your General Details and
+                                        Contact Details
+                                    </p>
+                                    <div>
+                                        @if( $user->progress->allpay == 1 )
+                                            @include('dashboard/_complete')
+                                        @else
+                                            @include('dashboard/_inprogress')
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  <!--基本訊息-->
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    專業資訊
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  <!--專業資訊-->
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    教育資訊
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  <!--教育資訊-->
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    興趣與經歷
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  <!--興趣與經歷-->
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    短文
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  <!--短文-->
-                    <div class="float-shadow col-md-4">
-                        <div class="panel panel-default panel-dashboard">
-                            <div class="panel-body">
-                                <p class="panel-head">
-                                    <i class="fa fa-th-list"> </i>
-                                    送出資料
-                                </p>
-
-                                <p class="panel-description">
-                                    Start by entering your General Details and
-                                    Contact Details
-                                </p>
-                                <div>
-                                    <p class="panel-status-inprogress">
-                                        In Progress
-                                        <i class="glyphicon glyphicon-pencil glyphicon-tfi tfiYellow pull-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  <!--送出-->
+                    </a> 
                 </div>
             </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <a href="{{ url('preview') }}">
+                <button type="submit" class="btn btn-primary pull-right btn-lg btn-block" {{ $isPass == 0 ? "disabled":"" }}>
+                    送出
+                </button>
+            </a>
         </div>
     </div>
 </div>
