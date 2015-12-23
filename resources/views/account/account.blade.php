@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo asset('css/bootstrap.min.css')?>" type="text/css"> 
     <link rel="stylesheet" href="<?php echo asset('css/bootstrap-social.css')?>" type="text/css"> 
     <link rel="stylesheet" href="<?php echo asset('css/style.css')?>" type="text/css"> 
+    <link rel="stylesheet" href="<?php echo asset('css/font-awesome.min.css')?>" type="text/css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
@@ -68,6 +69,9 @@
                                                 <h4 id='result' style="display:none;"></h4>
                                                 @if($errors->any())
                                                 <h4 style="color:red;">{{$errors->first('error_signup')}}</h4>
+                                                @endif                                                
+                                                @if($errors->any())
+                                                <h4 style="color:blue;">{{$errors->first('success_signup')}}</h4>
                                                 @endif
                                             </div>
                                         </div>
@@ -214,6 +218,12 @@
         </div>
         
     </div>
-
+    <div id="footer">
+        <footer class="text-center">
+            <div class="ng-scope">
+                <h5 class="footer-text ng-binding ng-scope">請注意，2016 Teach for Taiwan教師計畫報名系統將開放至2016年4月7日 13:00截止，逾期系統將不受理報名，請申請者提早規劃完成報名手續。</h5>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

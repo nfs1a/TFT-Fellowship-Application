@@ -47,8 +47,14 @@
                                 @if (count($errors) > 0)
                                     <ul>
                                         @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                            <li style="color:red;">{{ $error }}</li>
                                         @endforeach
+                                    </ul>
+                                @endif
+                                @if(Session::has('status'))
+                                    <ul>
+                                        <li  style="color:blue;">{!! session('status') !!}</li>
+                                        
                                     </ul>
                                 @endif
                                 <div class="row-fluid form-group">

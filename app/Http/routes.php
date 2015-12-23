@@ -1,18 +1,19 @@
 <?php
 use SocialNorm\Exceptions\ApplicationRejectedException;
 use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+use App\Progress;
+
 
 Route::pattern('id', '[0-9]+'); // 規定ID格式
 
 // ------- 前台 -------
 // Account
 Route::get('login', 'AccountController@showLogin');
+Route::post('login', 'AccountController@login');
 Route::get('/', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
-Route::post('login', 'AccountController@login');
 Route::get('signup', 'AccountController@showsignup');
 Route::post('signup', 'AccountController@signup');
-Route::get('logout', 'AccountController@logout');
 Route::get('reset', 'AccountController@reset');
 
 Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
@@ -33,6 +34,10 @@ Route::get('{provider}/login', function($provider) {
         	$user->email = $userDetails->email;
         	$user->facebook_id = $userDetails->id;
         	$user->save();
+            Auth::login($user);
+            $user = Auth::user();
+            $progress = new Progress;
+            Auth::user()->progress()->save($progress);
         }
     });
     $authuser = Auth::user();

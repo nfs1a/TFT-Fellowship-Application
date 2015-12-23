@@ -31,7 +31,7 @@ class AccountController extends Controller {
                 'email' => Input::get('email'),
                 'password' => Input::get('password'));
         if(Auth::attempt($userdata)){
-                return Redirect::to('dashboard');
+                return Redirect::to('applyLicense');
         } else {
                 $errors = new MessageBag(['error_login' => ['密碼錯誤或Email不存在, 請重試']]);
                 return Redirect::to('login')->withErrors($errors);
@@ -46,9 +46,9 @@ class AccountController extends Controller {
     public function signup()
     {
         $emali = Input::get('email');
-        $results = DB::select( DB::raw("SELECT COUNT(*) FROM users WHERE email = '$emali'") );
+        $results = DB::select( DB::raw("SELECT * FROM users WHERE email = '$emali'") );
 
-        if($results > '0') {
+        if(count($results) > '0') {
             $errors = new MessageBag(['error_signup' => ['Email已存在, 請直接登入']]);
             return Redirect::to('login')->withErrors($errors);
         }
@@ -62,7 +62,8 @@ class AccountController extends Controller {
         $progress = new Progress;
         Auth::user()->progress()->save($progress);
 
-        return Redirect::to('login');
+        $message = new MessageBag(['success_signup' => ['註冊完成, 請登入']]);
+        return Redirect::to('login')->withErrors($message);
     }
 
     public function reset()
@@ -72,9 +73,5 @@ class AccountController extends Controller {
     return Password::remind($credentials);
     }
 
-        public function socialauth($provider)
-    {
-        return SocialAuth::authorize($provider);
-    }
 
 }
