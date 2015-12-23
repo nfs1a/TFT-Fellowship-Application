@@ -2,6 +2,7 @@
 use SocialNorm\Exceptions\ApplicationRejectedException;
 use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 use App\Progress;
+use Illuminate\Support\MessageBag;
 
 
 Route::pattern('id', '[0-9]+'); // 規定ID格式
@@ -26,20 +27,27 @@ Route::get('{provider}/authorize', function($provider) {
 
 // Facebook redirects here after authorization
 Route::get('{provider}/login', function($provider) {
+    try{
+        SocialAuth::login($provider, function($user, $userDetails) { 
 
-    SocialAuth::login($provider, function($user, $userDetails) { 
-
-    	$authuser = Auth::user();
-        if (!$authuser){
-        	$user->email = $userDetails->email;
-        	$user->facebook_id = $userDetails->id;
-        	$user->save();
-            Auth::login($user);
-            $user = Auth::user();
-            $progress = new Progress;
-            Auth::user()->progress()->save($progress);
-        }
-    });
+        	$authuser = Auth::user();
+            if (!$authuser){
+            	$user->email = $userDetails->email;
+            	$user->facebook_id = $userDetails->id;
+        	    $user->save();
+                Auth::login($user);
+                $user = Auth::user();
+                $progress = new Progress;
+                Auth::user()->progress()->save($progress);
+            }
+        });
+    } catch (ApplicationRejectedException $e) {
+        $errors = new MessageBag(['error_signup' => ['使用者取消Facebook授權']]);
+        return Redirect::to('login')->withErrors($errors);
+    } catch (Exception $e) {
+        $errors = new MessageBag(['error_signup' => ['Email已存在, 請直接登入']]);
+        return Redirect::to('login')->withErrors($errors);
+    } 
     $authuser = Auth::user();
     if ($authuser){
     	return Redirect::intended();
