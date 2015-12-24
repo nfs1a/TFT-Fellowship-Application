@@ -90,7 +90,7 @@ Route::get('appendix/create','AppendixController@create');
 Route::post('appendix/create','AppendixController@store');
 // 第六區塊：串金流歐付寶
 Route::get('paymentList', ['middleware' => 'auth', 'uses' => 'PaymentController@showPaymentList']);   //Display payment list
-Route::get('paymentResult', 'PaymentController@showPaymentResult');   //Display payment result
+Route::post('paymentResult', 'PaymentController@showPaymentResult');   //Display payment result
 // 資料預覽頁面
 Route::get('preview','PreviewController@index');
 // 感謝頁面

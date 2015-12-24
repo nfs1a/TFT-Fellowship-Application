@@ -30,11 +30,6 @@ class PaymentController extends Controller
 
     public function showPaymentResult()
     {
-        // Mail::send('payment.paymentResultMail', ['name' => 'Teach For Taiwan'], function($message) 
-        // {
-        //     $user = Auth::user();
-        //     $message->to($user->email, '付款通知')->subject('報名費付款成功');
-        // });
         return view('payment.paymentResult');
 
     }
@@ -43,20 +38,34 @@ class PaymentController extends Controller
     {
         $user = Auth::user();
         DB::table('payment_table')->insert(
-            ['email' => $user->email, 'trade_no' => $trade_no]);
+            ['user_id' => $user->id,'email' => $user->email, 'trade_no' => $trade_no]);
 
     }
 
     public function insertPaymentSuccessResult($trade_no, $payment_type, $payment_date)
     {
-        $user = Auth::user();
         DB::table('payment_table')
-        ->where('email', $user->email)
         ->where('trade_no', $trade_no)
         ->update(
-            ['payment_type' => $payment_type, 
-             'payment_date' => $payment_date
+            ['payment_type' => '$payment_type', 
+             'payment_date' => "$payment_date",
+             'result' => 1
             ]);
+
+        $user_id = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('user_id');
+
+        DB::table('progresses')
+            ->where('user_id', $user_id)
+            ->update(['allpay' => 1]);
+
+        $email = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('email');
+
+        $data = array('email' => $email);
+
+        Mail::send('payment.paymentResultMail', $data, function($message)  use ($data)
+        {
+            $message->to($data['email'], '付款通知')->subject('報名費付款成功');
+        });
 
     }
 
