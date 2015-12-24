@@ -107,7 +107,7 @@
 
 </div>
 
-<div class="form-group" onmouseover="displayExample('eduArea1')">
+<div class="form-group" onmouseover="displayExample('eduArea')">
     <label for="input" class="col-sm-2 control-label">就學期間<br>（開始）</label>
 
     <div class="col-sm-4">
