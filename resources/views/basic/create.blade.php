@@ -33,44 +33,56 @@
             var exampleHelpText = '...';
             var exampleText = '...';
             if (dom == 'name') {
-                exampleHelpText = '請輸入你的姓名(2~20個字)';
-                exampleText = '王大明';
+                exampleHelpText = '請輸入您的中文全名。';
+                exampleText = '熊小編';
             }
             if (dom == 'sex') {
-                exampleHelpText = '請輸入你的生理性別(必填)';
-                exampleText = '男，女，或其他';
+                exampleHelpText = '請選擇您的生理性別(必填)';
+                exampleText = '男性';
             }
             if (dom == 'idNumber') {
-                exampleHelpText = '請輸入你的身分證字號(必填)';
+                exampleHelpText = '請輸入您的室內電話號碼(必填)';
                 exampleText = 'A123456789';
             }
             if (dom == 'birthday') {
-                exampleHelpText = '請輸入你的生日(必填)';
-                exampleText = '1991/01/33';
+                exampleHelpText = '請輸入您的出生年月日。(必填)';
+                exampleText = '1988年9月28日';
             }
             if (dom == 'phone') {
-                exampleHelpText = '請輸入室內電話(選填)';
-                exampleText = '0224895094';
+                exampleHelpText = '請輸入您的手機電話號碼。(選填)';
+                exampleText = '09XXXXXXXX';
             }
             if (dom == 'cellPhone') {
-                exampleHelpText = '請輸入你的手機';
+                exampleHelpText = '請輸入您的手機電話號碼。';
                 exampleText = '09XXXXXXXX';
             }
             if (dom == 'skype') {
-                exampleHelpText = '請輸入你的 skype 帳號';
+                exampleHelpText = '請輸入您的skype帳號。';
                 exampleText = 'Skype ID';
             }
             if (dom == 'email') {
-                exampleHelpText = '請輸入你的電子信箱';
-                exampleText = 'E-mail address';
+                exampleHelpText = '請輸入您最常使用的e-mail。(高度建議您填寫gmail帳號) ';
+                exampleText = 'teach4taiwan@gmail.comE-mail address';
             }
             if (dom == 'sec_email') {
-                exampleHelpText = '請輸入你的備用電子信箱(選填)';
-                exampleText = 'E-mail address';
+                exampleHelpText = '請輸入您備用的e-mail信箱(選填)';
+                exampleText = 'teach4taiwan@gmail.com';
             }
             if (dom == 'address') {
-                exampleHelpText = '請輸入你的地址';
-                exampleText = '地址';
+                exampleHelpText = '請輸入您的戶籍地址。';
+                exampleText = '台北市大安區復興南路二段318號3樓';
+            }
+            if (dom == 'status') {
+                exampleHelpText = '請選擇一個符合您目前就學或就業狀態的描述。';
+                exampleText = '現階段有工作';
+            }
+             if (dom == 'school') {
+                exampleHelpText = '請輸入曾就讀學校全名';
+                exampleText = '國立台北教育大學';
+            }
+            if (dom == 'eduArea') {
+                exampleHelpText = '請輸入您高中畢業之年月';
+                exampleText = '2006年6月';
             }
             document.getElementById("exampleHelpText").innerHTML = exampleHelpText;
             document.getElementById("exampleText").innerHTML = exampleText;
