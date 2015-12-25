@@ -19,7 +19,7 @@
             <div class="col-md-8">            
                 <input type="file" class="form-control" name="resume"> 
                 <div id='resume'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->resume or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->resume or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -36,7 +36,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="idCard">
                 <div id='idCard'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->idCard or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->idCard or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -53,7 +53,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="qualification">
                 <div id='qualification'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->qualification or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->qualification or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -70,7 +70,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="soldierProof" >
                 <div id='soldierProof'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->soldierProof or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->soldierProof or '' }}" width = "300px" height = "300px"></iframe>
                     </div>

@@ -18,7 +18,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="transcript" >
                 <div id='transcript'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->transcript or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->transcript or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -35,7 +35,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="teacherCertification" >
                 <div id='teacherCertification'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->teacherCertification or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->teacherCertification or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -52,7 +52,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="languageCertification" >
                 <div id='languageCertification'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->languageCertification or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->languageCertification or '' }}" width = "300px" height = "300px"></iframe>
                     </div>
@@ -69,7 +69,7 @@
             <div class="col-md-8">
                 <input type="file" class="form-control" name="otherCertification" >
                 <div id='otherCertification'>
-                    <a href="javascript: void(0)" disabled>preview</a>
+                    <a href="{{ $userAppendix->otherCertification or '' }}" disabled>preview</a>
                     <div class="box">
                         <iframe src="{{ $userAppendix->otherCertification or '' }}" width = "300px" height = "300px"></iframe>
                     </div>

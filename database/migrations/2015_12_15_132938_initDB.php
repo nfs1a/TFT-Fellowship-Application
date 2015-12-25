@@ -138,9 +138,9 @@ class InitDB extends Migration
         Schema::create('appendixes',function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->string('resume');
-            $table->string('idCard');
+            $table->integer('user_id')->nullable();
+            $table->string('resume')->nullable();
+            $table->string('idCard')->nullable();
             $table->string('qualification')->nullable();
             $table->string('soldierProof')->nullable();
             $table->string('transcript')->nullable();

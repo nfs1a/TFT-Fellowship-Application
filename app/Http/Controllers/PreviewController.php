@@ -12,11 +12,17 @@ class PreviewController extends Controller
 {
     public function index()
     {
-        $user = User::with('work', 'teach', 'essay', 'basic', 'appendix', 'work.workExperiences', 'work.expertises', 'teach.teachExperiences')->get()->find(Auth::user()->id);
-
+        $user = User::with('work', 'teach', 'essay', 'basic', 'appendix', 'work.workExperiences', 'work.expertises', 'teach.teachExperiences','basic.eduHistorys')->get()->find(Auth::user()->id);
         $loginUser = Auth::check() ? Auth::user()->name : null;
-        return $data = compact('loginUser', 'user');
+        $data = compact('loginUser', 'user');
 		return view('preview.index',$data);
+    }
+
+    public function indexApi()
+    {
+        $users = User::with('work', 'teach', 'essay', 'basic', 'appendix', 'work.workExperiences', 'work.expertises', 'teach.teachExperiences','basic.eduHistorys')->get()->toArray();
+        $data = compact('users');
+        return $data;
     }
 
 }
