@@ -32,9 +32,9 @@ class WorkExperienceController extends Controller
     public function store(WorkExperienceRequest $request)
     {
         $input = $request->all();
-        Log::info('------- WorkExperienceController: store -------'); 
-        Log::info($input['startDate']);        
-        Log::info('===============================================\n\n');
+        // Log::info('------- WorkExperienceController: store -------'); 
+        // Log::info($input['startDate']);        
+        // Log::info('===============================================\n\n');
         
         Auth::user()->work()->delete();
         $work = new Work;
@@ -60,14 +60,12 @@ class WorkExperienceController extends Controller
             $workExperience->startDate = date('Y-m-d H:i:s', strtotime($input['startDate'][$i]));
             $workExperience->endDate = date('Y-m-d H:i:s', strtotime($input['endDate'][$i]));
             $workExperience->description = $input['description'][$i];
-            Auth::user()->work()->first()->workExperiences()->save($workExperience);
-            Log::info($workExperience);        
-        
+            Auth::user()->work()->first()->workExperiences()->save($workExperience);        
         }
 
-        Log::info('------- WorkExperienceController: store -------'); 
-        Log::info(Auth::user()->work()->first()->workExperiences()->get());        
-        Log::info('===============================================\n\n');
+        // Log::info('------- WorkExperienceController: store -------'); 
+        // Log::info(Auth::user()->work()->first()->workExperiences()->get());        
+        // Log::info('===============================================\n\n');
         
         $progress = Auth::user()->progress;
         $progress->work = 1;
