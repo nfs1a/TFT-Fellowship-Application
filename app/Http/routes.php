@@ -85,6 +85,7 @@ Route::post('appendix/create', [ 'middleware' => 'auth', 'uses' => 'AppendixCont
 // 第六區塊：串金流歐付寶
 Route::get('paymentList', ['middleware' => 'auth', 'uses' => 'PaymentController@showPaymentList']);   //Display payment list
 Route::post('paymentResult', 'PaymentController@showPaymentResult');   //Display payment result
+Route::post('paymentResultServer', 'PaymentController@PaymentResultServer');   // Receive transaction result from Allpay
 // 資料預覽頁面
 Route::get ('preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@index' ]);
 Route::get ('api/preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@indexApi' ]);

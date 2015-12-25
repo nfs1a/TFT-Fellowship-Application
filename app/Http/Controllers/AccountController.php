@@ -69,8 +69,7 @@ class AccountController extends Controller {
     public function reset()
     {
     	    $credentials = array('email' => Input::get('email'));
- 
-    return Password::remind($credentials);
+            return Password::remind($credentials);
     }
 
 

@@ -34,6 +34,12 @@ class PaymentController extends Controller
 
     }
 
+    public function paymentResultServer()
+    {
+        return view('payment.paymentResultServer');
+
+    }
+
     public function insertPayment($trade_no)
     {
         $user = Auth::user();
@@ -42,30 +48,36 @@ class PaymentController extends Controller
 
     }
 
-    public function insertPaymentSuccessResult($trade_no, $payment_type, $payment_date)
+    public function insertPaymentResult($trade_no, $payment_type, $payment_date, $szRtnCode)
     {
         DB::table('payment_table')
         ->where('trade_no', $trade_no)
         ->update(
-            ['payment_type' => '$payment_type', 
-             'payment_date' => "$payment_date",
-             'result' => 1
+            ['payment_type' => $payment_type, 
+             'payment_date' => $payment_date,
+             'result' => $szRtnCode
             ]);
 
-        $user_id = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('user_id');
-
-        DB::table('progresses')
-            ->where('user_id', $user_id)
-            ->update(['allpay' => 1]);
-
-        $email = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('email');
-
-        $data = array('email' => $email);
-
-        Mail::send('payment.paymentResultMail', $data, function($message)  use ($data)
+        if($szRtnCode == 1) 
         {
-            $message->to($data['email'], '付款通知')->subject('報名費付款成功');
-        });
+            $user_id = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('user_id');
+
+            DB::table('progresses')
+                ->where('user_id', $user_id)
+                ->update(['allpay' => 1]);
+
+            $email = DB::table('payment_table')->where('trade_no', $trade_no)->pluck('email');
+
+            $data = array('email' => $email);
+
+            Mail::send('payment.paymentResultMail', $data, function($message)  use ($data)
+            {
+                $message->to($data['email'], '付款通知')->subject('報名費付款成功');
+            });
+        }
+
+
+        
 
     }
 
