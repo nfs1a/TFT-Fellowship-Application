@@ -32,9 +32,9 @@
                     <a href="{{ url('basic/create') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
-                                <div class="panel-body">
+                                <div class="panel-body" style = "height:147px;">
                                     <p class="panel-head">
-                                        <i class="fa fa-th-list"> </i>
+                                        <i class="fa fa-th-list"> </i
                                         基本資訊
                                     </p>
 
@@ -88,7 +88,7 @@
                                     </p>
 
                                     <p class="panel-description">
-                                       請填寫你個人過去任何與教學相關的經歷。
+                                        請填寫你個人過去任何與教學相關的經歷。
                                     </p>
                                     <div>
                                         @if( $user->progress->teach == 1 )
@@ -112,8 +112,7 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                        請與我們聊聊為什麼你對Teach for Taiwan感興趣，以及你對「當老師」這件事的看法。
                                     </p>
                                     <div>
                                         @if( $user->progress->essay == 1 )
@@ -137,8 +136,7 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                        請在此上傳相關證明文件。
                                     </p>
                                     <div>
                                         @if( $user->progress->appendix == 1 )
