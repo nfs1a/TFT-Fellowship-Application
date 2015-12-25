@@ -7,7 +7,7 @@
 </div> 
 <!-- form description --> 
 <div class="" style="margin-bottom: 30px;">
-    各領域專長不拘，如學科、語言、運動、音樂、表演藝術、生態、資訊等，至多填三項。
+    各領域專長不拘，如學科、語言、運動、音樂、表演藝術、生態、資訊等，至多填三項
 </div> 
 <!-- form content -->
 <div>
