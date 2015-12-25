@@ -6,7 +6,7 @@ return [
 		'facebook' => [
 			'client_id' => '948077125272735',
 			'client_secret' => 'c2047642387927b2d4d853224f81a1bc',
-			'redirect_uri' => 'http://52.34.38.92:8000/facebook/login',
+			'redirect_uri' => 'http://ec2-52-27-85-178.us-west-2.compute.amazonaws.com/facebook/login',
 			'scope' => [],
 		],
 		'google' => [
