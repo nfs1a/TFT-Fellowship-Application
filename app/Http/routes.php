@@ -11,8 +11,6 @@ Route::pattern('id', '[0-9]+'); // 規定ID格式
 // Account
 Route::get('login', 'AccountController@showLogin');
 Route::post('login', 'AccountController@login');
-Route::get('/', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
-Route::get('home', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 Route::get('signup', 'AccountController@showsignup');
 Route::post('signup', 'AccountController@signup');
 Route::get('reset', 'AccountController@reset');
@@ -61,7 +59,14 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset/', 'Auth\PasswordController@postReset');
 
-Route::get ('dashboard','PagesController@dashboard');
+
+// 首頁
+Route::get('/', ['middleware' => 'auth', 'uses' => 'ApplyLicenseController@index']);
+// 申請須知
+Route::get('applyLicense', ['middleware' => 'auth', 'uses' => 'ApplyLicenseController@index']);
+// dashboard
+Route::get ('dashboard',  ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
+
 // 第一區塊：基本資料
 Route::get ('basic/create', [ 'middleware' => 'auth', 'as' => 'basic.create' , 'uses' => 'BasicController@create']);   //新增基本資料表單
 Route::post('basic', [ 'middleware' => 'auth', 'as' => 'basic.store'  , 'uses' => 'BasicController@store']);    //新增使用者資料到資料庫
