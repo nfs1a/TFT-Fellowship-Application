@@ -10,13 +10,12 @@
             <div class="col-md-12">
                 <div class="col-md-12 well background-white ">
                     <h3 class="text-center tfiOrange ">
-                        Welcome to the Teach For Taiwan - Fellowship Application.
+                        歡迎申請2016 Teach for Taiwan教師計畫
                     </h3><br>
 
                     <p class="text-center">
-                        Please start by filling in the basic information section. The
-                        following sections will be enabled once you have entered all the details and submitted this
-                        section.
+                        親愛的申請者，歡迎您申請TFT計畫。申請表共分為基本資料、專業經歷（工作、社團、服務經驗）、教學經驗、計畫申論題、附件區及繳納報名費六個區塊，
+                        各區塊可獨立填寫，各區填寫完畢請按下「儲存」鍵，六區塊皆完成即可送出報名資料。
                     </p>
                 </div>
                 
@@ -40,8 +39,7 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                       從填寫你的聯絡資訊與個人背景著手吧！                    
                                     </p>
                                     <div>
                                         @if( $user->progress->basic == 1 )
@@ -65,8 +63,8 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                        請填寫你個人過去的專業經歷，
+                                        例如工作或社團領導、參與或服務經驗。
                                     </p>
                                     <div>
                                         @if( $user->progress->work == 1 )
@@ -90,8 +88,7 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                       請填寫你個人過去任何與教學相關的經歷。
                                     </p>
                                     <div>
                                         @if( $user->progress->teach == 1 )
