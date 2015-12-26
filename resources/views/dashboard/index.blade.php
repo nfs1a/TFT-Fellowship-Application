@@ -13,10 +13,8 @@
                         歡迎申請2016 Teach for Taiwan教師計畫
                     </h3><br>
 
-                    <p class="text-center">
-                        親愛的申請者，歡迎您申請TFT計畫。申請表共分為基本資料、專業經歷（工作、社團、服務經驗）、教學經驗、計畫申論題、附件區及繳納報名費六個區塊，
-                        各區塊可獨立填寫，各區填寫完畢請按下「儲存」鍵，六區塊皆完成即可送出報名資料。
-                    </p>
+                    <p class="text-center">親愛的申請者，歡迎您申請TFT計畫。申請表共分為基本資料、專業經歷（工作、社團、服務經驗）、教學經驗、計畫申論題、附件區及繳納報名費六個區塊，
+                        各區塊可獨立填寫，各區填寫完畢請按下「儲存」鍵，六區塊皆完成即可送出報名資料。</p>
                 </div>
                 
             </div>
@@ -34,8 +32,8 @@
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body" style = "height:147px;">
                                     <p class="panel-head">
-                                        <i class="fa fa-th-list"> </i
-                                        基本資訊
+                                        <i class="fa fa-th-list"> </i>
+                                        個人資料
                                     </p>
 
                                     <p class="panel-description">
@@ -59,7 +57,7 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        工作/社團經驗
+                                        專業經歷
                                     </p>
 
                                     <p class="panel-description">
@@ -84,7 +82,7 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        教學/志工服務經驗
+                                        教學經歷
                                     </p>
 
                                     <p class="panel-description">
@@ -108,7 +106,7 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        第四區塊：教師計畫簡答題
+                                        計畫簡答題Essay
                                     </p>
 
                                     <p class="panel-description">
@@ -132,7 +130,7 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        第五區塊：附件區
+                                        上傳附件
                                     </p>
 
                                     <p class="panel-description">
@@ -156,12 +154,11 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        串金流歐付寶
+                                        繳納報名費
                                     </p>
 
                                     <p class="panel-description">
-                                        Start by entering your General Details and
-                                        Contact Details
+                                        報名費為新台幣300元，係透過歐付寶第三方支付平台進行付款，繳納成功TFT將開立收據給您。
                                     </p>
                                     <div>
                                         @if( $user->progress->allpay == 1 )
