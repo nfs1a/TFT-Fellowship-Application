@@ -6,21 +6,20 @@
                         <img src="/tittle-24.png" alt="">
                     </a>
                 </li>
-                <li><a href="/dashboard"
-                       class="btn btn-success btn-lg btn-home">DASHBOARD</a></li>
+                @if(isset($loginUser))
+                    <li><a href="/dashboard"
+                           class="btn btn-success btn-lg btn-home">DASHBOARD</a></li>
+                @endif
                 <li><a href="http://www.teach4taiwan.org/faqs.html" target="_blank"
                        class="btn btn-success btn-lg btn-home">FAQ</a></li>
             </ul>
             <ul id="navmainright" class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                        {{ $loginUser }}
-                        <span class="caret"></span>
-                    </a>
-                    <ul role="menu" class="dropdown-menu">
-                        <li><a href="http://apply.teachforindia.org/user/logout">Logout</a></li>
-                    </ul>
-                </li>
+                @if(isset($loginUser))
+                    <li><a href="/">{{ isset($loginUser)? $loginUser : '' }}</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                @else
+                    <li><a href="/">尚未登入</a></li>
+                @endif
             </ul>
         </div>
     </nav>

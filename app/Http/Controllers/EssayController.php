@@ -17,7 +17,7 @@ class EssayController extends Controller
     public function create()
     {
         $userEssay = Auth::user()->essay()->first();
-        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $data = compact('loginUser','userEssay');
         return view('essay.create', $data);
     }
