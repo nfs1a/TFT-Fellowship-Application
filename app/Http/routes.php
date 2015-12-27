@@ -90,7 +90,7 @@ Route::post('paymentResultServer', 'PaymentController@PaymentResultServer');   /
 Route::get ('preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@index' ]);
 Route::get ('api/preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@indexApi' ]);
 // 感謝頁面
-
+Route::get ('thankyou', [ 'middleware' => 'auth', 'uses' => 'PagesController@thankyouPage' ]);
 
 Route::get('logout', function(){
     Auth::logout();

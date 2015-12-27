@@ -11,6 +11,7 @@ use App\User;
 use Auth;
 use App\Progress;
 use App\Work;
+use Mail;
 
 class PagesController extends Controller
 {
@@ -33,6 +34,16 @@ class PagesController extends Controller
     public function basic()
     {
         return view('dashboard.basic');
+    }
+
+    public function thankyouPage() {
+
+        Mail::send('payment.paymentResultMail', ['key' => 'value'], function($message)
+        {
+            $currentuser = Auth::user();
+            $message->to($currentuser->email, '報名結果')->subject('報名資料繳交成功');
+        });
+        return view('thankyou.thankyoupage');
     }
 }
 
