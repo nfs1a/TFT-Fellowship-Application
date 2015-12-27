@@ -21,6 +21,7 @@
 
 <body>
     <div id="container">
+<!-- 
         <div id="navbar">
             <nav role="navigation" class="navbar navbar-fixed-top navbar-default background_white">
                 <div class="container-fluid">
@@ -38,6 +39,9 @@
                 </div>
             </nav>
         </div>
+ -->
+        @include('partials/_navigation')
+        
         <div id="page">
             <div id="main" class="main">
                 <div class="container container-home">
@@ -57,7 +61,7 @@
                     </div>
                     <div class="col-md-6">
                         <div id="panel-register" class="panel panel-default panel-register">
-                            <div class="panel-body">
+                            <div class="">
                                 <div class="row-fluid form-group"></div>
                                 <?php
                                 echo '<form onSubmit=\'return validate(); \' role="form" method="POST" action="' . URL::to('signup') . '" novalidate="novalidate" action="" class="ng-pristine ng-valid">';
@@ -146,7 +150,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="panel panel-default panel-login">
-                            <div class="panel-body">
+                            <div class="">
                                 <div class="row-fluid form-group">
                                     <div class="col-md-12"></div>
                                 </div>
@@ -213,17 +217,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         </div>
+
+        <!-- @include('partials/_footer') -->
+
         
-    </div>
-    <div id="footer">
-        <footer class="text-center">
-            <div class="ng-scope">
-                <h5 class="footer-text ng-binding ng-scope">請注意，2016 Teach for Taiwan教師計畫報名系統將開放至2016年4月7日 13:00截止，逾期系統將不受理報名，請申請者提早規劃完成報名手續。</h5>
-            </div>
-        </footer>
+        <div id="footer">
+            <footer class="text-center">
+                <div class="ng-scope">
+                    <h5 class="footer-text ng-binding ng-scope">請注意，2016 Teach for Taiwan教師計畫報名系統將開放至2016年4月7日 13:00截止，逾期系統將不受理報名，請申請者提早規劃完成報名手續。</h5>
+                </div>
+            </footer>
+        </div>
+
     </div>
 </body>
 </html>

@@ -21,7 +21,7 @@ class TeachExperienceController extends Controller
         Log::info($userTeach);        
         Log::info($teachExperiences);        
         Log::info('===============================================\n\n');
-        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $data = compact('loginUser', 'userTeach', 'teachExperiences');
         return view('teachExperience.create',$data);
     }

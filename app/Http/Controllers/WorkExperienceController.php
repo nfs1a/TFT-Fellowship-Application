@@ -24,7 +24,7 @@ class WorkExperienceController extends Controller
         Log::info($expertises);        
         Log::info($workExperiences);        
         Log::info('===============================================\n\n');
-        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $data = compact('loginUser', 'expertises', 'workExperiences');
         return view('workExperience.create', $data);
     }
