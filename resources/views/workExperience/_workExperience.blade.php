@@ -41,6 +41,7 @@
             <div class="col-md-5">
                 {{--*/ $startDate = isset($workExperiences[0]->startDate)? $workExperiences[0]->startDate: '' /*--}}
                 {{--*/ $startDate = isset(Input::old('startDate')[0])? Input::old('startDate')[0]: $startDate /*--}}
+                {{--*/ $startDate = $startDate == '1970-01-01 08:00:00'? '': $startDate /*--}}
                 <input type="text" name="startDate[]" class="form-control date" placeholder="1991/01/33"
                     required="required" value="{{ $startDate }}" />
                 {{ $errors->first('startDate.0') }}
@@ -48,6 +49,7 @@
              <div class="col-md-5">
                 {{--*/ $endDate = isset($workExperiences[0]->endDate)? $workExperiences[0]->endDate: '' /*--}}
                 {{--*/ $endDate = isset(Input::old('endDate')[0])? Input::old('endDate')[0]: $endDate /*--}}
+                {{--*/ $endDate = $endDate == '1970-01-01 08:00:00'? '': $endDate /*--}}               
                 <input type="text" name="endDate[]" class="form-control date" placeholder="1991/01/33"
                     required="required" value="{{ $endDate }}" />
                 {{ $errors->first('endDate.0') }}
@@ -98,6 +100,7 @@
                 <div class="col-md-5">
                     {{--*/ $startDate = isset($workExperiences[$i]->startDate)? $workExperiences[$i]->startDate: '' /*--}}
                     {{--*/ $startDate = isset(Input::old('startDate')[$i])? Input::old('startDate')[$i]: $startDate /*--}}
+                    {{--*/ $startDate = $startDate == '1970-01-01 08:00:00'? '': $startDate /*--}}               
                     <input type="text" name="startDate[]" class="form-control date" placeholder="1991/01/33"
                         value="{{ $startDate }}" />
                     {{ $errors->first('startDate.'.$i) }}
@@ -105,6 +108,7 @@
                  <div class="col-md-5">
                     {{--*/ $endDate = isset($workExperiences[$i]->endDate)? $workExperiences[$i]->endDate: '' /*--}}
                     {{--*/ $endDate = isset(Input::old('endDate')[$i])? Input::old('endDate')[$i]: $endDate /*--}}
+                    {{--*/ $endDate = $endDate == '1970-01-01 08:00:00'? '': $endDate /*--}}               
                     <input type="text" name="endDate[]" class="form-control date" placeholder="1991/01/33"
                         value="{{ $endDate }}" />
                     {{ $errors->first('endDate.'.$i) }}

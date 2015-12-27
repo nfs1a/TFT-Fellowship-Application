@@ -96,8 +96,8 @@ class InitDB extends Migration
             $table->integer('work_id');
             $table->string('organization');
             $table->string('position');
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('startDate')->nullable();
+            $table->dateTime('endDate')->nullable();
             $table->text('description');
             $table->timestamps();
         });
@@ -119,8 +119,8 @@ class InitDB extends Migration
             $table->integer('teach_id');
             $table->string('organization');
             $table->string('position');
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('startDate')->nullable();
+            $table->dateTime('endDate')->nullable();
             $table->text('description');
             $table->timestamps();
         });
