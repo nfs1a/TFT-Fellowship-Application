@@ -30,14 +30,14 @@
                     <a href="{{ url('basic/create') }}">
                         <div class="float-shadow col-md-4">
                             <div class="panel panel-default panel-dashboard">
-                                <div class="panel-body" style = "height:147px;">
+                                <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
                                         個人資料
                                     </p>
 
                                     <p class="panel-description">
-                                       從填寫你的聯絡資訊與個人背景著手吧！                    
+                                       填寫你的聯絡資訊與個人背景                    
                                     </p>
                                     <div>
                                         @if( $user->progress->basic == 1 )
@@ -61,8 +61,8 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        請填寫你個人過去的專業經歷，
-                                        例如工作或社團領導、參與或服務經驗。
+                                        填寫你個人過去的專業經歷，
+                                        例如工作或社團領導、參與。
                                     </p>
                                     <div>
                                         @if( $user->progress->work == 1 )
@@ -86,7 +86,8 @@
                                     </p>
 
                                     <p class="panel-description">
-                                        請填寫你個人過去任何與教學相關的經歷。
+                                        填寫你個人過去的教學經歷，
+                                        例如教學或服務經驗、參與。
                                     </p>
                                     <div>
                                         @if( $user->progress->teach == 1 )
@@ -106,7 +107,7 @@
                                 <div class="panel-body">
                                     <p class="panel-head">
                                         <i class="fa fa-th-list"> </i>
-                                        計畫簡答題Essay
+                                        計畫簡答題
                                     </p>
 
                                     <p class="panel-description">

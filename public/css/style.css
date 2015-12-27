@@ -192,6 +192,9 @@ a > .panel-dashboard:hover {
     font-weight: bold;
     font-family: 'OpenSans';
 }
+.panel-body {
+    height: 190px;
+}
 
 .panel-status-heading {
     font-family: 'Roboto';
@@ -234,6 +237,7 @@ a > .panel-dashboard:hover {
 .panel-description {
     font-family: 'OpenSans';
     font-size: medium;
+    height: 90px;
 }
 
 hr.sectionBreak {
