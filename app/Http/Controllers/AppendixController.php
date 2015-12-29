@@ -16,7 +16,7 @@ class AppendixController extends Controller
     public function create()
     {
         $userAppendix = Auth::user()->appendix()->first();
-        $loginUser = Auth::check() ? Auth::user()->eamil : null;
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $data = compact('loginUser', 'userAppendix');
         return view('appendix.create',$data);
     }
