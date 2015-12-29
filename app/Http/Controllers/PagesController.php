@@ -11,6 +11,7 @@ use App\User;
 use Auth;
 use App\Progress;
 use App\Work;
+use Mail;
 
 class PagesController extends Controller
 {
@@ -20,22 +21,8 @@ class PagesController extends Controller
     public function dashboard()
     {
         
-        // 這一段之後拿到建立新帳號的地方
-        if (Auth::check()){
-        	$user = User::with('progress')->get()->find(Auth::user()->id);
-        } else {
-        	$user = new User;
-            $user->name = 'test'.rand(0,100);
-            $user->email = 'test'.rand(0,100);
-            $user->password = bcrypt('test');
-            $user->save();
-            Auth::login($user);
-            $user = Auth::user();
-            $progress = new Progress;
-            Auth::user()->progress()->save($progress);
-        }
-
-        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $user = User::with('progress')->get()->find(Auth::user()->id);
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $progress = Auth::user()->progress()->first();
         $progress->allpay = 1;
         $isPass = $progress['basic'] * $progress['work'] * $progress['teach'] * $progress['essay'] * $progress['appendix'] * $progress['allpay'];
@@ -47,6 +34,16 @@ class PagesController extends Controller
     public function basic()
     {
         return view('dashboard.basic');
+    }
+
+    public function thankyouPage() {
+
+        Mail::send('payment.paymentResultMail', ['key' => 'value'], function($message)
+        {
+            $currentuser = Auth::user();
+            $message->to($currentuser->email, '報名結果')->subject('報名資料繳交成功');
+        });
+        return view('thankyou.thankyoupage');
     }
 }
 

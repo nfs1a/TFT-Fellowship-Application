@@ -24,7 +24,7 @@ class WorkExperienceController extends Controller
         Log::info($expertises);        
         Log::info($workExperiences);        
         Log::info('===============================================\n\n');
-        $loginUser = Auth::check() ? Auth::user()->name : null;
+        $loginUser = Auth::check() ? Auth::user()->email : null;
         $data = compact('loginUser', 'expertises', 'workExperiences');
         return view('workExperience.create', $data);
     }
@@ -33,7 +33,7 @@ class WorkExperienceController extends Controller
     {
         $input = $request->all();
         // Log::info('------- WorkExperienceController: store -------'); 
-        // Log::info(count($input['organization']));        
+        // Log::info($input['startDate']);        
         // Log::info('===============================================\n\n');
         
         Auth::user()->work()->delete();
@@ -57,10 +57,10 @@ class WorkExperienceController extends Controller
             $workExperience = new WorkExperience;
             $workExperience->organization = $input['organization'][$i];
             $workExperience->position = $input['position'][$i];
-            $workExperience->startDate = $input['startDate'][$i];
-            $workExperience->endDate = $input['endDate'][$i];
+            $workExperience->startDate = date('Y-m-d H:i:s', strtotime($input['startDate'][$i]));
+            $workExperience->endDate = date('Y-m-d H:i:s', strtotime($input['endDate'][$i]));
             $workExperience->description = $input['description'][$i];
-            Auth::user()->work()->first()->workExperiences()->save($workExperience);
+            Auth::user()->work()->first()->workExperiences()->save($workExperience);        
         }
 
         // Log::info('------- WorkExperienceController: store -------'); 
