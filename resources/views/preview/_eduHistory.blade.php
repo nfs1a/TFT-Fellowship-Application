@@ -25,35 +25,35 @@
                         <td>{{ $user->basic->eduHistorys[$i]->school }}</td>
 
                         <th scope="row">學位</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->degreeLevel }}</td>
+                        <td>{{ $degreeLevelDictionary[$user->basic->eduHistorys[$i]->degreeLevel] }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">系所</th>
                         <td>{{ $user->basic->eduHistorys[$i]->major }}</td>
 
                         <th scope="row">就學狀態</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->eduStatus }}</td>
+                        <td>{{ $eduStatusDictionary[$user->basic->eduHistorys[$i]->eduStatus] }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">科系類別</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->majorMainClass }}</td>
+                        <td>{{ $classDictionary[$user->basic->eduHistorys[$i]->majorMainClass] }}</td>
 
                         <th scope="row">科系學群</th>
                         <td>{{ $user->basic->eduHistorys[$i]->majorSubClass }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">地區</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->eduMainArea }}</td>
+                        <td>{{ $classDictionary[$user->basic->eduHistorys[$i]->eduMainArea] }}</td>
 
                         <th scope="row">國家</th>
                         <td>{{ $user->basic->eduHistorys[$i]->eduSubArea }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">就讀期間(起)</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->eduPeriodStartYear.$user->basic->eduHistorys[$i]->eduPeriodStartMon }}</td>
+                        <td>{{ $user->basic->eduHistorys[$i]->eduPeriodStartYear."/".$user->basic->eduHistorys[$i]->eduPeriodStartMon }}</td>
 
                         <th scope="row">就讀期間(迄)</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->eduPeriodEndYear.$user->basic->eduHistorys[$i]->eduPeriodEndon }}</td>
+                        <td>{{ $user->basic->eduHistorys[$i]->eduPeriodEndYear."/".$user->basic->eduHistorys[$i]->eduPeriodEndon }}</td>
                     </tr>
 
                     {{--<tr> --}}
