@@ -25,14 +25,14 @@
                         <td>{{ $user->basic->eduHistorys[$i]->school }}</td>
 
                         <th scope="row">學位</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->degreeLevel }}</td>
+                        <td>{{ $degreeLevelDictionary[$user->basic->eduHistorys[$i]->degreeLevel] }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">系所</th>
                         <td>{{ $user->basic->eduHistorys[$i]->major }}</td>
 
                         <th scope="row">就學狀態</th>
-                        <td>{{ $user->basic->eduHistorys[$i]->eduStatus }}</td>
+                        <td>{{ $eduStatusDictionary[$user->basic->eduHistorys[$i]->eduStatus] }}</td>
                     </tr>
                     <tr> 
                         <th scope="row">科系類別</th>
