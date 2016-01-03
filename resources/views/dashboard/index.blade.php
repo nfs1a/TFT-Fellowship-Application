@@ -5,7 +5,7 @@
 <div id="page">
 
     <div id="dashboard" class="container page ">
-        <div class="row sectionTitle"><h1>Application Dashboard </h1></div>
+        {{--<div class="row sectionTitle"><h1>Application Dashboard </h1></div>--}}
         <div class="row">
             <div class="col-md-10 col-md-push-1">
                 <div class="col-md-12 well background-white ">
