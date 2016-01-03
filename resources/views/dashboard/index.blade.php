@@ -7,13 +7,12 @@
     <div id="dashboard" class="container page ">
         <div class="row sectionTitle"><h1>Application Dashboard </h1></div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10 col-md-push-1">
                 <div class="col-md-12 well background-white ">
                     <h3 class="text-center tfiOrange ">
                         歡迎申請2016 Teach for Taiwan教師計畫
-                    </h3><br>
-
-                    <p class="text-center">親愛的申請者，歡迎您申請TFT計畫。申請表共分為基本資料、專業經歷（工作、社團、服務經驗）、教學經驗、計畫申論題、附件區及繳納報名費六個區塊，
+                    </h3>
+                    <p class="text-center" style="padding-left: 30px; padding-right: 30px;">親愛的申請者，歡迎您申請TFT計畫。申請表共分為基本資料、專業經歷（工作、社團、服務經驗）、教學經驗、計畫申論題、附件區及繳納報名費六個區塊，
                         各區塊可獨立填寫，各區填寫完畢請按下「儲存」鍵，六區塊皆完成即可送出報名資料。</p>
                 </div>
                 
