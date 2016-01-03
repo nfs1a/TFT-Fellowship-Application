@@ -109,8 +109,7 @@
                                         計畫簡答題
                                     </p>
 
-                                    <p class="panel-description">
-                                        請與我們聊聊為什麼你對Teach for Taiwan感興趣，以及你對「當老師」這件事的看法。
+                                    <p class="panel-description">請與我們聊聊為什麼你對Teach for Taiwan感興趣，以及你對「當老師」這件事的看法。
                                     </p>
                                     <div>
                                         @if( $user->progress->essay == 1 )
@@ -129,12 +128,10 @@
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">
                                     <p class="panel-head">
-                                        <i class="fa fa-th-list"> </i>
-                                        上傳附件
+                                        <i class="fa fa-th-list"> </i>上傳附件
                                     </p>
 
-                                    <p class="panel-description">
-                                        請在此上傳相關證明文件。
+                                    <p class="panel-description">請在此上傳相關證明文件。
                                     </p>
                                     <div>
                                         @if( $user->progress->appendix == 1 )
@@ -153,13 +150,10 @@
                             <div class="panel panel-default panel-dashboard">
                                 <div class="panel-body">
                                     <p class="panel-head">
-                                        <i class="fa fa-th-list"> </i>
-                                        繳納報名費
+                                        <i class="fa fa-th-list"> </i>繳納報名費
                                     </p>
 
-                                    <p class="panel-description">
-                                        報名費為新台幣300元，係透過歐付寶第三方支付平台進行付款，繳納成功TFT將開立收據給您。
-                                    </p>
+                                    <p class="panel-description">報名費為新台幣300元，係透過歐付寶第三方支付平台進行付款，繳納成功TFT將開立收據給您。</p>
                                     <div>
                                         @if( $user->progress->allpay == 1 )
                                             @include('dashboard/_complete')
@@ -177,7 +171,7 @@
         <div class="col-md-8 col-md-offset-2">
             <a href="{{ url('preview') }}">
                 <button type="submit" class="btn btn-primary pull-right btn-lg btn-block" {{ $isPass == 0 ? "disabled":"" }}>
-                    送出
+                    預覽
                 </button>
             </a>
         </div>
