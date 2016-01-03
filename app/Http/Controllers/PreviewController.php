@@ -36,6 +36,7 @@ class PreviewController extends Controller
             "11" => "國中(含)以下"
         ];
         $classDictionary = [
+            "0"          => "未填寫",
             "3001000000" => "教育學科類",
             "3002000000" => "藝術學科類",
             "3003000000" => "語文及人文學科類",
