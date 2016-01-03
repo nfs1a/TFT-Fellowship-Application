@@ -89,6 +89,8 @@ Route::post('paymentResultServer', 'PaymentController@PaymentResultServer');   /
 // 資料預覽頁面
 Route::get ('preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@index' ]);
 Route::get ('api/preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@indexApi' ]);
+Route::get ('pdf', [ 'middleware' => 'auth', 'uses' => 'PreviewController@pdf' ]);
+
 // 感謝頁面
 Route::get ('thankyou', [ 'middleware' => 'auth', 'uses' => 'PagesController@thankyouPage' ]);
 
