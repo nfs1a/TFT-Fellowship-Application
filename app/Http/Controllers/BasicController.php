@@ -22,7 +22,7 @@ class BasicController extends Controller
         // Log::info($eduHistorys);        
         // Log::info('===============================================\n\n');
         $loginUser = Auth::check() ? Auth::user()->email : null;
-        $data = compact('loginUser', 'userBasic', 'eduHistorys');
+        return $data = compact('loginUser', 'userBasic', 'eduHistorys');
         return view('basic.create',$data);
     }
 
