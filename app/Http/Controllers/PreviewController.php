@@ -404,12 +404,14 @@ class PreviewController extends Controller
         $user = User::with('work', 'teach', 'essay', 'basic', 'appendix', 'work.workExperiences', 'work.expertises', 'teach.teachExperiences', 'basic.eduHistorys')->get()->find(Auth::user()->id);
         $loginUser = Auth::check() ? Auth::user()->email : null;
         $eduStatusDictionary = [
+            "0" => "未填寫",
             "1" => "已畢業",
             "2" => "應屆畢業",
             "3" => "肄業",
             "4" => "就學中"
         ];
         $degreeLevelDictionary = [
+            "0" => "未填寫",
             "1" => "博士",
             "2" => "碩士",
             "3" => "大學",
@@ -423,6 +425,7 @@ class PreviewController extends Controller
             "11" => "國中(含)以下"
         ];
         $classDictionary = [
+            "0"          => "未填寫",
             "3001000000" => "教育學科類",
             "3002000000" => "藝術學科類",
             "3003000000" => "語文及人文學科類",
@@ -775,7 +778,7 @@ class PreviewController extends Controller
         ];
 
         $data = compact('loginUser', 'user', 'classDictionary', 'degreeLevelDictionary', 'eduStatusDictionary');
-        return view('preview.index', $data);
+        return view('preview.pdf', $data);
     }
 
 }
