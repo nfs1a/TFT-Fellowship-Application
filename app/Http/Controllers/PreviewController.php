@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\PDF;
+use Doctrine\DBAL\Schema\View;
+use Illuminate\Support\Facades\App;
 use Log;
 use Auth;
 

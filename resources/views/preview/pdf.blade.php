@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <title>Teach for Taiwan</title>
     <meta charset="utf-8">
+=======
+<html lang="zh-tw">
+<head>
+    <title>Teach for Taiwan</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+>>>>>>> develop
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -25,7 +32,7 @@
         <div class="container">
             <div class="row sectionBody">
                 <!-- sectionBody: Left -->
-                <div class="sectionPan panel panel-default col-md-12 shadow">
+                <div class="sectionPan panel panel-default col-md-10 shadow col-lg-push-1">
                     <div class="panel-body">
                         <h2>Teach For Taiwan 教師申請表</h2>
                         @include('preview/_basic')
