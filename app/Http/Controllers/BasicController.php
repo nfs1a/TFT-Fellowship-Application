@@ -26,6 +26,18 @@ class BasicController extends Controller
         return view('basic.create',$data);
     }
 
+    public function api()
+    {
+        $userBasic = Auth::user()->basic()->first();
+        $eduHistorys = isset(Auth::user()->basic()->with('eduHistorys')->first()->eduHistorys)? Auth::user()->basic()->with('eduHistorys')->first()->eduHistorys: null;
+        // Log::info('------- BasicController: create -------');
+        // Log::info($userBasic);
+        // Log::info($eduHistorys);
+        // Log::info('===============================================\n\n');
+        $loginUser = Auth::check() ? Auth::user()->email : null;
+        return $data = compact('loginUser', 'userBasic', 'eduHistorys');
+    }
+
 
     public function store(BasicRequest $request)
     {
