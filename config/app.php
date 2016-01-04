@@ -139,6 +139,7 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         'AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider',
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -198,7 +199,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Illuminate\Html\FormFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'SocialAuth' => 'AdamWathan\EloquentOAuth\Facades\OAuth',
+        'SocialAuth'=> 'AdamWathan\EloquentOAuth\Facades\OAuth',
+        'PDF'       => Barryvdh\DomPDF\Facade::class,
 
 
     ],

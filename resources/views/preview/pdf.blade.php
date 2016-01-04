@@ -1,7 +1,14 @@
+<<<<<<< HEAD
+<html lang="en">
+<head>
+    <title>Teach for Taiwan</title>
+    <meta charset="utf-8">
+=======
 <html lang="zh-tw">
 <head>
     <title>Teach for Taiwan</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+>>>>>>> develop
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 

@@ -7,7 +7,7 @@
 
     <div class="col-sm-10">
         {{--*/ $school = isset($eduHistorys[0]->school)? $eduHistorys[0]->school: '' /*--}}
-        {{--*/ $school = isset(Input::old('school')[0])? Input::old('school')[0]: $school /*--}}            
+        {{--*/ $school = isset(Input::old('school')[0])? Input::old('school')[0]: $school /*--}}
         <input type="text" class="form-control" name="school[]" placeholder="國立ＯＯ大學"
                required="required" value="{{ $school }}">
     </div>
@@ -15,9 +15,8 @@
 </div>
 <div class="form-group" onmouseover="displayExample('degreeLevel')">
     <label for="input" class="col-sm-2 control-label">學位</label>
-
     <div class="col-sm-10">
-        <select class="form-control" name="degreeLevel[]" required="required">
+        <select class="form-control" name="degreeLevel[0]" required="required">
             <option value="0" selected="selected">選一個</option>
             <option value="1">博士</option>
             <option value="2">碩士</option>
@@ -39,13 +38,12 @@
 
     <div class="col-sm-10">
         {{--*/ $major = isset($eduHistorys[0]->major)? $eduHistorys[0]->major: '' /*--}}
-        {{--*/ $major = isset(Input::old('major')[0])? Input::old('major')[0]: $major /*--}}            
+        {{--*/ $major = isset(Input::old('major')[0])? Input::old('major')[0]: $major /*--}}
         <input type="text" class="form-control" name="major[]" placeholder="幼兒教育學系"
                required="required" value="{{ $major }}">
     </div>
     {{ $errors->first('major.0') }}
 </div>
-
 <div class="form-group" onmouseover="displayExample('majorClass')">
     <label for="input" class="col-sm-2 control-label">科系類別</label>
 
@@ -82,7 +80,6 @@
     </div>
     {{ $errors->first('majorSubClass.0') }}
 </div>
-
 <div class="form-group" onmouseover="displayExample('eduArea')">
     <label for="input" class="col-sm-2 control-label">地區</label>
 
@@ -106,12 +103,11 @@
     </div>
 
 </div>
-
 <div class="form-group" onmouseover="displayExample('eduArea')">
     <label for="input" class="col-sm-2 control-label">就學期間<br>（開始）</label>
 
     <div class="col-sm-4">
-        <select class="form-control eduPeriod" name="eduPeriodStartYear[]" required="required"
+        <select class="form-control eduPeriod" name="eduPeriodStartYear[0]" required="required"
                 required="required">
             <option value="0"></option>
             <option value="2022">西元2022</option>
@@ -189,18 +185,18 @@
         <label for="input" class="control-label">年</label>
     </div>
     <div class="col-sm-4">
-        <select class="form-control eduPeriod" name="eduPeriodStartMon[]" required="required"
+        <select class="form-control eduPeriod" name="eduPeriodStartMon[0]" required="required"
                 required="required">
             <option value="0"></option>
-            <option value="01">1</option>
-            <option value="02">2</option>
-            <option value="03">3</option>
-            <option value="04">4</option>
-            <option value="05">5</option>
-            <option value="06">6</option>
-            <option value="07">7</option>
-            <option value="08">8</option>
-            <option value="09">9</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
@@ -211,12 +207,11 @@
         <label for="input" class="control-label">月</label>
     </div>
 </div>
-
 <div class="form-group" onmouseover="displayExample('eduArea')">
     <label for="input" class="col-sm-2 control-label">就學期間<br>（結束）</label>
 
     <div class="col-sm-4">
-        <select class="form-control eduPeriod" name="eduPeriodEndYear[]" required="required"
+        <select class="form-control eduPeriod" name="eduPeriodEndYear[0]" required="required"
                 required="required">
             <option value="0"></option>
             <option value="2022">西元2022</option>
@@ -294,18 +289,18 @@
         <label for="input" class="control-label">年</label>
     </div>
     <div class="col-sm-4">
-        <select class="form-control eduPeriod" name="eduPeriodEndMon[]" required="required"
-                          required="required">
+        <select class="form-control eduPeriod" name="eduPeriodEndMon[0]" required="required"
+                required="required">
             <option value="0"></option>
-            <option value="01">1</option>
-            <option value="02">2</option>
-            <option value="03">3</option>
-            <option value="04">4</option>
-            <option value="05">5</option>
-            <option value="06">6</option>
-            <option value="07">7</option>
-            <option value="08">8</option>
-            <option value="09">9</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
@@ -316,12 +311,11 @@
         <label for="input" class="control-label">月</label>
     </div>
 </div>
-
 <div class="form-group" onmouseover="displayExample('eduStatus')">
     <label for="input" class="col-sm-2 control-label">學業狀態</label>
 
     <div class="col-sm-10">
-        <select class="form-control" name="eduStatus[]" required="required">
+        <select class="form-control" name="eduStatus[0]" required="required">
             <option value="0">選一個</option>
             <option value="1">已畢業</option>
             <option value="2">應屆畢業</option>
@@ -331,18 +325,18 @@
         {{ $errors->first('eduStatus.0') }}
     </div>
 </div>
+
 @for ($i = 1; $i < 3; $i++)
     <div class="legend tfiBlueDark">學歷{{$i+1}}
         <hr class="small-top">
     </div>
-
     <div class="form-group" onmouseover="displayExample('school')">
         <label for="input" class="col-sm-2 control-label">學校名稱</label>
 
         <div class="col-sm-10">
             {{--*/ $school = isset($eduHistorys[$i]->school)? $eduHistorys[$i]->school: '' /*--}}
             {{--*/ $school = isset(Input::old('school')[$i])? Input::old('school')[$i]: $school /*--}}
-            <input type="text" class="form-control" name="school[]" placeholder="國立ＯＯ大學"
+            <input type="text" class="form-control" name="school[{{ $i }}]" placeholder="國立ＯＯ大學"
                    value="{{ $school }}">
         </div>
         {{ $errors->first('school.'.$i) }}
@@ -351,7 +345,7 @@
         <label for="input" class="col-sm-2 control-label">學位</label>
 
         <div class="col-sm-10">
-            <select class="form-control" name="degreeLevel[]">
+            <select class="form-control" name="degreeLevel[{{ $i }}]">
                 <option value="0" selected="selected">選一個</option>
                 <option value="1">博士</option>
                 <option value="2">碩士</option>
@@ -374,12 +368,11 @@
         <div class="col-sm-10">
             {{--*/ $major = isset($eduHistorys[$i]->major)? $eduHistorys[$i]->major: '' /*--}}
             {{--*/ $major = isset(Input::old('major')[$i])? Input::old('major')[$i]: $major /*--}}
-            <input type="text" class="form-control" name="major[]" placeholder="幼兒教育學系"
+            <input type="text" class="form-control" name="major[{{ $i }}]" placeholder="幼兒教育學系"
                    value="{{ $major }}">
         </div>
         {{ $errors->first('major.'.$i) }}
     </div>
-
     <div class="form-group" onmouseover="displayExample('majorClass')">
         <label for="input" class="col-sm-2 control-label">科系類別</label>
 
@@ -416,7 +409,6 @@
         </div>
         {{ $errors->first('majorSubClass.'.$i) }}
     </div>
-
     <div class="form-group" onmouseover="displayExample('eduArea')">
         <label for="input" class="col-sm-2 control-label">地區</label>
 
@@ -444,7 +436,7 @@
         <label for="input" class="col-sm-2 control-label">就學期間<br>（開始）</label>
 
         <div class="col-sm-4">
-            <select class="form-control eduPeriod" name="eduPeriodStartYear[]"
+            <select class="form-control eduPeriod" name="eduPeriodStartYear[{{ $i }}]"
                     required="required">
                 <option value="0"></option>
                 <option value="2022">西元2022</option>
@@ -522,18 +514,18 @@
             <label for="input" class="control-label">年</label>
         </div>
         <div class="col-sm-4">
-            <select class="form-control eduPeriod" name="eduPeriodStartMon[]"
+            <select class="form-control eduPeriod" name="eduPeriodStartMon[{{ $i }}]"
                     required="required">
                 <option value="0"></option>
-                <option value="01">1</option>
-                <option value="02">2</option>
-                <option value="03">3</option>
-                <option value="04">4</option>
-                <option value="05">5</option>
-                <option value="06">6</option>
-                <option value="07">7</option>
-                <option value="08">8</option>
-                <option value="09">9</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -544,12 +536,11 @@
             <label for="input" class="control-label">月</label>
         </div>
     </div>
-
     <div class="form-group" onmouseover="displayExample('eduArea')">
         <label for="input" class="col-sm-2 control-label">就學期間<br>（結束）</label>
 
         <div class="col-sm-4">
-            <select class="form-control eduPeriod" name="eduPeriodEndYear[]"
+            <select class="form-control eduPeriod" name="eduPeriodEndYear[{{ $i }}]"
                     required="required">
                 <option value="0"></option>
                 <option value="2022">西元2022</option>
@@ -627,18 +618,18 @@
             <label for="input" class="control-label">年</label>
         </div>
         <div class="col-sm-4">
-            <select class="form-control eduPeriod" name="eduPeriodEndMon[]"
+            <select class="form-control eduPeriod" name="eduPeriodEndMon[{{ $i }}]"
                     required="required">
                 <option value="0"></option>
-                <option value="01">1</option>
-                <option value="02">2</option>
-                <option value="03">3</option>
-                <option value="04">4</option>
-                <option value="05">5</option>
-                <option value="06">6</option>
-                <option value="07">7</option>
-                <option value="08">8</option>
-                <option value="09">9</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -649,12 +640,11 @@
             <label for="input" class="control-label">月</label>
         </div>
     </div>
-
     <div class="form-group" onmouseover="displayExample('eduStatus')">
         <label for="input" class="col-sm-2 control-label">學業狀態</label>
 
         <div class="col-sm-10">
-            <select class="form-control" name="eduStatus[]">
+            <select class="form-control" name="eduStatus[{{ $i }}]">
                 <option value="0" selected="selected">選一個</option>
                 <option value="1">已畢業</option>
                 <option value="2">應屆畢業</option>
@@ -665,3 +655,91 @@
         </div>
     </div>
 @endfor
+
+
+<script type="text/javascript">
+    $(function () {
+        var degreeLevel = new Array();
+        var majorMainClass = new Array();
+        var majorSubClass = new Array();
+        var eduMainArea = new Array();
+        var eduSubArea = new Array();
+        var eduPeriodStartYear = new Array();
+        var eduPeriodStartMon = new Array();
+        var eduPeriodEndYear = new Array();
+        var eduPeriodEndMon = new Array();
+        var eduStatus = new Array();
+
+        @for ($i = 0; $i <= 2; $i++)
+            degreeLevel[{{ $i }}] = "{{ $degreeLevel[$i] = isset($eduHistorys[$i]->degreeLevel)? $eduHistorys[$i]->degreeLevel : 'undefined' }}";
+            degreeLevel[{{ $i }}] = "{{ $degreeLevel[$i] = Input::old('degreeLevel')[$i]? Input::old('degreeLevel')[$i] : $degreeLevel[$i] }}";
+            $("select[name='degreeLevel["+{{ $i }}+
+            "]']"
+            ).
+            val(degreeLevel[{{ $i }}]);
+
+            majorMainClass[{{ $i }}] = "{{ $majorMainClass[$i] = isset($eduHistorys[$i]->majorMainClass)? $eduHistorys[$i]->majorMainClass : 'undefined' }}";
+            majorMainClass[{{ $i }}] = "{{ $majorMainClass[$i] = Input::old('majorMainClass')[$i]? Input::old('majorMainClass')[$i] : $majorMainClass[$i] }}";
+            $("select[name='majorMainClass["+{{ $i }}+
+            "]']"
+            ).
+            val(majorMainClass[{{ $i }}]);
+
+            majorSubClass[{{ $i }}] = "{{ $majorSubClass[$i] = isset($eduHistorys[$i]->majorSubClass)? $eduHistorys[$i]->majorSubClass : 'undefined' }}";
+            majorSubClass[{{ $i }}] = "{{ $majorSubClass[$i] = Input::old('majorSubClass')[$i]? Input::old('majorSubClass')[$i] : $majorSubClass[$i] }}";
+            $("select[name='majorSubClass["+{{ $i }}+
+            "]']"
+            ).
+            val(majorSubClass[{{ $i }}]);
+
+            eduMainArea[{{ $i }}] = "{{ $eduMainArea[$i] = isset($eduHistorys[$i]->eduMainArea)? $eduHistorys[$i]->eduMainArea : 'undefined' }}";
+            eduMainArea[{{ $i }}] = "{{ $eduMainArea[$i] = Input::old('eduMainArea')[$i]? Input::old('eduMainArea')[$i] : $eduMainArea[$i] }}";
+            $("select[name='eduMainArea["+{{ $i }}+
+            "]']"
+            ).
+            val(eduMainArea[{{ $i }}]);
+
+            eduSubArea[{{ $i }}] = "{{ $eduSubArea[$i] = isset($eduHistorys[$i]->eduSubArea)? $eduHistorys[$i]->eduSubArea : 'undefined' }}";
+            eduSubArea[{{ $i }}] = "{{ $eduSubArea[$i] = Input::old('eduSubArea')[$i]? Input::old('eduSubArea')[$i] : $eduSubArea[$i] }}";
+            $("select[name='eduSubArea["+{{ $i }}+
+            "]']"
+            ).
+            val(eduSubArea[{{ $i }}]);
+
+            eduPeriodStartYear[{{ $i }}] = "{{ $eduPeriodStartYear[$i] = isset($eduHistorys[$i]->eduPeriodStartYear)? $eduHistorys[$i]->eduPeriodStartYear : 'undefined' }}";
+            eduPeriodStartYear[{{ $i }}] = "{{ $eduPeriodStartYear[$i] = Input::old('eduPeriodStartYear')[$i]? Input::old('eduPeriodStartYear')[$i] : $eduPeriodStartYear[$i] }}";
+            $("select[name='eduPeriodStartYear["+{{ $i }}+
+            "]']"
+            ).
+            val(eduPeriodStartYear[{{ $i }}]);
+
+            eduPeriodStartMon[{{ $i }}] = "{{ $eduPeriodStartMon[$i] = isset($eduHistorys[$i]->eduPeriodStartMon)? $eduHistorys[$i]->eduPeriodStartMon : 'undefined' }}";
+            eduPeriodStartMon[{{ $i }}] = "{{ $eduPeriodStartMon[$i] = Input::old('eduPeriodStartMon')[$i]? Input::old('eduPeriodStartMon')[$i] : $eduPeriodStartMon[$i] }}";
+            $("select[name='eduPeriodStartMon["+{{ $i }}+
+            "]']"
+            ).
+            val(eduPeriodStartMon[{{ $i }}]);
+
+            eduPeriodEndYear[{{ $i }}] = "{{ $eduPeriodEndYear[$i] = isset($eduHistorys[$i]->eduPeriodEndYear)? $eduHistorys[$i]->eduPeriodEndYear : 'undefined' }}";
+            eduPeriodEndYear[{{ $i }}] = "{{ $eduPeriodEndYear[$i] = Input::old('eduPeriodEndYear')[$i]? Input::old('eduPeriodEndYear')[$i] : $eduPeriodEndYear[$i] }}";
+            $("select[name='eduPeriodEndYear["+{{ $i }}+
+            "]']"
+            ).
+            val(eduPeriodEndYear[{{ $i }}]);
+
+            eduPeriodEndMon[{{ $i }}] = "{{ $eduPeriodEndMon[$i] = isset($eduHistorys[$i]->eduPeriodEndMon)? $eduHistorys[$i]->eduPeriodEndMon : 'undefined' }}";
+            eduPeriodEndMon[{{ $i }}] = "{{ $eduPeriodEndMon[$i] = Input::old('eduPeriodEndMon')[$i]? Input::old('eduPeriodEndMon')[$i] : $eduPeriodEndMon[$i] }}";
+            $("select[name='eduPeriodEndMon["+{{ $i }}+
+            "]']"
+            ).
+            val(eduPeriodEndMon[{{ $i }}]);
+
+            eduStatus[{{ $i }}] = "{{ $eduStatus[$i] = isset($eduHistorys[$i]->eduStatus)? $eduHistorys[$i]->eduStatus : 'undefined' }}";
+            eduStatus[{{ $i }}] = "{{ $eduStatus[$i] = Input::old('eduStatus')[$i]? Input::old('eduStatus')[$i] : $eduStatus[$i] }}";
+            $("select[name='eduStatus["+{{ $i }}+
+            "]']"
+            ).
+            val(eduStatus[{{ $i }}]);
+        @endfor
+    });
+</script>

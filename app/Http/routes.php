@@ -70,6 +70,7 @@ Route::get ('dashboard',  ['middleware' => 'auth', 'uses' => 'PagesController@da
 // 第一區塊：基本資料
 Route::get ('basic/create', [ 'middleware' => 'auth', 'as' => 'basic.create' , 'uses' => 'BasicController@create']);   //新增基本資料表單
 Route::post('basic', [ 'middleware' => 'auth', 'as' => 'basic.store'  , 'uses' => 'BasicController@store']);    //新增使用者資料到資料庫
+Route::get ('api/basic', [ 'middleware' => 'auth', 'uses' => 'BasicController@api' ]);
 // 第二區塊：工作/社團經驗
 Route::get ('workExperience/create', [ 'middleware' => 'auth', 'uses' => 'WorkExperienceController@create' ]);
 Route::post('workExperience/create', [ 'middleware' => 'auth', 'uses' => 'WorkExperienceController@store' ]);
@@ -89,6 +90,8 @@ Route::post('paymentResultServer', 'PaymentController@PaymentResultServer');   /
 // 資料預覽頁面
 Route::get ('preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@index' ]);
 Route::get ('api/preview', [ 'middleware' => 'auth', 'uses' => 'PreviewController@indexApi' ]);
+Route::get ('pdf', [ 'middleware' => 'auth', 'uses' => 'PreviewController@pdf' ]);
+
 // 感謝頁面
 Route::get ('thankyou', [ 'middleware' => 'auth', 'uses' => 'PagesController@thankyouPage' ]);
 
