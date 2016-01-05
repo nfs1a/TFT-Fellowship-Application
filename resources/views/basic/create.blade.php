@@ -93,7 +93,7 @@
                     $subClass.empty().append(function () {
                         var output = '';
                         $.each(selectValues[$mainClass.val()], function (key, value) {
-                            output += '<option value' + value + '>' + key + '</option>';
+                            output += '<option value=' + value + '>' + key + '</option>';
                         });
                         return output;
                     });
